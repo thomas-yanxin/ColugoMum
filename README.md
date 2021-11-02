@@ -51,5 +51,3 @@
 打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；  </font>
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
-
-<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=548858266&bvid=BV19q4y1G7bx&cid=431661561&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
