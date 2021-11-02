@@ -1,0 +1,25 @@
+/* miniprogram/pages/main/main.wxss */
+.swiperCont{
+  width: 100%;
+  box-sizing: border-box;
+}
+.swiper{
+  width: 710rpx;
+  height: 310rpx;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 50rpx;
+  margin: 15rpx auto 30rpx;
+}
+.swiper-item image{
+  width: 710rpx;
+  height: 310rpx;
+}
+.swiper .wx-swiper-dot{
+  width: 30rpx;
+  height: 8rpx;
+  border-radius: 5rpx;
+}
+.swiper .wx-swiper-dot-active{
+  background: #ffffff;
+}
