@@ -8,8 +8,9 @@
 
 ## 实现功能
 <font size=3 >本项目具体实现在零售过程中对用户购买商品的自动结算。即：利用计算机视觉领域中的图像识别及目标检测技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域的时候，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整地购物清单及顾客应付的实际商品总价格，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
-
-![](https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3)
+<div style="align: center">
+<img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3"/>
+</div>
 
 ## 整体架构
 
@@ -60,3 +61,4 @@
     打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；  </font>
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
+
