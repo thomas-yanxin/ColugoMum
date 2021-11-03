@@ -182,7 +182,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         requestsss={'name':'测试图片', 'image':img_str}
         req = json.dumps(requestsss) #字典数据结构变json(所有程序语言都认识的字符串)
 
-        res=requests.post('http://106.12.78.130:8001/reference_client/', data=req)
+        res=requests.post('localhost/reference_client/', data=req)
         print(type(res.text))
         json_res = json.loads(res.text)
         print(json_res['container'])
