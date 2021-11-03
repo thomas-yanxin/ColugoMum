@@ -18,7 +18,7 @@
 ## 技术路线
 <font size=3 >**袋鼯麻麻——智能购物平台** 主要基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[图像识别技术](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/tutorials/quick_start_recognition.md)，并通过PaddleInference将其部署于Jetson Nano，开发一套符合实际应用需求的智能零售购物平台。  </font>
 
-### 图像识别介绍
+### [图像识别](https://arxiv.org/pdf/2111.00775.pdf)介绍
 ![](https://ai-studio-static-online.cdn.bcebos.com/277b4a0641234484a529054791505f9f3fba0faa4b2047838ebbadc3663af0ac) 
 
 <font size=3 >整个图像识别系统分为三步：  
@@ -33,21 +33,29 @@
 
 【The second one】:[RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://www.pinlandata.com/rp2k_dataset)  
 
-**袋鼯麻麻——智能购物平台**基于上述两个数据集，并对此两种数据集进行适应性处理，其中共357种商品类型，训练集 共230,280张图片； 测试集共25,738张图片。  
+**袋鼯麻麻——智能购物平台**基于上述两个数据集，并对此两种数据集进行适应性处理。  
 
 
 目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/108651)开源。 </font>
 
 
 ## 部署方式
-<font size=3 >安装python依赖库：pip install -r requestment.txt；  
+<font size=3 >
   
-执行python manage.py makemigrations;  
+  - 使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘链接：https://pan.baidu.com/s/1pVr4zSZB6qV10VIPvgWCsA  提取码：mpq2  
+  
+    解压后运行**启动程序.exe**即可
+  
+  - 服务器部署
+    安装python依赖库：pip install -r requestment.txt；  
+  
+    执行python manage.py makemigrations;  
 
-执行python manage.py migrate;  
+    执行python manage.py migrate;  
+  
+    执行python manage.py runserver # 默认运行在8000端口  
 
-执行python manage.py runserver # 默认运行在8000端口  
-
-打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；  </font>
+  - 微信小程序
+    打开开发者工具，导入系统文件夹下wx_mini_app文件夹并运行，即可运行小程序端；  </font>
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
