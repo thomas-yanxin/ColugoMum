@@ -8,19 +8,24 @@
 
 ## 实现功能
 <font size=3 >本项目具体实现在零售过程中对用户购买商品的自动结算。即：利用计算机视觉领域中的图像识别及目标检测技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域的时候，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整地购物清单及顾客应付的实际商品总价格，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
-<div style="align: center">
-<img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3"/>
+<div align="center">
+<img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3" width = "480" height = "320"/>
 </div>
 
 ## 整体架构
+<div align="center">
+<img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "1080" height = "720"/>
+</div>
 
-![](https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab) 
 
 ## 技术路线
-<font size=3 >**袋鼯麻麻——智能购物平台** 主要基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[图像识别技术](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/tutorials/quick_start_recognition.md)，并通过PaddleInference将其部署于Jetson Nano，开发一套符合实际应用需求的智能零售购物平台。  </font>
+<font size=3 >**袋鼯麻麻——智能购物平台** 主要基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[图像识别技术](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/tutorials/quick_start_recognition.md)，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售购物平台。  </font>
 
 ### [图像识别](https://arxiv.org/pdf/2111.00775.pdf)介绍
-![](https://ai-studio-static-online.cdn.bcebos.com/277b4a0641234484a529054791505f9f3fba0faa4b2047838ebbadc3663af0ac) 
+
+<div align="center">
+<img src="https://ai-studio-static-online.cdn.bcebos.com/277b4a0641234484a529054791505f9f3fba0faa4b2047838ebbadc3663af0ac" width = "480" height = "540"/>
+</div>
 
 <font size=3 >整个图像识别系统分为三步：  
 （1）通过一个目标检测模型，检测图像物体候选区域；  
