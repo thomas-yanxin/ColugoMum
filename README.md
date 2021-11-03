@@ -46,7 +46,8 @@
   
     解压后运行**启动程序.exe**即可
   
-  - 服务器部署
+  - 服务器部署  
+  
     安装python依赖库：pip install -r requestment.txt；  
   
     执行python manage.py makemigrations;  
