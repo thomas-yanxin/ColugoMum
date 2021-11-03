@@ -41,6 +41,8 @@
 
 
 ## 部署方式
+本项目已打通**Jetson Nano、Windows、linux**系统
+
 <font size=3 >
   
   - 使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘链接：https://pan.baidu.com/s/1pVr4zSZB6qV10VIPvgWCsA  提取码：mpq2  
