@@ -46,7 +46,9 @@
 
 
 ## 部署方式
-本项目已打通**Jetson Nano、Windows、linux**系统
+本项目已打通**Jetson Nano、Windows、linux**系统  
+本项目全部代码：链接：https://pan.baidu.com/s/1hVMobt-SKIL6DZwhNohDAg   
+              提取码：zcj9
 
 <font size=3 >
   
