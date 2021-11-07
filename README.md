@@ -15,7 +15,7 @@
 
 ## 整体架构
 <div align="center">
-<img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "720" height = "480"/>
+<img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "1080" height = "640"/>
 </div>
 
 
@@ -27,7 +27,7 @@
 PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检测、特征学习和向量检索三个模块组成。该系统从骨干网络选择和调整、损失函数的选择、数据增强、学习率变换策略、正则化参数选择、预训练模型使用以及模型裁剪量化8个方面，采用多种策略，对各个模块的模型进行优化，最终得到在CPU上仅0.2s即可完成10w+库的图像识别的系统。
 
 <div align="center">
-<img src="./image/structure.jpg" width = "720" height = "480"/>
+<img src="./image/structure.jpg" width = "1080" height = "540"/>
 </div>
 
 <font size=3 >整个图像识别系统分为三步（[详情见PP-ShiTu训练模块](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/models_training/recognition.md)）：  
@@ -74,12 +74,13 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
 - 主界面
-  ![主界面](./image/all.jpg)
+  <div align="center"><img src="./image/all.jpg" width = "1080" height = "540"/></div>
   
 - 端侧界面  
  
-![端侧主界面](./image/main.png)
-![端侧识别界面](./image/recognition_1.png)
+<div align="center"><img src="./image/main.png" width = "1080" height = "540"/></div>
+
+<div align="center"><img src="./image/recognition_1.png" width = "1080" height = "540"/></div>
 
 - 小程序界面
   <div align="center">
