@@ -27,10 +27,10 @@
 PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检测、特征学习和向量检索三个模块组成。该系统从骨干网络选择和调整、损失函数的选择、数据增强、学习率变换策略、正则化参数选择、预训练模型使用以及模型裁剪量化8个方面，采用多种策略，对各个模块的模型进行优化，最终得到在CPU上仅0.2s即可完成10w+库的图像识别的系统。
 
 <div align="center">
-<img src="https://ai-studio-static-online.cdn.bcebos.com/277b4a0641234484a529054791505f9f3fba0faa4b2047838ebbadc3663af0ac" width = "480" height = "540"/>
+<img src="./image/structure.jpg" width = "720" height = "480"/>
 </div>
 
-<font size=3 >整个图像识别系统分为三步：  
+<font size=3 >整个图像识别系统分为三步（[详情见PP-ShiTu训练模块](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/models_training/recognition.md)）：  
 （1）通过一个目标检测模型，检测图像物体候选区域；  
 （2）对每个候选区域进行特征提取；  
 （3）与检索库中图像进行特征匹配，提取识别结果。
@@ -58,9 +58,11 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - 使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘链接：https://pan.baidu.com/s/1pVr4zSZB6qV10VIPvgWCsA  提取码：mpq2  
   
     解压后运行**启动程序.exe**即可
+  
   - 图像识别部分部署详情请见[PP-ShiTu部署](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
+  
 - 端侧界面  
  
 ![端侧主界面](./image/main.png)
