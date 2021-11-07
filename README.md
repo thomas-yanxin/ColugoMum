@@ -80,6 +80,9 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 ![端侧识别界面](./image/recognition_1.png)
 
 - 小程序界面
+  <div align="center">
+<img src="./image/wxapp_main.jpg" width = "320" height = "720"/>
+</div>
 
 ## 特别鸣谢
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
