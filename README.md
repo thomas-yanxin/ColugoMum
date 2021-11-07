@@ -49,16 +49,26 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 ## 部署方式
 本项目已打通**Jetson Nano、Windows、linux**系统  
-本项目全部代码：链接：https://pan.baidu.com/s/1hVMobt-SKIL6DZwhNohDAg   
+本项目全部代码百度网盘链接：https://pan.baidu.com/s/1hVMobt-SKIL6DZwhNohDAg   
                提取码：zcj9
 
 <font size=3 >
   
-  - 使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘链接：https://pan.baidu.com/s/1pVr4zSZB6qV10VIPvgWCsA  提取码：mpq2  
+  - Windows 端  
+  
+    使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘链接：https://pan.baidu.com/s/1pVr4zSZB6qV10VIPvgWCsA  提取码：mpq2  
   
     解压后运行**启动程序.exe**即可
+  - Linux 端  
+    Download本项目代码后，进入client文件夹内，执行以下代码即可运行：
+    ```
+      python client.py
+     ```
   
   - 图像识别部分部署详情请见[PP-ShiTu部署](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
+  
+  - 微信小程序端
+   打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端；
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
   
