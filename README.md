@@ -7,7 +7,7 @@
 随着计算机视觉技术的发展，以及无人化、自动化超市运营理念的提出，利用图像识别技术及目标检测技术实现产品的自动识别及自动化结算的需求呼之欲出，及自动结账系统（Automatic checkout, ACO）。基于计算机视觉的自动结账系统能有效降低零售行业的运营成本，提高顾客结账效率，从而进一步提升用户在购物过程中的体验感与幸福感。  </font>
 
 ## 实现功能
-<font size=3 >本项目具体实现在零售过程中对用户购买商品的自动结算。即：利用计算机视觉领域中的图像识别及目标检测技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域的时候，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整地购物清单及顾客应付的实际商品总价格，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
+<font size=3 >“**袋鼯麻麻——智能购物平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的图像识别技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整地购物清单及顾客应付的实际商品总价格，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
 
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3" width = "480" height = "320"/>
@@ -20,7 +20,7 @@
 
 
 ## 技术路线
-<font size=3 >**袋鼯麻麻——智能购物平台** 主要基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售购物平台。  </font>
+<font size=3 >**袋鼯麻麻——智能购物平台** 基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)进行核心功能的开发，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售购物平台。  </font>
 
 ### [图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)介绍
 
@@ -43,7 +43,6 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 【The second one】:[RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://www.pinlandata.com/rp2k_dataset)  
 
 **袋鼯麻麻——智能购物平台**基于上述两个数据集，并对此两种数据集进行适应性处理。  
-
 
 目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/108651)开源。 </font>
 
