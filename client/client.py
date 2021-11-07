@@ -76,7 +76,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # 窗口图标
         self.icon = QIcon()
-        self.icon.addPixmap(QPixmap("D:\\project\\Smart_container\\client\\image\\icon.png"), QIcon.Normal, QIcon.On)
+        self.icon.addPixmap(QPixmap("./image/icon.png"), QIcon.Normal, QIcon.On)
         self.setWindowIcon(self.icon)
 
         # 矩形框
@@ -139,14 +139,14 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # Paddle Logo
         self.paddle_logo=QLabel("图片",self)
-        self.paddle_pic=QPixmap("D:\\project\\Smart_container\\client\\image\\paddlepaddle.png")
+        self.paddle_pic=QPixmap("./image/paddlepaddle.png")
         self.paddle_logo.setPixmap(self.paddle_pic)
         self.paddle_logo.setGeometry(QRect(3*self.rate, 3*self.rate, 400*self.rate,105*self.rate))
 
 
         # 袋鼯 Logo
         self.daiwu_logo=QLabel("图片",self)
-        self.daiwu_pic=QPixmap("D:\\project\\Smart_container\\client\\image\\icon.png")
+        self.daiwu_pic=QPixmap("./image/icon.png")
         self.daiwu_logo.setPixmap(self.daiwu_pic)
         self.daiwu_logo.setGeometry(QRect(881*self.rate, 10*self.rate, 190*self.rate, 150*self.rate))
 
@@ -163,7 +163,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
         # add logo
         self.add_logo=QLabel("图片",self)
-        self.add_pic=QPixmap("D:\\project\\Smart_container\\client\\image\\add.png")
+        self.add_pic=QPixmap("./image/add.png")
         self.add_logo.setPixmap(self.add_pic)
         self.add_logo.setGeometry(QRect(410*self.rate, 200*self.rate, 120*self.rate,120*self.rate))
 
@@ -317,16 +317,16 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
     def container_recognition(self):
 
-        self.picture_file = '.\\test_client_pic.jpg'
+        self.picture_file = './test_client_pic.jpg'
 
         cv2.imwrite(self.picture_file, self.image)
 
-        img_str = self.getByte('.\\test_client_pic.jpg')
+        img_str = self.getByte('./test_client_pic.jpg')
 
         requestsss={'name':'测试图片', 'image':img_str}
         req = json.dumps(requestsss) #字典数据结构变json(所有程序语言都认识的字符串)
 
-        res=requests.post('http://106.12.78.130:8001/reference_client/', data=req)
+        res=requests.post('localhost/reference_client/', data=req)
         print(type(res.text))
         json_res = json.loads(res.text)
         print(json_res['container'])
