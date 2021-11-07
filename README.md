@@ -73,6 +73,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
    打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端；
 
 ## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
+- 主界面
+  ![主界面](./image/all.jpg)
   
 - 端侧界面  
  
