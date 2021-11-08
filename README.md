@@ -42,9 +42,9 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 【The second one】:[RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://www.pinlandata.com/rp2k_dataset)  
 
-**袋鼯麻麻——智能购物平台**基于上述两个数据集，并对此两种数据集进行适应性处理。  
+**袋鼯麻麻——智能购物平台**基于上述两个数据集，结合爬虫，对此两种数据集进行适应性处理。  
 
-目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/108651)开源。 </font>
+目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。 </font>
 
 
 ## 部署方式
