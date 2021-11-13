@@ -100,11 +100,12 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   
  |  序号  | 完成度 | 优先级 |  功能描述  |
  | :----: | :---- | :---- | :---- |
- |  1  |  |★★★★★  |  端侧 Jetson Nano的深度适配  |
- |  2  |  |★★★★★  |  小程序端 面向管理者及顾客的功能分离  |
- |  3  |  |★★★★  |  基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立  |
- |  4  |  |★★★  |  接入[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)实现商品名称的自动录入  |
- |  5  |  |★★  |  Android and IOS 客户端的打通部署  |
+ |  1  |  |★★★★★  |  小程序初始功能上线  |
+ |  2  |  |★★★★★  |  端侧 Jetson Nano的深度适配  |
+ |  3  |  |★★★★★  |  小程序端 面向管理者及顾客的功能分离  |
+ |  4  |  |★★★★  |  基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立  |
+ |  5  |  |★★★  |  接入[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)实现商品名称的自动录入  |
+ |  6  |  |★★  |  Android and IOS 客户端的打通部署  |
 
 
 
