@@ -4,6 +4,9 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
 ![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
+![python](https://img.shields.io/badge/python-3.69+-aff.svg)
+![os](https://img.shields.io/badge/os-linux%2C%20win%2C%20Nano-pink.svg)
+![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
 > 求求了，点个Star吧
 ## 项目背景
 <font size=3 >目前在零售行业的实际运营过程中，会产生巨大的人力成本，例如导购、保洁、结算等，而其中，尤其需要花费大量的人力成本和时间成本在识别商品并对其进行价格结算的过程中，并且在此过程中，顾客也因此而需要排队等待。这样一来零售行业人力成本较大、工作效率极低，二来也使得顾客的购物体验下降。  
