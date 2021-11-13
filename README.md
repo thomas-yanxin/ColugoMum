@@ -1,6 +1,10 @@
 
 # 袋鼯麻麻——智能购物平台
 
+![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
+![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
+![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
+> 求求了，点个Star吧
 ## 项目背景
 <font size=3 >目前在零售行业的实际运营过程中，会产生巨大的人力成本，例如导购、保洁、结算等，而其中，尤其需要花费大量的人力成本和时间成本在识别商品并对其进行价格结算的过程中，并且在此过程中，顾客也因此而需要排队等待。这样一来零售行业人力成本较大、工作效率极低，二来也使得顾客的购物体验下降。  
   
@@ -86,6 +90,14 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   <div align="center">
 <img src="./image/wx_all.png" width = "1080" height = "540"/>
 </div>
+
+
+## 待完成
+- [ ]    Jetson Nano深度适配
+- [ ]    web端信息管理系统的建立
+- [ ]    小程序面向管理者及顾客的功能分离
+- [ ]    打通APP客户端
+- [ ]    接入OCR实现商品名称的自动录入
 
 ## 开发团队
 
