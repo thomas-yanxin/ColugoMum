@@ -58,7 +58,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   
     使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘 链接：https://pan.baidu.com/s/13cbLfqtXC_FS3Op9vnLl6w   
   
-  提取码：t9pl
+     提取码：t9pl
   
     解压后运行**启动程序.exe**即可
   - Linux 端  
@@ -87,9 +87,17 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 <img src="./image/wx_all.png" width = "1080" height = "540"/>
 </div>
 
+## 开发团队
+
+  |  职责   |  名单  |
+|  :----:  | :----:  |
+| PM及算法  | [颜鑫](https://github.com/thomas-yanxin) |
+| 前端  | [沈晨](https://github.com/Scxw010516) |
+ | 后端  | [杜旭东](https://github.com/DXD-agumo) |
+  
+  
 ## 特别鸣谢
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
 
-## 合作开发者
-  [Scxw010516](https://github.com/Scxw010516)  、  [DXD-agumo](https://github.com/DXD-agumo)
+
