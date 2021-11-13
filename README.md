@@ -109,8 +109,10 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
   |  职责   |  名单  |
 |  :----:  | :----:  |
-| PM及算法  | [颜鑫](https://github.com/thomas-yanxin) |
-| 前端  | [沈晨](https://github.com/Scxw010516) |
+| PM | [颜鑫](https://github.com/thomas-yanxin) |
+| 算法 | [颜鑫](https://github.com/thomas-yanxin) |
+| 端侧前端 | [颜鑫](https://github.com/thomas-yanxin) |
+| 小程序前端  | [沈晨](https://github.com/Scxw010516) |
  | 后端  | [杜旭东](https://github.com/DXD-agumo) |
   
   
