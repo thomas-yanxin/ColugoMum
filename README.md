@@ -93,11 +93,12 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 
 ## 待完成
-- [ ]    Jetson Nano深度适配
-- [ ]    web端信息管理系统的建立
+- [ ]    端测Jetson Nano的深度适配
+- [ ]    基于Tyadmin的web端信息管理系统的建立
 - [ ]    小程序面向管理者及顾客的功能分离
-- [ ]    打通APP客户端
 - [ ]    接入OCR实现商品名称的自动录入
+- [ ]    APP客户端的打通部署
+
 
 ## 开发团队
 
@@ -112,4 +113,6 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
 
+## 欢迎共建
+  我们非常欢迎您为"**袋鼯麻麻——智能购物平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交issue or Pull Requests。
 
