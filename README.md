@@ -5,7 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
 ![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
-![os](https://img.shields.io/badge/os-linux%2C%20win%2C%20Nano-pink.svg)
+![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
 > 求求了，点个Star吧
 ## 项目背景
