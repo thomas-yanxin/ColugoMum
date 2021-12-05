@@ -1,5 +1,4 @@
-
-# 袋鼯麻麻——智能购物平台
+<h1 align="center"> 袋鼯麻麻——智能购物平台</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
@@ -7,26 +6,27 @@
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
+
 > 求求了，点个Star吧
-## 项目背景
+## 🧁项目背景🧁
 <font size=3 >目前在零售行业的实际运营过程中，会产生巨大的人力成本，例如导购、保洁、结算等，而其中，尤其需要花费大量的人力成本和时间成本在识别商品并对其进行价格结算的过程中，并且在此过程中，顾客也因此而需要排队等待。这样一来零售行业人力成本较大、工作效率极低，二来也使得顾客的购物体验下降。  
   
 随着计算机视觉技术的发展，以及无人化、自动化超市运营理念的提出，利用图像识别技术及目标检测技术实现产品的自动识别及自动化结算的需求呼之欲出，及自动结账系统（Automatic checkout, ACO）。基于计算机视觉的自动结账系统能有效降低零售行业的运营成本，提高顾客结账效率，从而进一步提升用户在购物过程中的体验感与幸福感。  </font>
 
-## 实现功能
+## 🍑实现功能🍑
 <font size=3 >“**袋鼯麻麻——智能购物平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。而当系统有新商品增加时，本系统只需更新检索库即可，无需重新训练模型，极大地降低了模型训练成本和时间。  </font>  
 
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3" width = "480" height = "320"/>
 </div>
 
-## 整体架构
+## 🍎整体架构🍎
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "1080" height = "640"/>
 </div>
 
 
-## 技术路线
+## 🐻技术路线🐻
 <font size=3 >**袋鼯麻麻——智能购物平台** 基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)进行核心功能的开发，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售购物平台。  </font>
 
 ### [图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)介绍
@@ -54,7 +54,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。 </font>
 
 
-## 部署方式
+## 🌍部署方式🌍
 本项目已打通**Jetson Nano、Windows、linux**系统  
 本项目全部代码百度网盘链接：https://pan.baidu.com/s/1hVMobt-SKIL6DZwhNohDAg   
                提取码：zcj9
@@ -79,7 +79,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - 微信小程序端
    打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端；
 
-## [bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示
+## 💃[bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示💃
 - 主界面
   <div align="center"><img src="./image/all.jpg" width = "1080" height = "540"/></div>
   
@@ -95,10 +95,10 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 </div>
 
 
-## 待完成
+## ⛽️待完成⛽️
 
   
- |  序号  | 完成度 |  优先级 |  分属类别  |  功能描述  |
+ |  序号  | 完成度 |  优先级 |  分属类别  |  功能描述  | 
  | :----: | :---- | :---- | :---- | :---- |
  |  1  |  在做了  |★★★★★  | 端侧 |  添加数据库内容显示滑块、考虑是否在端侧增添商品补录功能|
  |  2  |  在做了  |★★★★★  | 小程序 |  初始功能上线  |
@@ -121,10 +121,10 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  | 后端  | [杜旭东](https://github.com/DXD-agumo) |
   
   
-## 特别鸣谢
+## 🌟特别鸣谢🌟
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
 
-## 欢迎共建
+## ❤️欢迎共建❤️
   我们非常欢迎您为"**袋鼯麻麻——智能购物平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交issue or Pull Requests。
 
