@@ -20,6 +20,10 @@
 <img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3" width = "480" height = "320"/>
 </div>
 
+## 项目贡献
+本项目为轻量级通用图像识别系统PP-ShiTu提供了扎实的落地应用案例，对新零售行业中无人零售视觉化智能解决方案提供了非常好的基础和思路，尤其针对解决多类别、小样本、高相似和更新频繁的特殊图像识别场景痛难点提供了可参考的示范。
+
+
 ## 🍎整体架构🍎
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "1080" height = "640"/>
