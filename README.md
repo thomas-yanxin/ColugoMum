@@ -60,8 +60,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 ## 🌍部署方式🌍
 本项目已打通**Jetson Nano、Windows、linux**系统  
-本项目全部代码百度网盘链接：https://pan.baidu.com/s/1hVMobt-SKIL6DZwhNohDAg   
-               提取码：zcj9
+本项目全部代码百度网盘链接：https://pan.baidu.com/s/1dmBbRk9mp0kg7rGi91s6Cg 
+提取码：4834
 
 <font size=3 >
   
