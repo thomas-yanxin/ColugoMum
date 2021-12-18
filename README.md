@@ -67,8 +67,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   
   - Windows 端  
   <本项目提供了较为简单的demo演示版本>
-    使用[QPT](https://github.com/QPT-Family/QPT)打包的百度网盘 链接：https://pan.baidu.com/s/14ZGQzHmJBg5yiVIgwoaPjw 
-提取码：z0gw  
+    使用[QPT](https://github.com/QPT-Family/QPT)打包   
+    百度网盘 链接：https://pan.baidu.com/s/14ZGQzHmJBg5yiVIgwoaPjw  提取码：z0gw  
     解压后运行**启动程序.exe**即可
   - Linux 端  
     Download本项目代码后，进入client文件夹内，执行以下代码即可运行：
@@ -81,7 +81,9 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - 微信小程序端
    打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端；
 
-## 💃[bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示💃
+## 💃[bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示💃  
+ 
+    
 - 主界面
   <div align="center"><img src="./image/all.jpg" width = "1080" height = "540"/></div>
   
@@ -109,7 +111,6 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  |  5  |  规划中  |★★★★  | web |  基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立  |
  |  6  |  规划中  |★★★  | 小程序 |  接入[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)实现商品名称的自动录入  |
  |  7  |  规划中  |★★  | APP |  Android and IOS 客户端的打通部署  |
-
 
 
 ## 🚀开发团队🚀
