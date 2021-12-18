@@ -156,18 +156,18 @@ test/200/Common_Yellowthroat_0114_190501.jpg 200 6
       cls_label_path: ./dataset/train_reg_all_data.txt  #此处表示train数据集label文件的地址
 ```
 ```
-    Query:
-      dataset:
-        name: VeriWild
-        image_root: ./dataset/Aliproduct/.    #此处表示query数据集所在的目录
-        cls_label_path: ./dataset/Aliproduct/val_list.txt.    #此处表示query数据集label文件的地址
+   Query:
+     dataset:
+       name: VeriWild
+       image_root: ./dataset/Aliproduct/.    #此处表示query数据集所在的目录
+       cls_label_path: ./dataset/Aliproduct/val_list.txt.    #此处表示query数据集label文件的地址
 ```
 ```
-    Gallery:
-      dataset:
-        name: VeriWild
-        image_root: ./dataset/Aliproduct/    #此处表示gallery数据集所在的目录
-        cls_label_path: ./dataset/Aliproduct/val_list.txt.   #此处表示gallery数据集label文件的地址
+   Gallery:
+     dataset:
+       name: VeriWild
+       image_root: ./dataset/Aliproduct/    #此处表示gallery数据集所在的目录
+       cls_label_path: ./dataset/Aliproduct/val_list.txt.   #此处表示gallery数据集label文件的地址
 ```
    
 2. 模型训练  
