@@ -39,24 +39,13 @@
 - PaddlePaddle >= 2.1
 - Linux 环境最佳
 
-1. 安装PaddlePaddle  
-    ```shell
-    pip3 install paddlepaddle-gpu --upgrade -i https://mirror.baidu.com/pypi/simple
-    ```
-    具体详情可参照[PaddlePaddle安装文档](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/develop/install/pip/linux-pip.html)  
+- 安装PaddleClas
 
-2. 安装PaddleClas
-
-    (1. 克隆 PaddleClas
+    - 克隆 PaddleClas
     ```shell
     git clone https://github.com/PaddlePaddle/PaddleClas.git -b release/2.3
     ```
-    如果访问 GitHub 网速较慢，可以从 Gitee 下载，命令如下：
-    ```shell
-    git clone https://gitee.com/paddlepaddle/PaddleClas.git -b release/2.3
-    ```
-    (2. 安装 Python 依赖库  
-
+    - 安装 Python 依赖库  
     PaddleClas 的 Python 依赖库在 `requirements.txt` 中给出，可通过如下命令安装：
     ```shell
     pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple
@@ -104,16 +93,6 @@ train/99/Ovenbird_0128_93366.jpg 99 6
 ...
 ```
 
-验证数据集(`CUB_200_2011`中既是gallery dataset，也是query dataset) `test_list.txt` 文件内容格式如下所示：
-
-```shell
-# 采用"空格"作为分隔符号
-...
-test/200/Common_Yellowthroat_0126_190407.jpg 200 1
-...
-test/200/Common_Yellowthroat_0114_190501.jpg 200 6
-...
-```
 
 每行数据使用“空格”分割，三列数据的含义分别是训练数据的路径、训练数据的label信息、训练数据的unique id。
 
@@ -123,7 +102,7 @@ test/200/Common_Yellowthroat_0114_190501.jpg 200 6
 
 主体检测技术是目前应用非常广泛的一种检测技术，它指的是检测出图片中一个或者多个主体的坐标位置，然后将图像中的对应区域裁剪下来，进行识别，从而完成整个识别过程。主体检测是识别任务的前序步骤，可以有效提升识别精度。  
 
-考虑到商品识别实际应用场景中，需要快速准确地获得识别结果，故本项目选取**轻量级主体检测模型**[PicoDet](https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/pretrain/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_pretrained.pdparams)作为本项目主体检测部分的模型。此模型inference模型大小(MB)仅**30.1MB**，mAP可达**40.1%**，在**cpu**下单张图片预测耗时仅**29.8ms**(具体模型参评标准请见[PicoDet系列模型介绍](https://github.com/PaddlePaddle/PaddleDetection/blob/develop/configs/picodet/README.md))，完美符合本项目实际落地需求。
+考虑到商品识别实际应用场景中，需要快速准确地获得识别结果，故本项目选取**轻量级主体检测模型**[PicoDet](https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/pretrain/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_pretrained.pdparams)作为本项目主体检测部分的模型。此模型inference模型大小(MB)仅**30.1MB**，mAP可达**40.1%**，在**cpu**下单张图片预测耗时仅**29.8ms**【具体模型参评标准请见[PicoDet系列模型介绍](https://github.com/PaddlePaddle/PaddleDetection/blob/develop/configs/picodet/README.md)】，完美符合本项目实际落地需求。
 
 ### 特征提取 
 
@@ -216,19 +195,9 @@ python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_infere
 
 ### bsseline指标结果
 
-
-
 ### 测试代码
 
 ### 测试效果图
-
-## 模型导出
-
-### 导出模型的原因
-
-### 导出模型的代码
-
-### 导出后的文件介绍
 
 ## 模型优化
 
@@ -239,3 +208,135 @@ python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_infere
 ### 最优模型方案
 
 ## 模型部署
+
+### 1. 简介
+[Paddle Serving](https://github.com/PaddlePaddle/Serving) 旨在帮助深度学习开发者轻松部署在线预测服务，支持一键部署工业级的服务能力、客户端和服务端之间高并发和高效通信、并支持多种编程语言开发客户端。
+
+该部分以 HTTP 预测服务部署为例，介绍怎样在 PaddleClas 中使用 PaddleServing 部署模型服务。
+
+
+### 2. Serving安装
+
+Serving 官网推荐使用 docker 安装并部署 Serving 环境。首先需要拉取 docker 环境并创建基于 Serving 的 docker。
+
+```shell
+nvidia-docker pull hub.baidubce.com/paddlepaddle/serving:0.2.0-gpu
+nvidia-docker run -p 9292:9292 --name test -dit hub.baidubce.com/paddlepaddle/serving:0.2.0-gpu
+nvidia-docker exec -it test bash
+```
+
+进入 docker 后，需要安装 Serving 相关的 python 包。
+
+```shell
+pip install paddlepaddle-gpu
+pip install paddle-serving-client
+pip install paddle-serving-server-gpu
+pip install paddle-serving-app
+```
+
+* 如果安装速度太慢，可以通过 `-i https://pypi.tuna.tsinghua.edu.cn/simple` 更换源，加速安装过程。
+
+* 如果希望部署 CPU 服务，可以安装 serving-server 的 cpu 版本，安装命令如下。
+
+```shell
+pip install paddle-serving-server
+
+```
+
+## 4.图像识别服务部署
+使用PaddleServing做服务化部署时，需要将保存的inference模型转换为Serving模型。 下面以PP-ShiTu中的超轻量图像识别模型为例，介绍图像识别服务的部署。
+## 4.1 模型转换
+- 下载通用检测inference模型和通用识别inference模型
+```
+cd deploy
+# 下载并解压通用识别模型
+wget -P models/ https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/inference/general_PPLCNet_x2_5_lite_v1.0_infer.tar
+cd models
+tar -xf general_PPLCNet_x2_5_lite_v1.0_infer.tar
+# 下载并解压通用检测模型
+wget https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/inference/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer.tar
+tar -xf picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer.tar
+```
+- 转换识别inference模型为Serving模型：
+```
+# 转换识别模型
+python3 -m paddle_serving_client.convert --dirname ./general_PPLCNet_x2_5_lite_v1.0_infer/ \
+                                         --model_filename inference.pdmodel  \
+                                         --params_filename inference.pdiparams \
+                                         --serving_server ./general_PPLCNet_x2_5_lite_v1.0_serving/ \
+                                         --serving_client ./general_PPLCNet_x2_5_lite_v1.0_client/
+```
+识别推理模型转换完成后，会在当前文件夹多出`general_PPLCNet_x2_5_lite_v1.0_serving/` 和`general_PPLCNet_x2_5_lite_v1.0_serving/`的文件夹。修改`general_PPLCNet_x2_5_lite_v1.0_serving/`目录下的serving_server_conf.prototxt中的alias名字： 将`fetch_var`中的`alias_name`改为`features`。
+修改后的serving_server_conf.prototxt内容如下：
+```
+feed_var {
+  name: "x"
+  alias_name: "x"
+  is_lod_tensor: false
+  feed_type: 1
+  shape: 3
+  shape: 224
+  shape: 224
+}
+fetch_var {
+  name: "save_infer_model/scale_0.tmp_1"
+  alias_name: "features"
+  is_lod_tensor: true
+  fetch_type: 1
+  shape: -1
+}
+```
+- 转换通用检测inference模型为Serving模型：
+```
+# 转换通用检测模型
+python3 -m paddle_serving_client.convert --dirname ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer/ \
+                                         --model_filename inference.pdmodel  \
+                                         --params_filename inference.pdiparams \
+                                         --serving_server ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/ \
+                                         --serving_client ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_client/
+```
+检测inference模型转换完成后，会在当前文件夹多出`picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/` 和`picodet_PPLCNet_x2_5_mainbody_lite_v1.0_client/`的文件夹。
+
+**注意:** 此处不需要修改`picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/`目录下的serving_server_conf.prototxt中的alias名字。
+
+- 下载并解压已经构建后的检索库index
+```
+cd ../
+wget https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/data/drink_dataset_v1.0.tar && tar -xf drink_dataset_v1.0.tar
+```
+## 4.2 服务部署和请求
+**注意:**  识别服务涉及到多个模型，出于性能考虑采用PipeLine部署方式。Pipeline部署方式当前不支持windows平台。
+- 进入到工作目录
+```shell
+cd ./deploy/paddleserving/recognition
+```
+paddleserving目录包含启动pipeline服务和发送预测请求的代码，包括：
+```
+__init__.py
+config.yml                    # 启动服务的配置文件
+pipeline_http_client.py       # http方式发送pipeline预测请求的脚本
+pipeline_rpc_client.py        # rpc方式发送pipeline预测请求的脚本
+recognition_web_service.py    # 启动pipeline服务端的脚本
+```
+- 启动服务：
+```
+# 启动服务，运行日志保存在log.txt
+python3 recognition_web_service.py &>log.txt &
+```
+成功启动服务后，log.txt中会打印类似如下日志
+![](https://github.com/PaddlePaddle/PaddleClas/raw/release/2.3/deploy/paddleserving/imgs/start_server_shitu.png)
+
+- 发送请求：
+```
+python3 pipeline_http_client.py
+```
+成功运行后，模型预测的结果会打印在cmd窗口中，结果示例为：
+![](https://github.com/PaddlePaddle/PaddleClas/raw/release/2.3/deploy/paddleserving/imgs/results_shitu.png)
+
+
+在项目中为用户提供了基于服务器的部署Demo方案。用户可根据实际情况自行参考。  
+
+![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/main.png)
+![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/recognition_1.png)
+![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/wx_all.png)
+具体部署方式可以参考：[袋鼯麻麻——智能购物平台](https://github.com/thomas-yanxin/Smart_container)  
