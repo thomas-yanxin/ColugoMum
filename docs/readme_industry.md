@@ -209,7 +209,7 @@ python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_infere
 
 ## 模型部署
 
-### 1. 简介
+<!-- ### 1. 简介
 [Paddle Serving](https://github.com/PaddlePaddle/Serving) 旨在帮助深度学习开发者轻松部署在线预测服务，支持一键部署工业级的服务能力、客户端和服务端之间高并发和高效通信、并支持多种编程语言开发客户端。
 
 该部分以 HTTP 预测服务部署为例，介绍怎样在 PaddleClas 中使用 PaddleServing 部署模型服务。
@@ -331,7 +331,7 @@ python3 recognition_web_service.py &>log.txt &
 python3 pipeline_http_client.py
 ```
 成功运行后，模型预测的结果会打印在cmd窗口中，结果示例为：
-![](https://github.com/PaddlePaddle/PaddleClas/raw/release/2.3/deploy/paddleserving/imgs/results_shitu.png)
+![](https://github.com/PaddlePaddle/PaddleClas/raw/release/2.3/deploy/paddleserving/imgs/results_shitu.png) -->
 
 
 在项目中为用户提供了基于服务器的部署Demo方案。用户可根据实际情况自行参考。  
