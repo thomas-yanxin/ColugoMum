@@ -1,4 +1,4 @@
-<h1 align="center"> 袋鼯麻麻——智能购物平台</h1>
+<h1 align="center"> 袋鼯麻麻——智能零售结算平台(PP-ACO)</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
