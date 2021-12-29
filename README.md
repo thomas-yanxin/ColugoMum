@@ -1,4 +1,5 @@
-<h1 > 袋鼯麻麻——智能零售结算平台(PP-ACO)</h1>
+
+<h1 > 袋鼯麻麻——智能零售结算平台</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
@@ -15,7 +16,7 @@
 
 ## 适用场景  
 
- >**袋鼯麻麻——智能零售购物平台**致力于为**大型线下零售体验店**提供基于视觉的零售结算方案。
+ >**袋鼯麻麻——智能零售结算平台**致力于为**大型线下零售体验店**提供基于视觉的零售结算方案。
 
 ## 痛点问题
 
@@ -25,9 +26,8 @@
    4. **商品类别数以万计**：根本没法事先把所有类别都放入训练集。
 
 ## 🍑实现功能🍑
-<font size=3 >“**袋鼯麻麻——智能购物平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格。而当系统有新商品增加时，本系统只需更新检索库即可，无需重新训练模型。   
+<font size=3 >“**袋鼯麻麻——智能零售结算平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能零售结算平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格。而当系统有新商品增加时，本系统只需更新检索库即可，无需重新训练模型。   
     
-  
   本项目为轻量级通用图像识别系统PP-ShiTu提供了扎实的落地应用案例，对新零售行业中无人零售视觉化智能解决方案提供了非常好的基础和思路，尤其针对解决多类别、小样本、高相似和更新频繁的特殊图像识别场景痛难点提供了可参考的示范，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
 
 <div align="center">
@@ -42,7 +42,7 @@
 
 
 ## 🐻技术路线🐻
-<font size=3 >**袋鼯麻麻——智能购物平台** 基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)进行核心功能的开发，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售购物平台。  </font>
+<font size=3 >**袋鼯麻麻——智能零售结算平台** 基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)进行核心功能的开发，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售结算平台。  </font>
 
 ### [图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)介绍
 
@@ -158,5 +158,5 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
 
 ## ❤️欢迎共建❤️
-  我们非常欢迎您为"**袋鼯麻麻——智能购物平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交issue or Pull Requests。
+  我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交issue or Pull Requests。
 
