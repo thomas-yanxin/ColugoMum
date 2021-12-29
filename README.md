@@ -149,7 +149,10 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 | 小程序前端  | [沈晨](https://github.com/Scxw010516) |
  | 后端  | [杜旭东](https://github.com/DXD-agumo) |
   
-  
+## ☕来一杯咖啡☕
+一杯咖啡提神醒脑，产品更新会更快更好！  
+<div><img width="490" alt="图片" src="./image/pay.png"></div>
+	  
 ## 🌟特别鸣谢🌟
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
