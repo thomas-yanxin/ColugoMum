@@ -329,7 +329,6 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
 ```
 
-
 ```python
 #基于索引库的图像识别
 !python3.7 python/predict_system.py \
@@ -345,9 +344,10 @@ Inference: 31.720638275146484 ms per batch image
 ```
 
 ### 测试效果图
-
+以下为参与模型训练的商品的测试效果图：
 ![](../image/recognition_3.png)
-![](../image/recognition_2.png)
+以下为未参与模型训练的商品的测试效果图：
+![](../image/recognition_2.jpg)
 
 
 ## 模型部署
