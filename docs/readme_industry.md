@@ -346,7 +346,8 @@ Inference: 31.720638275146484 ms per batch image
 
 ### 测试效果图
 
-![](https://ai-studio-static-online.cdn.bcebos.com/26b32cf71c174b429626f8e3423267749bae3790d0344cf8bcb9a33ddd7a644c)
+![](../image/recognition_3.png)
+![](../image/recognition_2.png)
 
 
 ## 模型部署
