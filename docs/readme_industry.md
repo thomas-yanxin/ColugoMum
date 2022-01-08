@@ -125,8 +125,6 @@ train/99/Ovenbird_0128_93366.jpg 99 6
 
 ## 模型训练
 
-
-
 ### 训练流程
 
 1. 数据准备
@@ -290,6 +288,15 @@ Eval:
 ```python
 !python tools/eval.py -c ./ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5.yaml -o Global.pretrained_model="output/RecModel/best_model"
 ```
+评估部分log如下，符合实际产业场景应用需求
+```
+[2022/01/08 12:59:04] root INFO: Build query done, all feat shape: [25738, 512], begin to eval..
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/framework.py:744: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  elif dtype == np.bool:
+[2022/01/08 12:59:05] root INFO: [Eval][Epoch 0][Avg]recall1: 0.98368, recall5: 0.99137
+```
+
 
 4. 模型推理
 
@@ -297,8 +304,6 @@ Eval:
 
 
 - 导出推理模型
-
-
 
 ```python
 !python tools/export_model -c ppcls/configs/ResNet50_vd_SOP.yaml -o Global.pretrained_model="output/RecModel/best_model"
@@ -309,15 +314,12 @@ Eval:
 
 - 获取特征向量
 
-
-
 ```python
 %cd deploy
 !python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_inference_model_dir="../inference"
 ```
 
 ### 测试代码
-
 
 ```python
 # 建立新的索引库
@@ -334,6 +336,12 @@ Eval:
     -c configs/inference_general.yaml \
     -o Global.infer_imgs="/home/aistudio/dataset/jianjiao.jpg" \
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
+```
+
+```
+Inference: 31.720638275146484 ms per batch image
+[{'bbox': [0, 0, 500, 375], 'rec_docs': '四季宝花生酱', 'rec_scores': 0.79656786}]
+
 ```
 
 ### 测试效果图
