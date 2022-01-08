@@ -368,6 +368,7 @@ Inference: 31.720638275146484 ms per batch image
 其中 bbox 表示检测出的主体所在位置，rec_docs 表示索引库中与检测框最为相似的类别，rec_scores 表示对应的置信度。  
 检测的可视化结果也保存在 output 文件夹下，对于本张图像，识别结果可视化如下所示：
 ![](../image/sijibao.jpg)
+
 以下为参与模型训练的商品的测试效果图：
 ![](../image/recognition_3.png)
 
