@@ -13,18 +13,18 @@
 
 ### 适用场景  
 
- >**袋鼯麻麻——智能零售购物平台**致力于为**大型线下零售体验店**提供基于视觉的零售结算方案。
+ >**袋鼯麻麻——智能零售结算平台**致力于为**大型线下零售体验店**提供基于视觉的零售结算方案。
 
 ### 痛点问题
 
    1. **结算效率要求极高**：在大型线下零售体验店购物场景中，若顾客购买的商品较多，采用传统的条形码结算，效率较低，顾客购物体验较差；
-   2. **品类更新极快**：像新零售这种行业，新品几乎都是**按小时级别**在更新，每增加新的产品都要辛辛苦苦重新训练模型，仅靠单一模型想要跟上步伐，着实望尘莫及；
-   3. **不同商品相似度极高**：比如同一种饮料的不同口味，就很可能拥有非常类似的包装。而且即便对于同一件商品，**在不同情况下所获得的商品图像都往往存在相当大的差异**；
+   2. **不同商品相似度极高**：比如同一种饮料的不同口味，就很可能拥有非常类似的包装。而且即便对于同一件商品，**在不同情况下所获得的商品图像都往往存在相当大的差异**；
+   3. **品类更新极快**：像新零售这种行业，新品几乎都是**按小时级别**在更新，每增加新的产品都需要重新训练模型，仅靠单一模型想要跟上步伐，着实望尘莫及；
    4. **商品类别数以万计**：根本没法事先把所有类别都放入训练集。
 
 ### 解决方案
 
-   “**袋鼯麻麻——智能购物平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能购物平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格。而当系统有新商品增加时，本系统只需更新检索库即可，无需重新训练模型。   
+   “**袋鼯麻麻——智能零售结算平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能零售结算平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格，整个结算过程控制在**4秒钟**以内，极大地提高了结算效率。而当系统有新商品增加时，本系统只需**30秒不到**的时间更新检索库即可，无需重新训练模型，能够做到“即增即用”，大大提高了人工智能在线下零售行业的应用落地可能性。   
 
 ### 模型工具简介
 
@@ -65,13 +65,13 @@
 
 ### 数据集介绍<详细讲述>
 
-目前开源的商品识别方向的数据集
+1. 目前开源的商品识别方向的数据集
 
 - [Products-10K Large Scale Product Recognition Dataset](https://www.kaggle.com/c/products-10k/data?select=train.csv) :数据集中的所有图片均来自京东商城。数据集中共包含 1 万个经常购买的 SKU。所有 SKU 组织成一个层次结构。总共有近 19 万张图片。在实际应用场景中，图像量的分布是不均衡的。所有图像都由生产专家团队手工检查/标记。
 
 - [RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://arxiv.org/abs/2006.12634) :收集了超过 500,000 张货架上零售产品的图像，属于 2000 种不同的产品。所有图片均在实体零售店人工拍摄，自然采光，符合实际应用场景。
 
-本项目数据集以上述数据集为背景，结合图片爬虫等，开源了一份新的更符合本项目背景的数据集，目前已在[AIStudio平台](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。(欢迎各位开发者对数据集进行补充扩展！)
+2. 本项目数据集基于上述数据集，结合图片爬虫等数据集搜索方式，开源了一份更符合本项目实际应用背景的demo数据集，目前已在[AIStudio平台](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。此数据集总计覆盖商品357类，涵盖包括厨房用品、日用品、饮料等生活日常购买商品，商品类别细粒度较高，涉及诸如同一品牌的不同规格商品、同一品类的不同品牌商品等，能够模拟实际购物场景下的购买需求。
 
 ### 商品部分list
 
@@ -92,18 +92,30 @@
 * 底库数据集合（gallery dataset）：用来提供图像检索任务中的底库数据，该集合可与训练集或测试集相同，也可以不同，当与训练集相同时，测试集的类别体系应与训练集的类别体系相同。
 * 测试数据集合（query dataset）：用来测试模型的好坏，通常要对测试集的每一张测试图片进行特征提取，之后和底库数据的特征进行距离匹配，得到识别结果，后根据识别结果计算整个测试集的指标。
 
-训练集、底库数据集和测试数据集均使用 `txt` 文件指定，训练数据集 `train_list.txt` 文件内容格式如下所示：
+训练集、底库数据集和测试数据集均使用 `txt` 文件指定，训练数据集 `train_list.txt`文件内容格式如下所示：
 
 ```shell
 # 采用"空格"作为分隔符号
 ...
-train/99/Ovenbird_0136_92859.jpg 99 2
+train/10/1283.jpg 10 624
+train/10/1284.jpg 10 625
+train/10/1285.jpg 10 626
+train/10/1286.jpg 10 627
 ...
-train/99/Ovenbird_0128_93366.jpg 99 6
+```
+验证数据集(本数据集中既是 gallery dataset，也是 query dataset)test_list.txt 文件内容格式如下所示：
+```shell
+...
+test/103/743.jpg 103 743
+test/103/744.jpg 103 744
+test/103/745.jpg 103 745
+test/103/746.jpg 103 746
 ...
 ```
 
-每行数据使用“空格”分割，三列数据的含义分别是训练数据的路径、训练数据的label信息、训练数据的unique id。
+**注：**
+1. 每行数据使用“空格”分割，三列数据的含义分别是训练数据的路径、训练数据的label信息、训练数据的unique id;
+2. 本数据集中由于 gallery dataset 和 query dataset 相同，为了去掉检索得到的第一个数据（检索图片本身无须评估），每个数据需要对应一个 unique id（每张图片的 id 不同即可，可以用行号来表示 unique id），用于后续评测 mAP、recall@1 等指标。yaml 配置文件的数据集选用 VeriWild。
 
 ## 模型选择
 
@@ -124,7 +136,7 @@ train/99/Ovenbird_0128_93366.jpg 99 6
 向量检索技术在图像识别、图像检索中应用比较广泛。其主要目标是，对于给定的查询向量，在已经建立好的向量库中，与库中所有的待查询向量，进行特征向量的相似度或距离计算，得到相似度排序。在图像识别系统中，本项目使用 [Faiss](https://github.com/facebookresearch/faiss) 对此部分进行支持。在此过程中，本项目选取 **HNSW32** 为检索算法，使得检索精度、检索速度能够取得较好的平衡，更为贴切本项目实际应用场景的使用需求。
 
 ## 模型训练
-
+这里主要介绍特征提取部分的模型训练，其余部分详情请参考[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)。
 ### 训练流程
 
 1. 数据准备
@@ -284,11 +296,10 @@ Eval:
 
 - 单卡评估
 
-
 ```python
 !python tools/eval.py -c ./ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5.yaml -o Global.pretrained_model="output/RecModel/best_model"
 ```
-评估部分log如下，符合实际产业场景应用需求
+评估部分log如下：
 ```
 [2022/01/08 12:59:04] root INFO: Build query done, all feat shape: [25738, 512], begin to eval..
 /opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/framework.py:744: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
@@ -296,21 +307,19 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
   elif dtype == np.bool:
 [2022/01/08 12:59:05] root INFO: [Eval][Epoch 0][Avg]recall1: 0.98368, recall5: 0.99137
 ```
-
+可见recall1为0.98368，能够符合实际产业场景应用需求。
 
 4. 模型推理
 
 推理过程包括两个步骤： 1)导出推理模型, 2)获取特征向量
 
-
 - 导出推理模型
+PaddlePaddle框架保存的权重文件分为两种：支持前向推理和反向梯度的**训练模型** 和 只支持前向推理的**推理模型**。二者的区别是推理模型针对推理速度和显存做了优化，裁剪了一些只在训练过程中才需要的tensor，降低显存占用，并进行了一些类似层融合，kernel选择的速度优化。因此可执行如下命令导出推理模型。
 
 ```python
 !python tools/export_model -c ppcls/configs/ResNet50_vd_SOP.yaml -o Global.pretrained_model="output/RecModel/best_model"
 ```
-
-
-生成的推理模型位于`inference`目录，名字为`inference.pd*`
+生成的推理模型位于 inference 目录，里面包含三个文件，分别为 inference.pdmodel、inference.pdiparams、inference.pdiparams.info。 其中: inference.pdmodel 用来存储推理模型的结构, inference.pdiparams 和 inference.pdiparams.info 用来存储推理模型相关的参数信息。
 
 - 获取特征向量
 
@@ -318,9 +327,17 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 %cd deploy
 !python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_inference_model_dir="../inference"
 ```
+得到的特征输出格式如下log所示：
+```
+
+```
+
 
 ### 测试代码
 
+这里串联主体检测、特征提取、向量检索，从而构成一整套图像识别系统：
+
+1. 建立索引库
 ```python
 # 建立新的索引库
 !python3.7 python/build_gallery.py \
@@ -328,20 +345,24 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
     -o IndexProcess.data_file="/home/aistudio/dataset/data_file.txt" \
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
 ```
-
+2. 识别单张图片
+运行下面的命令，对图像 /home/aistudio/dataset/sijibao.jpg 进行识别与检索
 ```python
 #基于索引库的图像识别
 !python3.7 python/predict_system.py \
     -c configs/inference_general.yaml \
-    -o Global.infer_imgs="/home/aistudio/dataset/jianjiao.jpg" \
+    -o Global.infer_imgs="/home/aistudio/dataset/sijibao.jpg" \
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
 ```
-
+最终输出结果如下：
 ```
 Inference: 31.720638275146484 ms per batch image
 [{'bbox': [0, 0, 500, 375], 'rec_docs': '四季宝花生酱', 'rec_scores': 0.79656786}]
 
 ```
+其中 bbox 表示检测出的主体所在位置，rec_docs 表示索引库中与检测框最为相似的类别，rec_scores 表示对应的置信度。  
+检测的可视化结果也保存在 output 文件夹下，对于本张图像，识别结果可视化如下所示：
+![]()
 
 ### 测试效果图
 以下为参与模型训练的商品的测试效果图：
@@ -357,3 +378,12 @@ Inference: 31.720638275146484 ms per batch image
 ![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/recognition_1.png)
 ![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/wx_all.png)
 具体部署方式可以参考：[袋鼯麻麻——智能购物平台](https://github.com/thomas-yanxin/Smart_container)  
+
+
+<!-- 1. 行业场景痛点和解决方案说明
+2. 文档用词规范化
+3. 数据集格式规划
+4. 100% 准确率  - 再看一下是什么原因
+5. 新入库- 新加入的商品品类如何更新索引库 效果如何
+6. 优化思路和策略 - 优化方案如果没有特别好的思路可以若干
+7. 部署方案的展示 - 速度如何 硬件参数对比 -->
