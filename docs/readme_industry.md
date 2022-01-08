@@ -173,12 +173,9 @@ test/103/746.jpg 103 746
 
 2. 模型训练  
 
-
-
 - 单机单卡训练
-
-
 ```python
+%cd /home/aistudio/PaddleClas
 !python tools/train.py \
     -c ./ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5.yaml \
     -o Arch.Backbone.pretrained=True \
@@ -297,9 +294,12 @@ Eval:
 - 单卡评估
 
 ```python
+%cd /home/aistudio/PaddleClas
 !python tools/eval.py -c ./ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5.yaml -o Global.pretrained_model="output/RecModel/best_model"
 ```
+
 评估部分log如下：
+
 ```
 [2022/01/08 12:59:04] root INFO: Build query done, all feat shape: [25738, 512], begin to eval..
 /opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/framework.py:744: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
@@ -307,6 +307,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
   elif dtype == np.bool:
 [2022/01/08 12:59:05] root INFO: [Eval][Epoch 0][Avg]recall1: 0.98368, recall5: 0.99137
 ```
+
 可见recall1为0.98368，能够符合实际产业场景应用需求。
 
 4. 模型推理
@@ -319,65 +320,166 @@ PaddlePaddle框架保存的权重文件分为两种：支持前向推理和反�
 ```python
 !python tools/export_model -c ppcls/configs/ResNet50_vd_SOP.yaml -o Global.pretrained_model="output/RecModel/best_model"
 ```
+
 生成的推理模型位于 inference 目录，里面包含三个文件，分别为 inference.pdmodel、inference.pdiparams、inference.pdiparams.info。 其中: inference.pdmodel 用来存储推理模型的结构, inference.pdiparams 和 inference.pdiparams.info 用来存储推理模型相关的参数信息。
 
 - 获取特征向量
 
 ```python
-%cd deploy
+%cd /home/aistudio/PaddleClas/deploy
 !python python/predict_rec.py -c configs/inference_rec.yaml  -o Global.rec_inference_model_dir="../inference"
 ```
-得到的特征输出格式如下log所示：
-```
-
-```
+得到的特征输出格式如下图所示：
+![](../image/rec.png)
 
 
 ### 测试代码
 
 这里串联主体检测、特征提取、向量检索，从而构成一整套图像识别系统：
 
-1. 建立索引库
+1. 若商品为原索引库里已有的商品：
+- 建立索引库
 ```python
-# 建立新的索引库
-!python3.7 python/build_gallery.py \
+# 建立索引库
+%cd /home/aistudio/PaddleClas/deploy
+!python3 python/build_gallery.py \
     -c configs/build_general.yaml \
     -o IndexProcess.data_file="/home/aistudio/dataset/data_file.txt" \
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
 ```
-2. 识别单张图片
-运行下面的命令，对图像 /home/aistudio/dataset/sijibao.jpg 进行识别与检索
+
+- 识别图片
+运行下面的命令，对图像 /home/aistudio/dataset/sijibao.jpg 进行识别与检索:
+
 ```python
 #基于索引库的图像识别
-!python3.7 python/predict_system.py \
+%cd /home/aistudio/PaddleClas/deploy
+!python python/predict_system.py \
     -c configs/inference_general.yaml \
     -o Global.infer_imgs="/home/aistudio/dataset/sijibao.jpg" \
     -o IndexProcess.index_dir="/home/aistudio/dataset/index_inference"
 ```
+
 最终输出结果如下：
 ```
 Inference: 31.720638275146484 ms per batch image
 [{'bbox': [0, 0, 500, 375], 'rec_docs': '四季宝花生酱', 'rec_scores': 0.79656786}]
-
 ```
 其中 bbox 表示检测出的主体所在位置，rec_docs 表示索引库中与检测框最为相似的类别，rec_scores 表示对应的置信度。  
 检测的可视化结果也保存在 output 文件夹下，对于本张图像，识别结果可视化如下所示：
-![]()
-
-### 测试效果图
+![](../image/sijibao.jpg)
 以下为参与模型训练的商品的测试效果图：
 ![](../image/recognition_3.png)
-以下为未参与模型训练的商品的测试效果图：
+
+2. 若商品为原索引库里没有的商品：
+
+当索引库中的图像无法覆盖我们实际识别的场景时，即在预测未知类别的图像时，只需要将对应类别的相似图像添加到索引库中，从而完成对未知类别的图像识别，这一过程是不需要重新训练的。
+
+- 准备新的数据与标签
+首先需要将与待检索图像相似的图像列表拷贝到索引库原始图像的文件夹。这里将所有的底库图像数据都放在文件夹 /home/aistudio/dataset/gallery/ 中。
+
+然后需要编辑记录了图像路径和标签信息的文本文件，这里 PaddleClas 将更正后的标签信息文件放在了 /home/aistudio/dataset/gallery_update.txt 文件中。可以与原来的 /home/aistudio/dataset/data_file.txt 标签文件进行对比，添加了江小白、小度充电宝和韩国进口火山泥的索引图像。
+
+每一行的文本中，第一个字段表示图像的相对路径，第二个字段表示图像对应的标签信息，中间用 \t 键分隔开
+
+- 建立新的索引库
+使用下面的命令构建 index 索引，加速识别后的检索过程。
+```python
+%cd /home/aistudio/PaddleClas/deploy/
+!python3 python/build_gallery.py -c configs/build_general.yaml -o IndexProcess.data_file="/home/aistudio/dataset/data_file.txt" -o IndexProcess.index_dir="/home/aistudio/dataset/index_update"
+```
+最终新的索引信息保存在文件夹 /home/aistudio/dataset/index_update 中。
+
+- 基于新的索引库的图像识别
+
+使用新的索引库，对上述图像进行识别，运行命令如下。
+```python
+# 使用下面的命令使用 GPU 进行预测，如果希望使用 CPU 预测，可以在命令后面添加 -o Global.use_gpu=False
+!python3 python/predict_system.py -c configs/inference_general.yaml -o Global.infer_imgs="/home/aistudio/dataset/recognition_2.jpg" -o IndexProcess.index_dir="./drink_dataset_v1.0/index_all"
+```
+由测试效果图可知，模型对于未参与训练的商品及多个商品均有较好的识别效果：
 ![](../image/recognition_2.jpg)
 
 
-## 模型部署
-在项目中为用户提供了基于服务器的部署Demo方案。用户可根据实际情况自行参考。  
+## 模型服务化部署
+
+使用 PaddleServing 做服务化部署时，需要将保存的 inference 模型转换为 Serving 模型。
+### 模型转换
+
+- 将 inference 模型转换为 Serving 模型：
+```python
+# 转换识别模型
+!python3 -m paddle_serving_client.convert --dirname /home/aistudio/PaddleClas/inference/ \
+                                         --model_filename inference.pdmodel  \
+                                         --params_filename inference.pdiparams \
+                                         --serving_server ./inference_PPLCNet_serving/ \
+                                         --serving_client ./inference_PPLCNet_client
+
+```
+识别推理模型转换完成后，会在当前文件夹多出 inference_PPLCNet_serving/ 和 inference_PPLCNet_client/ 的文件夹。修改 ginference_PPLCNet_serving/ 目录下的 serving_server_conf.prototxt 中的 alias 名字： 将 fetch_var 中的 alias_name 改为 features。 修改后的 serving_server_conf.prototxt 内容如下：
+```
+feed_var {
+  name: "x"
+  alias_name: "x"
+  is_lod_tensor: false
+  feed_type: 1
+  shape: 3
+  shape: 224
+  shape: 224
+}
+fetch_var {
+  name: "save_infer_model/scale_0.tmp_1"
+  alias_name: "features"
+  is_lod_tensor: false
+  fetch_type: 1
+  shape: 512
+}
+```
+- 转换通用检测 inference 模型为 Serving 模型：
+```python
+# 转换通用检测模型
+python3 -m paddle_serving_client.convert --dirname ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer/ \
+                                         --model_filename inference.pdmodel  \
+                                         --params_filename inference.pdiparams \
+                                         --serving_server ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/ \
+                                         --serving_client ./picodet_PPLCNet_x2_5_mainbody_lite_v1.0_client/
+```
+检测 inference 模型转换完成后，会在当前文件夹多出 picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/ 和 picodet_PPLCNet_x2_5_mainbody_lite_v1.0_client/ 的文件夹。
+
+注意: 此处不需要修改 picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/ 目录下的 serving_server_conf.prototxt 中的 alias 名字。
+
+### 服务部署和请求
+注意: 识别服务涉及到多个模型，出于性能考虑采用 PipeLine 部署方式。
+- 进入到工作目录
+
+```
+%cd ./deploy/paddleserving/recognition
+```
+paddleserving 目录包含启动 pipeline 服务和发送预测请求的代码，包括：
+```
+__init__.py
+config.yml                    # 启动服务的配置文件
+pipeline_http_client.py       # http方式发送pipeline预测请求的脚本
+pipeline_rpc_client.py        # rpc方式发送pipeline预测请求的脚本
+recognition_web_service.py    # 启动pipeline服务端的脚本
+```
+- 启动服务
+```
+# 启动服务，运行日志保存在 log.txt
+python3 recognition_web_service.py &>log.txt &
+```
+
+- 发送请求
+```
+python3 pipeline_http_client.py
+```
+
+本项目中用户提供了基于服务器的部署Demo方案。用户可根据实际情况自行参考。  
 
 ![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/main.png)
 ![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/recognition_1.png)
 ![](https://github.com/thomas-yanxin/Smart_container/raw/master/image/wx_all.png)
-具体部署方式可以参考：[袋鼯麻麻——智能购物平台](https://github.com/thomas-yanxin/Smart_container)  
+具体可以参考：[袋鼯麻麻——智能购物平台](https://github.com/thomas-yanxin/Smart_container)  
 
 
 <!-- 1. 行业场景痛点和解决方案说明
