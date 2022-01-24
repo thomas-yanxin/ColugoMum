@@ -6,9 +6,9 @@
 
    目前，在传统的商超零售企业的经营过程中，急需通过引进数字化及人工智能等新兴技术，进行管理能力、成本控制、用户体验等多维度的全面升级。而现如今普遍通用的人工智能技术并不能帮助零售企业从根本上上述问题。因此传统商超零售企业数字化转型陷入两难境地。   
  
-<!-- <div style="align: center">
-<img src="https://ai-studio-static-online.cdn.bcebos.com/fa2920c589d247a4a3657bdc141fb3838b3c208d19ce454297420ee1e91bef17">
-</div> -->
+<div style="align: center">
+<img src="../image/background.jpg">
+</div>
 
 ### 痛点问题
 
@@ -49,19 +49,10 @@
     pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple
 
 
-```python
-!git clone https://github.com/PaddlePaddle/PaddleClas.git -b release/2.3
-```
-
-
-```python
-%cd PaddleClas/
-!pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple
-```
 
 ## 数据准备
 
-### 数据集介绍<详细讲述>
+### 数据集介绍<描述方式一>
 
 1. 目前开源的商品识别方向的数据集
 
@@ -70,6 +61,11 @@
 - [RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://arxiv.org/abs/2006.12634) :收集了超过 500,000 张货架上零售产品的图像，属于 2000 种不同的产品。所有图片均在实体零售店人工拍摄，自然采光，符合实际应用场景。
 
 2. 本项目**以实际应用场景为依托，以数据质量为主要衡量标准**，主体基于上述开源商品识别方向数据集、结合图片爬虫技术等数据搜索方式，开源了一份更符合本项目实际应用背景的[demo数据集](https://aistudio.baidu.com/aistudio/datasetdetail/113685)。此数据集总计覆盖商品**357类**，涵盖包括厨房用品、日用品、饮料等**生活日常购买商品**，商品类别**细粒度较高**，涉及诸如**同一品牌的不同规格商品**、**同一品类的不同品牌商品**等实际场景下的数据可能性，能够模拟实际购物场景下的购买需求。
+
+
+### 数据集介绍<描述方式二>
+
+本项目**以实际应用场景为依托，以数据质量为主要衡量标准**，主体基于[Products-10K Large Scale Product Recognition Dataset](https://www.kaggle.com/c/products-10k/data?select=train.csv)和[RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://arxiv.org/abs/2006.12634) 两大开源商品识别方向数据集，从中以**样本均衡**、**图像质量**、**实际应用**等为思考维度选取了部分SKU，并结合图片爬虫技术等数据搜索方式，开源了一份更符合本项目实际应用背景和技术需求的[demo数据集](https://aistudio.baidu.com/aistudio/datasetdetail/113685)。此数据集总计覆盖商品**357类**，涵盖包括厨房用品、日用品、饮料等**生活日常购买商品**，商品类别**细粒度较高**，涉及诸如**同一品牌的不同规格商品**、**同一品类的不同品牌商品**等实际场景下的数据可能性，能够模拟实际购物场景下的购买需求。
 
 ### 商品部分list
 
@@ -113,7 +109,21 @@ test/103/746.jpg 103 746
 
 **注：**
 1. 每行数据使用“空格”分割，三列数据的含义分别是训练数据的路径、训练数据的label信息、训练数据的unique id;
-2. 本数据集中由于 gallery dataset 和 query dataset 相同，为了去掉检索得到的第一个数据（检索图片本身无须评估），每个数据需要对应一个 unique id（每张图片的 id 不同即可，可以用行号来表示 unique id），用于后续评测 mAP、recall@1 等指标。yaml 配置文件的数据集选用 VeriWild。
+2. 本数据集中由于 gallery dataset 和 query dataset 相同，为了去掉检索得到的第一个数据（检索图片本身无须评估），每个数据需要对应一个 unique id（每张图片的 id 不同即可，可以用行号来表示 unique id），用于后续评测 mAP、recall@1 等指标。yaml 配置文件的数据集选用 VeriWild。  
+
+
+根据以上描述对数据集进行处理，并将数据集修改为如下目录格式：
+
+```
+├── classlabel.txt	# 数据label和对应商品名称
+├── data_file.txt	# 图片地址及对应的商品名称
+├── gallery		# 底库图片
+├── test		# 测试集图片
+├── test_list.txt	# 测试集图片地址及对应的商品名称
+├── train		# 训练集图片
+└── train_list.txt	# 训练集图片地址及对应的商品名称
+```
+
 
 ## 模型选择
 
@@ -123,7 +133,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 主体检测技术是目前应用非常广泛的一种检测技术，它指的是检测出图片中一个或者多个主体的坐标位置，然后将图像中的对应区域裁剪下来，进行识别，从而完成整个识别过程。主体检测是识别任务的前序步骤，可以有效提升识别精度。  
 
-考虑到商品识别实际应用场景中，需要快速准确地获得识别结果，故本项目选取适用于 CPU 或者移动端场景的**轻量级主体检测模型**[PicoDet](https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/pretrain/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_pretrained.pdparams)作为本项目主体检测部分的模型。此模型融合了ATSS、Generalized Focal Loss、余弦学习率策略、Cycle-EMA、轻量级检测 head等一系列优化算法，最终inference模型大小(MB)仅**30.1MB**，mAP可达**40.1%**，在**cpu**下单张图片预测耗时仅**29.8ms**，完美符合本项目实际落地需求，故在本项目中不对主体检测部分做适应性训练。
+考虑到商品识别实际应用场景中，需要快速准确地获得识别结果，故本项目选取适用于 CPU 或者移动端场景的**轻量级主体检测模型**[PicoDet](https://paddle-imagenet-models-name.bj.bcebos.com/dygraph/rec/models/pretrain/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_pretrained.pdparams)作为本项目主体检测部分的模型。此模型融合了ATSS、Generalized Focal Loss、余弦学习率策略、Cycle-EMA、轻量级检测 head等一系列优化算法，基于COCO train2017数据集进行大规模预训练，最终inference模型大小(MB)仅**30.1MB**，mAP可达**40.1%**，在**cpu**下单张图片预测耗时仅**29.8ms**，完美符合本项目实际落地需求，故在本项目中不对主体检测部分做适应性训练。
 
 ### 特征提取 
 
@@ -136,7 +146,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 向量检索技术在图像识别、图像检索中应用比较广泛。其主要目标是，对于给定的查询向量，在已经建立好的向量库中，与库中所有的待查询向量，进行特征向量的相似度或距离计算，得到相似度排序。在图像识别系统中，本项目使用 [Faiss](https://github.com/facebookresearch/faiss) 对此部分进行支持。在此过程中，本项目选取 **HNSW32** 为检索算法，使得检索精度、检索速度能够取得较好的平衡，更为贴切本项目实际应用场景的使用需求。
 
 ## 模型训练
-这里主要介绍特征提取部分的模型训练，其余部分详情请参考[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)。
+本项目在主体检测部分直接采用PaddleDetection提供给得预训练模型，故这里主要介绍特征提取部分的模型训练。
 ### 训练流程
 
 1. 数据准备
@@ -184,54 +194,54 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 ### 模型优化思路
 
-<!-- - 优化器的选择  
- 
-自深度学习发展以来，就有很多关于优化器的研究者工作，优化器的目的是为了让损失函数尽可能的小，从而找到合适的参数来完成某项任务。目前业界主要用到的优化器有 SGD、RMSProp、Adam、AdaDelt 等，其中由于带 momentum 的 SGD 优化器广泛应用于学术界和工业界，所以我们发布的模型也大都使用该优化器来实现损失函数的梯度下降。带 momentum 的 SGD 优化器有两个劣势，其一是收敛速度慢，其二是初始学习率的设置需要依靠大量的经验，然而如果初始学习率设置得当并且迭代轮数充足，该优化器也会在众多的优化器中脱颖而出，使得其在验证集上获得更高的准确率。一些自适应学习率的优化器如 Adam、RMSProp 等，收敛速度往往比较快，但是最终的收敛精度会稍差一些。如果追求更快的收敛速度，我们推荐使用这些自适应学习率的优化器，如果追求更高的收敛精度，我们推荐使用带 momentum 的 SGD 优化器。
-
-- 学习率以及学习率下降策略的选择  
-
-在整个训练过程中，我们不能使用同样的学习率来更新权重，否则无法到达最优点，所以需要在训练过程中调整学习率的大小。在训练初始阶段，由于权重处于随机初始化的状态，损失函数相对容易进行梯度下降，所以可以设置一个较大的学习率。在训练后期，由于权重参数已经接近最优值，较大的学习率无法进一步寻找最优值，所以需要设置一个较小的学习率。在训练整个过程中，很多研究者使用的学习率下降方式是 piecewise_decay，即阶梯式下降学习率，如在 ResNet50 标准的训练中，我们设置的初始学习率是 0.1，每 30 epoch 学习率下降到原来的 1/10，一共迭代 120 epoch。除了 piecewise_decay，很多研究者也提出了学习率的其他下降方式，如 polynomial_decay（多项式下降）、exponential_decay（指数下降）、cosine_decay（余弦下降）等，其中 cosine_decay 无需调整超参数，鲁棒性也比较高，所以成为现在提高模型精度首选的学习率下降方式。Cosine_decay 和 piecewise_decay 的学习率变化曲线如下图所示，容易观察到，在整个训练过程中，cosine_decay 都保持着较大的学习率，所以其收敛较为缓慢，但是最终的收敛效果较 peicewise_decay 更好一些。
-
-- 使用数据增广方式提升精度  
-
-一般来说，数据集的规模对性能影响至关重要，但是图片的标注往往比较昂贵，所以有标注的图片数量往往比较稀少，在这种情况下，数据的增广尤为重要。在训练 ImageNet-1k 的标准数据增广中，主要使用了 random_crop 与 random_flip 两种数据增广方式，然而，近些年，越来越多的数据增广方式被提出，如 cutout、mixup、cutmix、AutoAugment 等。实验表明，这些数据的增广方式可以有效提升模型的精度
-
-- 通过已有的预训练模型提升自己的数据集的精度  
-
-在现阶段计算机视觉领域中，加载预训练模型来训练自己的任务已成为普遍的做法，相比从随机初始化开始训练，加载预训练模型往往可以提升特定任务的精度。一般来说，业界广泛使用的预训练模型是通过训练 128 万张图片 1000 类的 ImageNet-1k 数据集得到的，该预训练模型的 fc 层权重是一个 k*1000 的矩阵，其中 k 是 fc 层以前的神经元数，在加载预训练权重时，无需加载 fc 层的权重。在学习率方面，如果您的任务训练的数据集特别小（如小于 1 千张），我们建议你使用较小的初始学习率，如 0.001（batch_size:256,下同），以免较大的学习率破坏预训练权重。如果您的训练数据集规模相对较大（大于 10 万），我们建议你尝试更大的初始学习率，如 0.01 或者更大。
- -->
- 
- 在使用官方模型之后，如果发现精度不达预期，则可对模型进行训练调优。同时，根据官方模型的结果，需要进一步大概判断出 检测模型精度、还是识别模型精度问题。不同模型的调优，可参考以下文档。
-
-
-
 - 检测模型调优
 
-`PP-ShiTu`中检测模型采用的 `PicoDet    `算法，具体算法请参考[此文档](https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.3/configs/picodet)。检测模型的训练及调优，请参考[此文档](https://github.com/PaddlePaddle/PaddleDetection/blob/release/2.3/README_cn.md)。
+`PP-ShiTu`中检测模型采用的 `PicoDet    `算法。
 
-对模型进行训练的话，需要自行准备数据，并对数据进行标注，建议一个类别至少准备200张标注图像，并将标注图像及groudtruth文件转成coco文件格式，以方便使用PaddleDetection进行训练。主体检测的预训练权重及相关配置文件相见[主体检测文档](https://github.com/PaddlePaddle/PaddleDetection/tree/develop/configs/picodet/application/mainbody_detection)。训练的时候，请加载主体检测的预训练权重。
+对模型进行训练的话，需要自行准备数据，并对数据进行标注，建议一个类别至少准备200张标注图像，并将标注图像及groudtruth文件转成coco文件格式，以方便使用PaddleDetection进行训练训练的时候，请加载主体检测的预训练权重。
 
-<a name="2.2"></a>
 
 - 识别模型调优
 
 在使用官方模型后，如果不满足精度需求，则可以参考此部分文档，进行模型调优
 
-因为要对模型进行训练，所以收集自己的数据集。数据准备及相应格式请参考：[特征提取文档](../image_recognition_pipeline/feature_extraction.md)中 `4.1数据准备`部分、[识别数据集说明](../data_preparation/recognition_dataset.md)。值得注意的是，此部分需要准备大量的数据，以保证识别模型效果。训练配置文件参考：[通用识别模型配置文件](../../../ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5.yaml)，训练方法参考：[识别模型训练](../models_training/recognition.md)
+因为要对模型进行训练，所以参照[数据准备](#数据准备)部分描述收集自己的数据集。值得注意的是，此部分需要准备大量的数据，以保证识别模型效果。
 
-  - 数据增强：根据实际情况选择不同数据增强方法。如：实际应用中数据遮挡比较严重，建议添加`RandomErasing`增强方法。详见[数据增强文档](./DataAugmentation.md)
-  - 换不同的`backbone`，一般来说，越大的模型，特征提取能力更强。不同`backbone`详见[模型介绍](../models/models_intro.md)
-  - 选择不同的`Metric Learning`方法。不同的`Metric Learning`方法，对不同的数据集效果可能不太一样，建议尝试其他`Loss`,详见[Metric Learning](../algorithm_introduction/metric_learning.md)
-  - 采用蒸馏方法，对小模型进行模型能力提升，详见[模型蒸馏](../algorithm_introduction/knowledge_distillation.md)
+  - 数据增强：根据实际情况选择不同数据增强方法。如：实际应用中数据遮挡比较严重，建议添加`RandomErasing`增强方法。
+  - 换不同的`backbone`，一般来说，越大的模型，特征提取能力更强。
+  - 选择不同的`Metric Learning`方法。不同的`Metric Learning`方法，对不同的数据集效果可能不太一样，建议尝试其他`Loss`
+  - 采用蒸馏方法，对小模型进行模型能力提升
   - 增补数据集。针对错误样本，添加badcase数据
 
-模型训练完成后，参照[1.2 检索库更新](#1.2 检索库更新)进行检索库更新。同时，对整个pipeline进行测试，如果精度不达预期，则重复此步骤。
-
+模型训练完成后，参照[测试代码](#测试代码)进行检索库更新。同时，对整个pipeline进行测试，如果精度不达预期，则重复此步骤。
 
 
 ### 调参方案及结果
 
 训练完成之后，会在`output`目录下生成`best_model`模型文件。 
+
+```
+├── output
+│   └── RecModel
+│       ├── best_model.pdopt
+│       ├── best_model.pdparams
+│       ├── best_model.pdstates
+│       ├── epoch_1.pdopt
+│       ├── epoch_1.pdparams
+│       ├── epoch_1.pdstates
+|       ├── ...
+|       ├── ...
+|       ├── ...
+│       ├── epoch_61.pdopt
+│       ├── epoch_61.pdparams
+│       ├── epoch_61.pdstates
+│       ├── eval.log
+│       ├── export.log
+│       ├── latest.pdopt
+│       ├── latest.pdparams
+│       ├── latest.pdstates
+│       └── train.log
+```
 
 3. 模型评估
 
