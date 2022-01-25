@@ -46,7 +46,8 @@
     - 安装 Python 依赖库  
     PaddleClas 的 Python 依赖库在 `requirements.txt` 中给出，可通过如下命令安装：
     ```shell
-    pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple
+    pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple 
+    ```
 
 
 
@@ -333,7 +334,7 @@ python3.7 python/predict_system.py -c configs/inference_general.yaml -o Global.i
 待检索图像如下所示。
 
 <div align="center">
-<img src="../image/recognition_null_test.jpg"  width = "400" />
+<img src="../image/recognition_null_test.jpg"  width = "600" />
 </div>
 
 
@@ -370,7 +371,7 @@ python3.7 python/predict_system.py -c configs/inference_general.yaml -o Global.i
 由测试效果图可知，模型对于未参与训练的商品及多个商品均有较好的识别效果：
 <!-- ![](../image/recognition_2.jpg) -->
 <div align="center">
-<img src="../image/recognition_2.jpg"  width = "400" />
+<img src="../image/recognition_2.jpg"  width = "600" />
 </div>
 
 ## 模型服务化部署
@@ -454,10 +455,4 @@ python3 pipeline_http_client.py
 具体可以参考：[袋鼯麻麻——智能购物平台](https://github.com/thomas-yanxin/Smart_container)  
 
 
-<!-- 1. 行业场景痛点和解决方案说明
-2. 文档用词规范化
-3. 数据集格式规划
-4. 100% 准确率  - 再看一下是什么原因
-5. 新入库- 新加入的商品品类如何更新索引库 效果如何
-6. 优化思路和策略 - 优化方案如果没有特别好的思路可以若干
-7. 部署方案的展示 - 速度如何 硬件参数对比 -->
+
