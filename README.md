@@ -111,13 +111,12 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  
     
 - 主界面
-  <div align="center"><img src="./image/all.jpg" width = "1080" height = "540"/></div>
+  <div align="center"><img src="./image/all.jpg" width = "720" height = "540"/></div>
   
 - 端侧界面  
  
-<div align="center"><img src="./image/main.png" width = "1080" height = "540"/></div>
+<div align="center"><img src="./image/pic_paddle.gif" width = "720" height = "540"/></div>
 
-<div align="center"><img src="./image/recognition_1.png" width = "1080" height = "540"/></div>
 
 - 小程序界面
   <div align="center">
