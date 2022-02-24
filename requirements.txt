@@ -19,4 +19,3 @@ six==1.14.0
 tqdm==4.62.3
 visualdl==2.2.0
 xpinyin==0.7.6
-qpt>=1.0a7

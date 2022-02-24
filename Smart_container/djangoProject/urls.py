@@ -28,10 +28,11 @@ urlpatterns = [
     path('record/', views.record),
     path('delete/', views.delete),
     path('replace/', views.replace),
+    path('stockSale/', views.stock_sale),
     path('find/', views.find),
     path('reference/', views.reference),
     path('reference_client/',views.reference_client),
-    re_path('media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
+  #  re_path('media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
   #  re_path('^xadmin/.*', AdminIndexView.as_view()),
  #   path('api/xadmin1/', include('tyadmin_api.urls')),
 ]

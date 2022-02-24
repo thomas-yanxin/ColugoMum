@@ -9,12 +9,10 @@ import sys
 from typing import Container
 
 import cv2
-import memcache
+#import memcache
 import numpy as np
 import pymysql
 import requests
-# 数据库相关操作
-from app01 import models
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import HttpResponse, render
 #检索
@@ -22,6 +20,9 @@ from fuzzywuzzy import fuzz, process
 #登陆用
 from pyDes import CBC, PAD_PKCS5, des
 from xpinyin import Pinyin
+
+# 数据库相关操作
+from app01 import models
 
 # Create your views here.
 
@@ -87,9 +88,11 @@ def information():
         temp.append(i.container_name)
         temp.append(i.container_price)
         temp.append(i.picture_address)
+        temp.append(i.stock)
         container_all.append(temp)
     
     return container_all
+
 
 
 def update():
@@ -122,7 +125,6 @@ def reference(request):
             sessionID = SKexpired(sessionID, code)
 
         image_name = base64.b64decode(value)
-        
 
         image_file = '/root/Smart_container/PaddleClas/dataset/retail/test1.jpg'
         with open(image_file, "wb") as fh:
@@ -135,12 +137,10 @@ def reference(request):
 
         price_all = 0.0
 
-
         os.system('python3 /root/Smart_container/PaddleClas/deploy/python/predict_system.py -c /root/Smart_container/PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
         print('234')
 	    
         log_path = '/root/Smart_container/PaddleClas/dataset/log.txt'
-        
 
         with open(log_path, 'r', encoding='utf8') as F:
 
@@ -154,7 +154,6 @@ def reference(request):
                 return JsonResponse({"state": 'true',"container": rec_deplay_str_all})
 
             else:
-
                 for str_result in str_result_list:
 
                     price_all = 0
@@ -168,18 +167,22 @@ def reference(request):
 
                 print(rec_docs_list)
 
-                
+                number_list = []
+
                 for rec_docs_sig in rec_docs_list:
                     for res in res_all:
                         if  res.container_name== rec_docs_sig:
+                            temp = []
                             rec_price = res.container_price
                             price_all += float(rec_price)
-                            rec_docs_price.append(rec_docs_sig)
-                            rec_docs_price.append(rec_price)
+                            number_list.append(res.number)
+                            temp.append(rec_docs_sig)
+                            temp.append(rec_price)
+                            rec_docs_price.append(temp)
 
             print(rec_docs_price)
             os.remove(log_path)
-            return JsonResponse({"state": 'true',"container": rec_docs_price,"price_all": price_all,"picture_test":'test1.jpg'})
+            return JsonResponse({"state": 'true', "number":number_list ,"container": rec_docs_price, "price_all": price_all, "picture_test":'test1.jpg'})
     else:
         return JsonResponse({"state": 'false'})
 
@@ -226,6 +229,7 @@ def record(request):             #增加模块
         code = request.POST.get('code')
         s_container_name = request.POST.get('container_name')         #商品名称 str
         s_container_price = request.POST.get('container_price')       #商品单价 float
+        s_stock = request.POST.get('container_stock')                #商品库存 int
 
         picture = request.FILES['productimage']   #照片
 
@@ -233,6 +237,7 @@ def record(request):             #增加模块
             sessionID = SKexpired(sessionID, code)
 
         value_name = s_container_name
+        print(s_container_name)
 
 
         p = Pinyin()                 
@@ -253,12 +258,16 @@ def record(request):             #增加模块
         
         old_container = models.TContainer.objects.filter(container_name=s_container_name)     
         old_container = old_container.values() 
+        print(s_stock)
 
         if not bool(old_container): 
 
-            s_container = models.TContainer(number = s_number, container_name = s_container_name, container_price = s_container_price, picture_address = s_picture_address)
+            s_container = models.TContainer(number=s_number, container_name=s_container_name, container_price=s_container_price,stock = s_stock, picture_address=s_picture_address)
             s_container.save()
             update()
+            
+            print("库存为："+s_stock)
+
             return JsonResponse({"state": 'true', "sessionID": sessionID})
 
         else:
@@ -311,11 +320,10 @@ def replace(request):               #修改模块
         code = request.POST.get('code')
         number = request.POST.get('number')
         r_container_name = request.POST.get('container_name')
-        print(r_container_name)
         r_container_price = request.POST.get('container_price')
-        print(r_container_price)
+        r_stock = request.POST.get('container_stock')
         isimageRevised = request.POST.get('isimageRevised')
-        print(isimageRevised)
+        
 
         if isimageRevised == True:
             r_picture = request.FILES['productimage']
@@ -328,16 +336,25 @@ def replace(request):               #修改模块
 
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
-     
-        models.TContainer.objects.filter(number = number).update(container_name = r_container_name)
 
-        models.TContainer.objects.filter(number = number).update(container_price = r_container_price)
-        
-        g = models.TContainer.objects.filter(number = number)
+            
+        numbers = int(number)
 
-        result = models.TContainer.objects.filter(number = number)
+        containers = models.TContainer.objects.all()
+
+        for i in containers:
+            if i.number == numbers:
+                stock = i.stock + int(r_stock)
+                break
+
+        models.TContainer.objects.filter(number=number).update(container_name=r_container_name)
+
+        models.TContainer.objects.filter(number=number).update(container_price=r_container_price)
+
+        models.TContainer.objects.filter(number=number).update(stock=stock)
 
         update()
+
         return JsonResponse({"state": 'true', "sessionID": sessionID})
         
     else:
@@ -367,6 +384,9 @@ def find(request):    #检索模块
         code = request.POST.get('code')
         searchtarget = request.POST.get('searchtarget')
 
+        if isSKexpried:
+            sessionID = SKexpired(sessionID, code)
+
         container = models.TContainer.objects.all()
 
         find_result = []
@@ -380,9 +400,56 @@ def find(request):    #检索模块
                 temp.append(i.container_name)
                 temp.append(i.container_price)
                 temp.append(i.picture_address)
+                temp.append(i.stock)
                 find_result.append(temp)
 
         return JsonResponse({"state": 'true', "sessionID": sessionID,"container_all":find_result})
+    else:
+        return JsonResponse({"state": 'false'})
+
+
+def stock_sale(request):   #商品销售
+    if request.method == "POST":
+        sessionID = request.POST.get('sessionID')
+        isSKexpried = request.POST.get('isSKexpried')
+        code = request.POST.get('code')
+        number_s = request.POST.get('numberlist')
+
+        if isSKexpried:
+            sessionID = SKexpired(sessionID, code)
+        
+        print(number_s)
+        
+        number_s = number_s.split(',')
+        number_s = list(map(int, number_s))
+        print(number_s)
+
+        classify = []
+        container_sale = []
+
+        for i in number_s:
+            Temp = []
+            if i not in classify:
+                Temp.append(i)
+                classify.append(i)
+                temp = 0
+                for j in number_s:
+                    if Temp[0] == j:
+                        temp = temp + 1
+                Temp.append(temp)
+                container_sale.append(Temp)
+
+        print(container_sale)
+
+        container = models.TContainer.objects.all()
+
+        for i in container_sale:                    #[['number','stock'],.....]
+            for j in container:
+                if j.number == i[0]:
+                    stock = j.stock - i[1]
+                    models.TContainer.objects.filter(number=i[0]).update(stock=stock)
+                    break
+        return JsonResponse({"state": 'true', "sessionID": sessionID})
     else:
         return JsonResponse({"state": 'false'})
 

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a5iwd(8ljs7)5x3_sfoni_&tpq+d4$&i-wul_oysicg8g$+hak
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['106.12.78.130']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app01.apps.App01Config',
-    'captcha',
-    'tyadmin_api_cli',
    # 'tyadmin_api'
 ]
 
@@ -86,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',	# 要连接的 数据库类型
         'HOST': 'localhost',	# 要连接的远程数据库的 ip地址
         'PORT': '3306',	# 数据库连接端口，mysql默认3306
-        'USER': 'SM_c',		# 数据库已有用户名
+        'USER': 'SM_C',		# 数据库已有用户名`
         'PASSWORD': '105316',	# 数据库已有用户密码
         'NAME': 'container',	# 要连接的 数据库名
     }

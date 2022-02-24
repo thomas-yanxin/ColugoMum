@@ -1,0 +1,28 @@
+mode: fluid
+draw_threshold: 0.5
+metric: COCO
+use_dynamic_shape: false
+arch: PicoDet
+min_subgraph_size: 3
+Preprocess:
+- interp: 2
+  keep_ratio: false
+  target_size:
+  - 416
+  - 416
+  type: Resize
+- is_scale: true
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+  type: NormalizeImage
+- type: Permute
+- stride: 32
+  type: PadStride
+label_list:
+- foreground
