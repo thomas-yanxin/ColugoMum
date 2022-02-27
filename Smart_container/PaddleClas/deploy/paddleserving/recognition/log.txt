@@ -1,0 +1,44 @@
+2022/02/26 01:40:10 start proxy service
+E0226 01:40:10.979717 19663 analysis_config.cc:91] Please compile with gpu to EnableGpu()
+E0226 01:40:11.086275 19655 analysis_config.cc:91] Please compile with gpu to EnableGpu()
+I0226 01:40:11.088076 19663 analysis_predictor.cc:668] ir_optim is turned off, no IR pass will be executed
+[1m[35m--- Running analysis [ir_graph_build_pass][0m
+I0226 01:40:11.112829 19655 analysis_predictor.cc:668] ir_optim is turned off, no IR pass will be executed
+[1m[35m--- Running analysis [ir_graph_build_pass][0m
+[1m[35m--- Running analysis [ir_graph_clean_pass][0m
+[1m[35m--- Running analysis [ir_analysis_pass][0m
+[1m[35m--- Running analysis [ir_params_sync_among_devices_pass][0m
+[1m[35m--- Running analysis [adjust_cudnn_workspace_size_pass][0m
+[1m[35m--- Running analysis [inference_op_replace_pass][0m
+[1m[35m--- Running analysis [memory_optimize_pass][0m
+I0226 01:40:11.221449 19655 memory_optimize_pass.cc:216] Cluster name : hardswish_31.tmp_0  size: 1003520
+I0226 01:40:11.221496 19655 memory_optimize_pass.cc:216] Cluster name : batch_norm_25.tmp_0  size: 5120
+I0226 01:40:11.221508 19655 memory_optimize_pass.cc:216] Cluster name : conv2d_33.tmp_0  size: 4014080
+I0226 01:40:11.221513 19655 memory_optimize_pass.cc:216] Cluster name : x  size: 602112
+I0226 01:40:11.221520 19655 memory_optimize_pass.cc:216] Cluster name : batch_norm_2.tmp_3  size: 4014080
+[1m[35m--- Running analysis [ir_graph_to_program_pass][0m
+I0226 01:40:11.284329 19655 analysis_predictor.cc:717] ======= optimize end =======
+I0226 01:40:11.287061 19655 naive_executor.cc:98] ---  skip [feed], feed -> x
+I0226 01:40:11.289458 19655 naive_executor.cc:98] ---  skip [save_infer_model/scale_0.tmp_1], fetch -> fetch
+[1m[35m--- Running analysis [ir_graph_clean_pass][0m
+[1m[35m--- Running analysis [ir_analysis_pass][0m
+[1m[35m--- Running analysis [ir_params_sync_among_devices_pass][0m
+[1m[35m--- Running analysis [adjust_cudnn_workspace_size_pass][0m
+[1m[35m--- Running analysis [inference_op_replace_pass][0m
+[1m[35m--- Running analysis [memory_optimize_pass][0m
+I0226 01:40:11.306927 19663 memory_optimize_pass.cc:216] Cluster name : batch_norm_52.tmp_1  size: 384
+I0226 01:40:11.306948 19663 memory_optimize_pass.cc:216] Cluster name : batch_norm_2.tmp_3  size: 32768000
+I0226 01:40:11.306953 19663 memory_optimize_pass.cc:216] Cluster name : leaky_relu_4.tmp_0  size: 38400
+I0226 01:40:11.306967 19663 memory_optimize_pass.cc:216] Cluster name : leaky_relu_2.tmp_0  size: 153600
+I0226 01:40:11.306972 19663 memory_optimize_pass.cc:216] Cluster name : depthwise_conv2d_2.tmp_0  size: 16384000
+I0226 01:40:11.306975 19663 memory_optimize_pass.cc:216] Cluster name : hardswish_51.tmp_0  size: 2048000
+I0226 01:40:11.306979 19663 memory_optimize_pass.cc:216] Cluster name : conv2d_89.tmp_0  size: 32768000
+I0226 01:40:11.306983 19663 memory_optimize_pass.cc:216] Cluster name : image  size: 4915200
+I0226 01:40:11.306988 19663 memory_optimize_pass.cc:216] Cluster name : depthwise_conv2d_7.tmp_0  size: 4096000
+[1m[35m--- Running analysis [ir_graph_to_program_pass][0m
+I0226 01:40:11.633292 19663 analysis_predictor.cc:717] ======= optimize end =======
+I0226 01:40:11.650090 19663 naive_executor.cc:98] ---  skip [feed], feed -> scale_factor
+I0226 01:40:11.650130 19663 naive_executor.cc:98] ---  skip [feed], feed -> image
+I0226 01:40:11.650135 19663 naive_executor.cc:98] ---  skip [feed], feed -> im_shape
+I0226 01:40:11.655412 19663 naive_executor.cc:98] ---  skip [save_infer_model/scale_0.tmp_1], fetch -> fetch
+I0226 01:40:11.655437 19663 naive_executor.cc:98] ---  skip [save_infer_model/scale_1.tmp_1], fetch -> fetch

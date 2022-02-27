@@ -187,3 +187,4 @@ gallery/meizu18.jpg	魅族18
 gallery/xiuzhengdai.jpg	修正带
 gallery/jiangxiaobai.jpg	江小白
 gallery/xiaoyuanbinggan.jpg	小圆饼干
+gallery/xiaoduchongdianbao.jpg	小度充电宝

@@ -3,7 +3,7 @@ import json
 import base64
 import os
 
-imgpath = "daoxiangcunjinzhubing_6.jpg"
+imgpath = "/root/Smart_container/PaddleClas/dataset/xiaoduchongdianbao.jpg"
 
 def cv2_to_base64(image):
     return base64.b64encode(image).decode('utf8')

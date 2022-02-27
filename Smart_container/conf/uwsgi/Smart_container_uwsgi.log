@@ -7084,3 +7084,137 @@ Inference: 376.6441345214844 ms per batch image
 [pid: 19148|app: 0|req: 1797/2082] 23.250.19.242 () {34 vars in 536 bytes} [Mon Feb 21 05:22:23 2022] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
 [pid: 19148|app: 0|req: 1798/2083] 23.250.19.242 () {30 vars in 359 bytes} [Mon Feb 21 05:22:25 2022] GET /robots.txt => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
 [pid: 19148|app: 0|req: 1799/2084] 81.17.24.154 () {40 vars in 627 bytes} [Mon Feb 21 05:45:21 2022] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15-debian (64bit) on [Fri Feb 25 00:19:57 2022] ***
+compiled with version: 7.5.0 on 26 August 2021 18:40:50
+os: Linux-4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:07:44 UTC 2021
+nodename: iZuf6i5vgnr6fuc47aapjkZ
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /root/Smart_container/conf/uwsgi
+writing pidfile to /root/Smart_container/conf/uwsgi/uwsgi.pid
+detected binary path: /usr/bin/uwsgi-core
+dropping root privileges as early as possible
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/Smart_container
+your processes number limit is 15592
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+dropping root privileges after socket binding
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+dropping root privileges after plugin initialization
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 800448 bytes (781 KB) for 10 cores
+*** Operational MODE: preforking ***
+*** no app loaded. going in full dynamic mode ***
+dropping root privileges after application loading
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+spawned uWSGI master process (pid: 11298)
+spawned uWSGI worker 1 (pid: 11299, cores: 1)
+spawned uWSGI worker 2 (pid: 11300, cores: 1)
+spawned uWSGI worker 3 (pid: 11301, cores: 1)
+spawned uWSGI worker 4 (pid: 11302, cores: 1)
+spawned uWSGI worker 5 (pid: 11303, cores: 1)
+spawned uWSGI worker 6 (pid: 11304, cores: 1)
+spawned uWSGI worker 7 (pid: 11305, cores: 1)
+spawned uWSGI worker 8 (pid: 11306, cores: 1)
+spawned uWSGI worker 9 (pid: 11307, cores: 1)
+spawned uWSGI worker 10 (pid: 11308, cores: 1)
+*** Starting uWSGI 2.0.15-debian (64bit) on [Fri Feb 25 00:21:43 2022] ***
+compiled with version: 7.5.0 on 26 August 2021 18:40:50
+os: Linux-4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:07:44 UTC 2021
+nodename: iZuf6i5vgnr6fuc47aapjkZ
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /root/Smart_container/conf/uwsgi
+writing pidfile to /root/Smart_container/conf/uwsgi/uwsgi.pid
+detected binary path: /usr/bin/uwsgi-core
+dropping root privileges as early as possible
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/Smart_container
+your processes number limit is 15592
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+*** Starting uWSGI 2.0.15-debian (64bit) on [Fri Feb 25 11:45:50 2022] ***
+compiled with version: 7.5.0 on 26 August 2021 18:40:50
+os: Linux-4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:07:44 UTC 2021
+nodename: iZuf6i5vgnr6fuc47aapjkZ
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /root/Smart_container/conf/uwsgi
+writing pidfile to /root/Smart_container/conf/uwsgi/uwsgi.pid
+detected binary path: /usr/bin/uwsgi-core
+dropping root privileges as early as possible
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/Smart_container
+your processes number limit is 15592
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.15-debian (64bit) on [Fri Feb 25 11:53:08 2022] ***
+compiled with version: 7.5.0 on 26 August 2021 18:40:50
+os: Linux-4.15.0-166-generic #174-Ubuntu SMP Wed Dec 8 19:07:44 UTC 2021
+nodename: iZuf6i5vgnr6fuc47aapjkZ
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /root/Smart_container/conf/uwsgi
+writing pidfile to /root/Smart_container/conf/uwsgi/uwsgi.pid
+detected binary path: /usr/bin/uwsgi-core
+dropping root privileges as early as possible
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/Smart_container
+your processes number limit is 15592
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]

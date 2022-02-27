@@ -9,6 +9,7 @@ class TContainer(models.Model):
     container_price = models.CharField(max_length=255, blank=True, null=True,verbose_name="price")
     picture_address = models.CharField(max_length=255, blank=True, null=True,verbose_name="address")
     stock = models.IntegerField(blank=True, null=True,verbose_name="stock")
+    sale = models.IntegerField(blank=True, null=True,verbose_name="sale") 
 
     class Meta:
         managed = True

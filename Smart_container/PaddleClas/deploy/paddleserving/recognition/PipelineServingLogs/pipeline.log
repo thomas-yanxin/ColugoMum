@@ -1,0 +1,1252 @@
+INFO 2022-02-25 13:17:27,297 [loader.py:54] Loading faiss with AVX2 support.
+INFO 2022-02-25 13:17:27,298 [loader.py:58] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'",)
+INFO 2022-02-25 13:17:27,298 [loader.py:64] Loading faiss.
+INFO 2022-02-25 13:17:27,311 [loader.py:66] Successfully loaded faiss.
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] build_dag_each_worker not set, use default: False
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] client_type not set, use default: brpc
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] use_profile not set, use default: False
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] channel_size not set, use default: 0
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] tracer not set, use default: {}
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] channel_recv_frist_arrive not set, use default: False
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] interval_s not set, use default: -1
+WARNING 2022-02-25 13:17:27,317 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-25 13:17:27,318 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-25 13:17:27,319 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+INFO 2022-02-25 13:17:27,324 [operator.py:181] local_service_conf: {'model_config': '../../models/general_PPLCNet_x2_5_lite_v1.0_serving', 'device_type': 1, 'devices': '0', 'client_type': 'local_predictor', 'fetch_list': ['features'], 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-25 13:17:27,324 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['features'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:17:27,325 [operator.py:285] rec 
+	input_ops: det,
+	server_endpoints: None
+	fetch_list: ['features']
+	client_config: ../../models/general_PPLCNet_x2_5_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-25 13:17:27,325 [operator.py:181] local_service_conf: {'client_type': 'local_predictor', 'device_type': 1, 'devices': '0', 'fetch_list': ['save_infer_model/scale_0.tmp_1'], 'model_config': '../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/', 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-25 13:17:27,325 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['save_infer_model/scale_0.tmp_1'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:17:27,325 [operator.py:285] det 
+	input_ops: @DAGExecutor,
+	server_endpoints: None
+	fetch_list: ['save_infer_model/scale_0.tmp_1']
+	client_config: ../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-25 13:17:27,325 [pipeline_server.py:215] ============= PIPELINE SERVER =============
+INFO 2022-02-25 13:17:27,325 [pipeline_server.py:218] 
+{
+    "worker_num":1,
+    "http_port":18081,
+    "rpc_port":9994,
+    "dag":{
+        "is_thread_op":false,
+        "retry":1,
+        "client_type":"brpc",
+        "use_profile":false,
+        "channel_size":0,
+        "tracer":{
+            "interval_s":-1
+        },
+        "channel_recv_frist_arrive":false
+    },
+    "op":{
+        "rec":{
+            "concurrency":1,
+            "local_service_conf":{
+                "model_config":"../../models/general_PPLCNet_x2_5_lite_v1.0_serving",
+                "device_type":1,
+                "devices":"0",
+                "client_type":"local_predictor",
+                "fetch_list":[
+                    "features"
+                ],
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        },
+        "det":{
+            "concurrency":1,
+            "local_service_conf":{
+                "client_type":"local_predictor",
+                "device_type":1,
+                "devices":"0",
+                "fetch_list":[
+                    "save_infer_model/scale_0.tmp_1"
+                ],
+                "model_config":"../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/",
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        }
+    },
+    "build_dag_each_worker":false
+}
+INFO 2022-02-25 13:17:27,325 [pipeline_server.py:223] -------------------------------------------
+INFO 2022-02-25 13:17:27,325 [operator.py:308] Op(rec) use local rpc service at port: []
+INFO 2022-02-25 13:17:27,325 [operator.py:308] Op(det) use local rpc service at port: []
+INFO 2022-02-25 13:17:27,334 [dag.py:496] [DAG] Succ init
+INFO 2022-02-25 13:17:27,335 [dag.py:659] ================= USED OP =================
+INFO 2022-02-25 13:17:27,335 [dag.py:662] rec
+INFO 2022-02-25 13:17:27,335 [dag.py:662] det
+INFO 2022-02-25 13:17:27,335 [dag.py:663] -------------------------------------------
+INFO 2022-02-25 13:17:27,335 [dag.py:680] ================== DAG ====================
+INFO 2022-02-25 13:17:27,335 [dag.py:682] (VIEW 0)
+INFO 2022-02-25 13:17:27,335 [dag.py:684]   [@DAGExecutor]
+INFO 2022-02-25 13:17:27,335 [dag.py:686]     - det
+INFO 2022-02-25 13:17:27,335 [dag.py:682] (VIEW 1)
+INFO 2022-02-25 13:17:27,335 [dag.py:684]   [det]
+INFO 2022-02-25 13:17:27,336 [dag.py:686]     - rec
+INFO 2022-02-25 13:17:27,336 [dag.py:682] (VIEW 2)
+INFO 2022-02-25 13:17:27,336 [dag.py:684]   [rec]
+INFO 2022-02-25 13:17:27,336 [dag.py:687] -------------------------------------------
+INFO 2022-02-25 13:17:27,356 [dag.py:730] op:det add input channel.
+INFO 2022-02-25 13:17:27,372 [dag.py:730] op:rec add input channel.
+INFO 2022-02-25 13:17:27,372 [dag.py:739] pred_op:det add output channel
+INFO 2022-02-25 13:17:27,388 [dag.py:759] last op:rec add output channel
+INFO 2022-02-25 13:17:27,388 [dag.py:800] [DAG] Succ build DAG
+INFO 2022-02-25 13:17:27,394 [dag.py:832] [DAG] start
+INFO 2022-02-25 13:17:27,394 [dag.py:182] [DAG] set in channel succ, name [@DAGExecutor]
+INFO 2022-02-25 13:17:27,399 [pipeline_server.py:51] [PipelineServicer] succ init
+INFO 2022-02-25 13:17:27,436 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:17:27,437 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-25 13:17:27,437 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-25 13:17:27,453 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:17:27,453 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-25 13:17:27,453 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-25 13:17:28,351 [local_predict.py:137] pdmodel_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-25 13:17:28,352 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-25 13:17:28,367 [local_predict.py:137] pdmodel_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-25 13:17:28,367 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/general_PPLCNet_x2_5_lite_v1.0_serving, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-25 13:17:28,577 [operator.py:1317] [rec|0] Succ init
+INFO 2022-02-25 13:17:29,007 [operator.py:1317] [det|0] Succ init
+INFO 2022-02-25 13:17:33,282 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766253.2828658
+INFO 2022-02-25 13:17:33,284 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766253.2840266
+INFO 2022-02-25 13:17:33,284 [dag.py:369] (data_id=0 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:17:34,405 [dag.py:405] (data_id=0 log_id=0) Succ predict
+INFO 2022-02-25 13:20:20,048 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766420.0482235
+INFO 2022-02-25 13:20:20,050 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766420.0502787
+INFO 2022-02-25 13:20:20,050 [dag.py:369] (data_id=1 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:20:21,718 [dag.py:405] (data_id=1 log_id=0) Succ predict
+INFO 2022-02-25 13:21:08,262 [loader.py:54] Loading faiss with AVX2 support.
+INFO 2022-02-25 13:21:08,262 [loader.py:58] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'",)
+INFO 2022-02-25 13:21:08,262 [loader.py:64] Loading faiss.
+INFO 2022-02-25 13:21:08,276 [loader.py:66] Successfully loaded faiss.
+WARNING 2022-02-25 13:21:08,281 [pipeline_server.py:509] [CONF] build_dag_each_worker not set, use default: False
+WARNING 2022-02-25 13:21:08,281 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:21:08,281 [pipeline_server.py:509] [CONF] client_type not set, use default: brpc
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] use_profile not set, use default: False
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] channel_size not set, use default: 0
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] tracer not set, use default: {}
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] channel_recv_frist_arrive not set, use default: False
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] interval_s not set, use default: -1
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-25 13:21:08,282 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-25 13:21:08,283 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+INFO 2022-02-25 13:21:08,290 [operator.py:181] local_service_conf: {'model_config': '../../models/general_PPLCNet_x2_5_lite_v1.0_serving', 'device_type': 1, 'devices': '0', 'client_type': 'local_predictor', 'fetch_list': ['features'], 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-25 13:21:08,290 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['features'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:21:08,290 [operator.py:285] rec 
+	input_ops: det,
+	server_endpoints: None
+	fetch_list: ['features']
+	client_config: ../../models/general_PPLCNet_x2_5_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-25 13:21:08,290 [operator.py:181] local_service_conf: {'client_type': 'local_predictor', 'device_type': 1, 'devices': '0', 'fetch_list': ['save_infer_model/scale_0.tmp_1'], 'model_config': '../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/', 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-25 13:21:08,291 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['save_infer_model/scale_0.tmp_1'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:21:08,291 [operator.py:285] det 
+	input_ops: @DAGExecutor,
+	server_endpoints: None
+	fetch_list: ['save_infer_model/scale_0.tmp_1']
+	client_config: ../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-25 13:21:08,291 [pipeline_server.py:215] ============= PIPELINE SERVER =============
+INFO 2022-02-25 13:21:08,291 [pipeline_server.py:218] 
+{
+    "worker_num":1,
+    "http_port":18081,
+    "rpc_port":9994,
+    "dag":{
+        "is_thread_op":false,
+        "retry":1,
+        "client_type":"brpc",
+        "use_profile":false,
+        "channel_size":0,
+        "tracer":{
+            "interval_s":-1
+        },
+        "channel_recv_frist_arrive":false
+    },
+    "op":{
+        "rec":{
+            "concurrency":1,
+            "local_service_conf":{
+                "model_config":"../../models/general_PPLCNet_x2_5_lite_v1.0_serving",
+                "device_type":1,
+                "devices":"0",
+                "client_type":"local_predictor",
+                "fetch_list":[
+                    "features"
+                ],
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        },
+        "det":{
+            "concurrency":1,
+            "local_service_conf":{
+                "client_type":"local_predictor",
+                "device_type":1,
+                "devices":"0",
+                "fetch_list":[
+                    "save_infer_model/scale_0.tmp_1"
+                ],
+                "model_config":"../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/",
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        }
+    },
+    "build_dag_each_worker":false
+}
+INFO 2022-02-25 13:21:08,291 [pipeline_server.py:223] -------------------------------------------
+INFO 2022-02-25 13:21:08,291 [operator.py:308] Op(rec) use local rpc service at port: []
+INFO 2022-02-25 13:21:08,291 [operator.py:308] Op(det) use local rpc service at port: []
+INFO 2022-02-25 13:21:08,301 [dag.py:496] [DAG] Succ init
+INFO 2022-02-25 13:21:08,301 [dag.py:659] ================= USED OP =================
+INFO 2022-02-25 13:21:08,301 [dag.py:662] rec
+INFO 2022-02-25 13:21:08,301 [dag.py:662] det
+INFO 2022-02-25 13:21:08,301 [dag.py:663] -------------------------------------------
+INFO 2022-02-25 13:21:08,302 [dag.py:680] ================== DAG ====================
+INFO 2022-02-25 13:21:08,302 [dag.py:682] (VIEW 0)
+INFO 2022-02-25 13:21:08,302 [dag.py:684]   [@DAGExecutor]
+INFO 2022-02-25 13:21:08,302 [dag.py:686]     - det
+INFO 2022-02-25 13:21:08,302 [dag.py:682] (VIEW 1)
+INFO 2022-02-25 13:21:08,302 [dag.py:684]   [det]
+INFO 2022-02-25 13:21:08,302 [dag.py:686]     - rec
+INFO 2022-02-25 13:21:08,302 [dag.py:682] (VIEW 2)
+INFO 2022-02-25 13:21:08,302 [dag.py:684]   [rec]
+INFO 2022-02-25 13:21:08,302 [dag.py:687] -------------------------------------------
+INFO 2022-02-25 13:21:08,322 [dag.py:730] op:det add input channel.
+INFO 2022-02-25 13:21:08,339 [dag.py:730] op:rec add input channel.
+INFO 2022-02-25 13:21:08,339 [dag.py:739] pred_op:det add output channel
+INFO 2022-02-25 13:21:08,354 [dag.py:759] last op:rec add output channel
+INFO 2022-02-25 13:21:08,355 [dag.py:800] [DAG] Succ build DAG
+INFO 2022-02-25 13:21:08,361 [dag.py:832] [DAG] start
+INFO 2022-02-25 13:21:08,362 [dag.py:182] [DAG] set in channel succ, name [@DAGExecutor]
+INFO 2022-02-25 13:21:08,365 [pipeline_server.py:51] [PipelineServicer] succ init
+INFO 2022-02-25 13:21:08,409 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:21:08,409 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-25 13:21:08,409 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-25 13:21:08,409 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-25 13:21:08,410 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-25 13:21:08,410 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-25 13:21:09,358 [local_predict.py:137] pdmodel_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-25 13:21:09,358 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/general_PPLCNet_x2_5_lite_v1.0_serving, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-25 13:21:09,361 [local_predict.py:137] pdmodel_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-25 13:21:09,361 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-25 13:21:09,563 [operator.py:1317] [rec|0] Succ init
+INFO 2022-02-25 13:21:10,064 [operator.py:1317] [det|0] Succ init
+INFO 2022-02-25 13:21:10,534 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766470.534481
+INFO 2022-02-25 13:21:10,537 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766470.5375066
+INFO 2022-02-25 13:21:10,537 [dag.py:369] (data_id=0 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:21:12,576 [dag.py:405] (data_id=0 log_id=0) Succ predict
+INFO 2022-02-25 13:23:26,919 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766606.9195468
+INFO 2022-02-25 13:23:26,920 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766606.9204419
+INFO 2022-02-25 13:23:26,920 [dag.py:369] (data_id=1 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:23:28,854 [dag.py:405] (data_id=1 log_id=0) Succ predict
+INFO 2022-02-25 13:29:11,340 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766951.3405335
+INFO 2022-02-25 13:29:11,340 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766951.3408952
+INFO 2022-02-25 13:29:11,341 [dag.py:369] (data_id=2 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:29:12,468 [dag.py:405] (data_id=2 log_id=0) Succ predict
+INFO 2022-02-25 13:29:21,786 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645766961.7864313
+INFO 2022-02-25 13:29:21,786 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645766961.7867348
+INFO 2022-02-25 13:29:21,786 [dag.py:369] (data_id=3 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:29:22,908 [dag.py:405] (data_id=3 log_id=0) Succ predict
+INFO 2022-02-25 13:37:42,837 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767462.8376174
+INFO 2022-02-25 13:37:42,839 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767462.8397899
+INFO 2022-02-25 13:37:42,839 [dag.py:369] (data_id=4 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:37:43,891 [dag.py:405] (data_id=4 log_id=0) Succ predict
+INFO 2022-02-25 13:38:29,692 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767509.6929502
+INFO 2022-02-25 13:38:29,693 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767509.6932688
+INFO 2022-02-25 13:38:29,693 [dag.py:369] (data_id=5 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:38:30,794 [dag.py:405] (data_id=5 log_id=0) Succ predict
+INFO 2022-02-25 13:40:15,706 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767615.7065263
+INFO 2022-02-25 13:40:15,706 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767615.7068365
+INFO 2022-02-25 13:40:15,706 [dag.py:369] (data_id=6 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:40:16,825 [dag.py:405] (data_id=6 log_id=0) Succ predict
+INFO 2022-02-25 13:41:01,367 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767661.3677664
+INFO 2022-02-25 13:41:01,368 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767661.368118
+INFO 2022-02-25 13:41:01,368 [dag.py:369] (data_id=7 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:41:02,525 [dag.py:405] (data_id=7 log_id=0) Succ predict
+INFO 2022-02-25 13:42:40,721 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767760.7217584
+INFO 2022-02-25 13:42:40,722 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767760.7221131
+INFO 2022-02-25 13:42:40,722 [dag.py:369] (data_id=8 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:42:41,874 [dag.py:405] (data_id=8 log_id=0) Succ predict
+INFO 2022-02-25 13:43:35,222 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767815.2225554
+INFO 2022-02-25 13:43:35,222 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767815.222923
+INFO 2022-02-25 13:43:35,223 [dag.py:369] (data_id=9 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:43:36,376 [dag.py:405] (data_id=9 log_id=0) Succ predict
+INFO 2022-02-25 13:44:28,129 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767868.1289716
+INFO 2022-02-25 13:44:28,129 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767868.1292858
+INFO 2022-02-25 13:44:28,129 [dag.py:369] (data_id=10 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:44:29,282 [dag.py:405] (data_id=10 log_id=0) Succ predict
+INFO 2022-02-25 13:45:15,853 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767915.8531537
+INFO 2022-02-25 13:45:15,853 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767915.8534813
+INFO 2022-02-25 13:45:15,853 [dag.py:369] (data_id=11 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:45:17,008 [dag.py:405] (data_id=11 log_id=0) Succ predict
+INFO 2022-02-25 13:46:12,434 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645767972.4348187
+INFO 2022-02-25 13:46:12,435 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645767972.435176
+INFO 2022-02-25 13:46:12,435 [dag.py:369] (data_id=12 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:46:13,581 [dag.py:405] (data_id=12 log_id=0) Succ predict
+INFO 2022-02-25 13:47:11,392 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768031.392457
+INFO 2022-02-25 13:47:11,392 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768031.3927827
+INFO 2022-02-25 13:47:11,392 [dag.py:369] (data_id=13 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:47:12,530 [dag.py:405] (data_id=13 log_id=0) Succ predict
+INFO 2022-02-25 13:47:30,665 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768050.6652246
+INFO 2022-02-25 13:47:30,665 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768050.6655314
+INFO 2022-02-25 13:47:30,665 [dag.py:369] (data_id=14 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:47:31,818 [dag.py:405] (data_id=14 log_id=0) Succ predict
+INFO 2022-02-25 13:48:00,458 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768080.458767
+INFO 2022-02-25 13:48:00,459 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768080.4590833
+INFO 2022-02-25 13:48:00,459 [dag.py:369] (data_id=15 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:48:01,615 [dag.py:405] (data_id=15 log_id=0) Succ predict
+INFO 2022-02-25 13:48:34,846 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768114.8467712
+INFO 2022-02-25 13:48:34,847 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768114.8471599
+INFO 2022-02-25 13:48:34,847 [dag.py:369] (data_id=16 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:48:35,974 [dag.py:405] (data_id=16 log_id=0) Succ predict
+INFO 2022-02-25 13:49:24,384 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768164.3848238
+INFO 2022-02-25 13:49:24,385 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768164.3851798
+INFO 2022-02-25 13:49:24,385 [dag.py:369] (data_id=17 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:49:25,516 [dag.py:405] (data_id=17 log_id=0) Succ predict
+INFO 2022-02-25 13:50:05,745 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768205.7458973
+INFO 2022-02-25 13:50:05,746 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768205.746218
+INFO 2022-02-25 13:50:05,746 [dag.py:369] (data_id=18 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:50:06,913 [dag.py:405] (data_id=18 log_id=0) Succ predict
+INFO 2022-02-25 13:50:32,350 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768232.3502827
+INFO 2022-02-25 13:50:32,350 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768232.3506017
+INFO 2022-02-25 13:50:32,350 [dag.py:369] (data_id=19 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:50:33,459 [dag.py:405] (data_id=19 log_id=0) Succ predict
+INFO 2022-02-25 13:50:58,483 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768258.483626
+INFO 2022-02-25 13:50:58,484 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768258.4839864
+INFO 2022-02-25 13:50:58,484 [dag.py:369] (data_id=20 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:50:59,639 [dag.py:405] (data_id=20 log_id=0) Succ predict
+INFO 2022-02-25 13:51:45,115 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768305.115826
+INFO 2022-02-25 13:51:45,116 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768305.1161764
+INFO 2022-02-25 13:51:45,116 [dag.py:369] (data_id=21 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:51:46,259 [dag.py:405] (data_id=21 log_id=0) Succ predict
+INFO 2022-02-25 13:53:54,448 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768434.4483771
+INFO 2022-02-25 13:53:54,448 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768434.4486935
+INFO 2022-02-25 13:53:54,448 [dag.py:369] (data_id=22 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:53:55,604 [dag.py:405] (data_id=22 log_id=0) Succ predict
+INFO 2022-02-25 13:57:54,915 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768674.9151607
+INFO 2022-02-25 13:57:54,915 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768674.9154592
+INFO 2022-02-25 13:57:54,915 [dag.py:369] (data_id=23 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:57:56,067 [dag.py:405] (data_id=23 log_id=0) Succ predict
+INFO 2022-02-25 13:58:43,389 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768723.3897183
+INFO 2022-02-25 13:58:43,390 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768723.3900256
+INFO 2022-02-25 13:58:43,390 [dag.py:369] (data_id=24 log_id=0) Succ Generate ID 
+INFO 2022-02-25 13:58:44,529 [dag.py:405] (data_id=24 log_id=0) Succ predict
+INFO 2022-02-25 14:00:06,661 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768806.6612258
+INFO 2022-02-25 14:00:06,661 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768806.6615758
+INFO 2022-02-25 14:00:06,661 [dag.py:369] (data_id=25 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:00:07,836 [dag.py:405] (data_id=25 log_id=0) Succ predict
+INFO 2022-02-25 14:00:29,959 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768829.9594407
+INFO 2022-02-25 14:00:29,959 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768829.9597843
+INFO 2022-02-25 14:00:29,959 [dag.py:369] (data_id=26 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:00:31,116 [dag.py:405] (data_id=26 log_id=0) Succ predict
+INFO 2022-02-25 14:02:39,520 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645768959.5204167
+INFO 2022-02-25 14:02:39,520 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645768959.5207703
+INFO 2022-02-25 14:02:39,520 [dag.py:369] (data_id=27 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:02:40,674 [dag.py:405] (data_id=27 log_id=0) Succ predict
+INFO 2022-02-25 14:03:49,686 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769029.6864836
+INFO 2022-02-25 14:03:49,686 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769029.686795
+INFO 2022-02-25 14:03:49,686 [dag.py:369] (data_id=28 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:03:50,461 [dag.py:405] (data_id=28 log_id=0) Succ predict
+INFO 2022-02-25 14:04:28,587 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769068.587669
+INFO 2022-02-25 14:04:28,588 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769068.588017
+INFO 2022-02-25 14:04:28,588 [dag.py:369] (data_id=29 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:04:29,437 [dag.py:405] (data_id=29 log_id=0) Succ predict
+INFO 2022-02-25 14:04:41,135 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769081.1355581
+INFO 2022-02-25 14:04:41,135 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769081.1358979
+INFO 2022-02-25 14:04:41,136 [dag.py:369] (data_id=30 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:04:42,272 [dag.py:405] (data_id=30 log_id=0) Succ predict
+INFO 2022-02-25 14:05:15,951 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769115.95147
+INFO 2022-02-25 14:05:15,951 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769115.9518023
+INFO 2022-02-25 14:05:15,951 [dag.py:369] (data_id=31 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:05:16,729 [dag.py:405] (data_id=31 log_id=0) Succ predict
+INFO 2022-02-25 14:07:40,709 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769260.7096634
+INFO 2022-02-25 14:07:40,709 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769260.7099802
+INFO 2022-02-25 14:07:40,710 [dag.py:369] (data_id=32 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:07:41,480 [dag.py:405] (data_id=32 log_id=0) Succ predict
+INFO 2022-02-25 14:07:48,910 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769268.9101236
+INFO 2022-02-25 14:07:48,910 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769268.910429
+INFO 2022-02-25 14:07:48,910 [dag.py:369] (data_id=33 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:07:49,722 [dag.py:405] (data_id=33 log_id=0) Succ predict
+INFO 2022-02-25 14:08:03,253 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769283.2529974
+INFO 2022-02-25 14:08:03,253 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769283.25337
+INFO 2022-02-25 14:08:03,253 [dag.py:369] (data_id=34 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:08:04,395 [dag.py:405] (data_id=34 log_id=0) Succ predict
+INFO 2022-02-25 14:11:49,031 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769509.0310664
+INFO 2022-02-25 14:11:49,031 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769509.0314386
+INFO 2022-02-25 14:11:49,031 [dag.py:369] (data_id=35 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:11:50,209 [dag.py:405] (data_id=35 log_id=0) Succ predict
+INFO 2022-02-25 14:12:07,896 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769527.8962219
+INFO 2022-02-25 14:12:07,896 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769527.8965597
+INFO 2022-02-25 14:12:07,896 [dag.py:369] (data_id=36 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:12:09,047 [dag.py:405] (data_id=36 log_id=0) Succ predict
+INFO 2022-02-25 14:14:10,953 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769650.9535596
+INFO 2022-02-25 14:14:10,953 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769650.953867
+INFO 2022-02-25 14:14:10,954 [dag.py:369] (data_id=37 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:14:11,772 [dag.py:405] (data_id=37 log_id=0) Succ predict
+INFO 2022-02-25 14:14:13,857 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769653.8572156
+INFO 2022-02-25 14:14:13,857 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769653.857527
+INFO 2022-02-25 14:14:13,857 [dag.py:369] (data_id=38 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:14:14,636 [dag.py:405] (data_id=38 log_id=0) Succ predict
+INFO 2022-02-25 14:14:24,223 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769664.223239
+INFO 2022-02-25 14:14:24,223 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769664.223576
+INFO 2022-02-25 14:14:24,223 [dag.py:369] (data_id=39 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:14:25,363 [dag.py:405] (data_id=39 log_id=0) Succ predict
+INFO 2022-02-25 14:15:17,681 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769717.6814644
+INFO 2022-02-25 14:15:17,681 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769717.6818235
+INFO 2022-02-25 14:15:17,682 [dag.py:369] (data_id=40 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:15:18,856 [dag.py:405] (data_id=40 log_id=0) Succ predict
+INFO 2022-02-25 14:15:35,681 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769735.6815977
+INFO 2022-02-25 14:15:35,681 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769735.681909
+INFO 2022-02-25 14:15:35,682 [dag.py:369] (data_id=41 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:15:36,473 [dag.py:405] (data_id=41 log_id=0) Succ predict
+INFO 2022-02-25 14:15:38,877 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769738.877044
+INFO 2022-02-25 14:15:38,877 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769738.8773746
+INFO 2022-02-25 14:15:38,877 [dag.py:369] (data_id=42 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:15:39,651 [dag.py:405] (data_id=42 log_id=0) Succ predict
+INFO 2022-02-25 14:17:16,312 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769836.312323
+INFO 2022-02-25 14:17:16,312 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769836.312644
+INFO 2022-02-25 14:17:16,312 [dag.py:369] (data_id=43 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:17:17,108 [dag.py:405] (data_id=43 log_id=0) Succ predict
+INFO 2022-02-25 14:17:40,113 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769860.113514
+INFO 2022-02-25 14:17:40,113 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769860.1138127
+INFO 2022-02-25 14:17:40,113 [dag.py:369] (data_id=44 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:17:40,878 [dag.py:405] (data_id=44 log_id=0) Succ predict
+INFO 2022-02-25 14:17:56,777 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769876.7771733
+INFO 2022-02-25 14:17:56,777 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769876.7775044
+INFO 2022-02-25 14:17:56,777 [dag.py:369] (data_id=45 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:17:57,595 [dag.py:405] (data_id=45 log_id=0) Succ predict
+INFO 2022-02-25 14:18:16,809 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769896.8097217
+INFO 2022-02-25 14:18:16,810 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769896.810036
+INFO 2022-02-25 14:18:16,810 [dag.py:369] (data_id=46 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:18:17,632 [dag.py:405] (data_id=46 log_id=0) Succ predict
+INFO 2022-02-25 14:18:43,201 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645769923.2018878
+INFO 2022-02-25 14:18:43,202 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645769923.2022002
+INFO 2022-02-25 14:18:43,202 [dag.py:369] (data_id=47 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:18:44,002 [dag.py:405] (data_id=47 log_id=0) Succ predict
+INFO 2022-02-25 14:20:09,334 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645770009.3344612
+INFO 2022-02-25 14:20:09,334 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645770009.3347704
+INFO 2022-02-25 14:20:09,334 [dag.py:369] (data_id=48 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:20:10,173 [dag.py:405] (data_id=48 log_id=0) Succ predict
+INFO 2022-02-25 14:20:43,375 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645770043.3750997
+INFO 2022-02-25 14:20:43,375 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645770043.3754456
+INFO 2022-02-25 14:20:43,375 [dag.py:369] (data_id=49 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:20:44,143 [dag.py:405] (data_id=49 log_id=0) Succ predict
+INFO 2022-02-25 14:22:56,966 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645770176.9668052
+INFO 2022-02-25 14:22:56,967 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645770176.9671192
+INFO 2022-02-25 14:22:56,967 [dag.py:369] (data_id=50 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:22:58,146 [dag.py:405] (data_id=50 log_id=0) Succ predict
+INFO 2022-02-25 14:24:02,245 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645770242.2459517
+INFO 2022-02-25 14:24:02,246 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645770242.2462616
+INFO 2022-02-25 14:24:02,246 [dag.py:369] (data_id=51 log_id=0) Succ Generate ID 
+INFO 2022-02-25 14:24:03,422 [dag.py:405] (data_id=51 log_id=0) Succ predict
+INFO 2022-02-25 15:03:11,959 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645772591.9589903
+INFO 2022-02-25 15:03:11,961 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645772591.9613369
+INFO 2022-02-25 15:03:11,961 [dag.py:369] (data_id=52 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:03:13,270 [dag.py:405] (data_id=52 log_id=0) Succ predict
+INFO 2022-02-25 15:08:47,412 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645772927.4127545
+INFO 2022-02-25 15:08:47,413 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645772927.413101
+INFO 2022-02-25 15:08:47,413 [dag.py:369] (data_id=53 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:08:48,542 [dag.py:405] (data_id=53 log_id=0) Succ predict
+INFO 2022-02-25 15:23:52,438 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773832.4382308
+INFO 2022-02-25 15:23:52,438 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773832.43858
+INFO 2022-02-25 15:23:52,438 [dag.py:369] (data_id=54 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:23:53,614 [dag.py:405] (data_id=54 log_id=0) Succ predict
+INFO 2022-02-25 15:24:38,604 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773878.6042085
+INFO 2022-02-25 15:24:38,604 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773878.6045268
+INFO 2022-02-25 15:24:38,604 [dag.py:369] (data_id=55 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:24:39,726 [dag.py:405] (data_id=55 log_id=0) Succ predict
+INFO 2022-02-25 15:24:42,091 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773882.0911148
+INFO 2022-02-25 15:24:42,091 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773882.0914402
+INFO 2022-02-25 15:24:42,091 [dag.py:369] (data_id=56 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:24:43,206 [dag.py:405] (data_id=56 log_id=0) Succ predict
+INFO 2022-02-25 15:24:46,830 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773886.8306985
+INFO 2022-02-25 15:24:46,831 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773886.8310506
+INFO 2022-02-25 15:24:46,831 [dag.py:369] (data_id=57 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:24:47,939 [dag.py:405] (data_id=57 log_id=0) Succ predict
+INFO 2022-02-25 15:24:52,542 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773892.5428104
+INFO 2022-02-25 15:24:52,543 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773892.5431309
+INFO 2022-02-25 15:24:52,543 [dag.py:369] (data_id=58 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:24:53,670 [dag.py:405] (data_id=58 log_id=0) Succ predict
+INFO 2022-02-25 15:24:56,557 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773896.557169
+INFO 2022-02-25 15:24:56,557 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773896.5574684
+INFO 2022-02-25 15:24:56,557 [dag.py:369] (data_id=59 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:24:57,672 [dag.py:405] (data_id=59 log_id=0) Succ predict
+INFO 2022-02-25 15:25:00,157 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773900.156974
+INFO 2022-02-25 15:25:00,157 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773900.1572895
+INFO 2022-02-25 15:25:00,157 [dag.py:369] (data_id=60 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:01,281 [dag.py:405] (data_id=60 log_id=0) Succ predict
+INFO 2022-02-25 15:25:03,424 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773903.423969
+INFO 2022-02-25 15:25:03,424 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773903.424279
+INFO 2022-02-25 15:25:03,424 [dag.py:369] (data_id=61 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:04,542 [dag.py:405] (data_id=61 log_id=0) Succ predict
+INFO 2022-02-25 15:25:07,809 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773907.8091846
+INFO 2022-02-25 15:25:07,809 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773907.8095772
+INFO 2022-02-25 15:25:07,809 [dag.py:369] (data_id=62 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:08,939 [dag.py:405] (data_id=62 log_id=0) Succ predict
+INFO 2022-02-25 15:25:10,857 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773910.8572462
+INFO 2022-02-25 15:25:10,857 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773910.8575745
+INFO 2022-02-25 15:25:10,857 [dag.py:369] (data_id=63 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:11,974 [dag.py:405] (data_id=63 log_id=0) Succ predict
+INFO 2022-02-25 15:25:14,045 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773914.0452833
+INFO 2022-02-25 15:25:14,045 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773914.0456
+INFO 2022-02-25 15:25:14,045 [dag.py:369] (data_id=64 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:15,179 [dag.py:405] (data_id=64 log_id=0) Succ predict
+INFO 2022-02-25 15:25:17,137 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773917.1377444
+INFO 2022-02-25 15:25:17,138 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773917.1380928
+INFO 2022-02-25 15:25:17,138 [dag.py:369] (data_id=65 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:18,245 [dag.py:405] (data_id=65 log_id=0) Succ predict
+INFO 2022-02-25 15:25:19,794 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645773919.794515
+INFO 2022-02-25 15:25:19,794 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645773919.7948344
+INFO 2022-02-25 15:25:19,794 [dag.py:369] (data_id=66 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:25:20,907 [dag.py:405] (data_id=66 log_id=0) Succ predict
+INFO 2022-02-25 15:27:25,974 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645774045.9744053
+INFO 2022-02-25 15:27:25,974 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645774045.974921
+INFO 2022-02-25 15:27:25,975 [dag.py:369] (data_id=67 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:27:27,094 [dag.py:405] (data_id=67 log_id=0) Succ predict
+INFO 2022-02-25 15:27:30,429 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645774050.4292653
+INFO 2022-02-25 15:27:30,429 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645774050.4295638
+INFO 2022-02-25 15:27:30,429 [dag.py:369] (data_id=68 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:27:31,540 [dag.py:405] (data_id=68 log_id=0) Succ predict
+INFO 2022-02-25 15:27:34,971 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645774054.9710534
+INFO 2022-02-25 15:27:34,971 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645774054.9713824
+INFO 2022-02-25 15:27:34,971 [dag.py:369] (data_id=69 log_id=0) Succ Generate ID 
+INFO 2022-02-25 15:27:36,092 [dag.py:405] (data_id=69 log_id=0) Succ predict
+INFO 2022-02-25 23:44:21,166 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645803861.1664772
+INFO 2022-02-25 23:44:21,166 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645803861.1667948
+INFO 2022-02-25 23:44:21,166 [dag.py:369] (data_id=70 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:44:22,251 [dag.py:405] (data_id=70 log_id=0) Succ predict
+INFO 2022-02-25 23:45:46,059 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645803946.0594404
+INFO 2022-02-25 23:45:46,059 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645803946.0597904
+INFO 2022-02-25 23:45:46,059 [dag.py:369] (data_id=71 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:45:47,139 [dag.py:405] (data_id=71 log_id=0) Succ predict
+INFO 2022-02-25 23:45:50,108 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645803950.1085105
+INFO 2022-02-25 23:45:50,108 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645803950.1088154
+INFO 2022-02-25 23:45:50,109 [dag.py:369] (data_id=72 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:45:51,196 [dag.py:405] (data_id=72 log_id=0) Succ predict
+INFO 2022-02-25 23:45:55,008 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645803955.008302
+INFO 2022-02-25 23:45:55,008 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645803955.00864
+INFO 2022-02-25 23:45:55,008 [dag.py:369] (data_id=73 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:45:56,091 [dag.py:405] (data_id=73 log_id=0) Succ predict
+INFO 2022-02-25 23:46:06,216 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645803966.2159867
+INFO 2022-02-25 23:46:06,216 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645803966.2162933
+INFO 2022-02-25 23:46:06,216 [dag.py:369] (data_id=74 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:46:07,305 [dag.py:405] (data_id=74 log_id=0) Succ predict
+INFO 2022-02-25 23:48:58,773 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804138.77357
+INFO 2022-02-25 23:48:58,773 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804138.7738872
+INFO 2022-02-25 23:48:58,774 [dag.py:369] (data_id=75 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:48:59,900 [dag.py:405] (data_id=75 log_id=0) Succ predict
+INFO 2022-02-25 23:50:01,609 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804201.609855
+INFO 2022-02-25 23:50:01,610 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804201.610173
+INFO 2022-02-25 23:50:01,610 [dag.py:369] (data_id=76 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:50:02,747 [dag.py:405] (data_id=76 log_id=0) Succ predict
+INFO 2022-02-25 23:50:32,464 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804232.4646986
+INFO 2022-02-25 23:50:32,465 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804232.4650297
+INFO 2022-02-25 23:50:32,465 [dag.py:369] (data_id=77 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:50:33,552 [dag.py:405] (data_id=77 log_id=0) Succ predict
+INFO 2022-02-25 23:53:02,050 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804382.0503585
+INFO 2022-02-25 23:53:02,050 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804382.0507083
+INFO 2022-02-25 23:53:02,050 [dag.py:369] (data_id=78 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:53:03,167 [dag.py:405] (data_id=78 log_id=0) Succ predict
+INFO 2022-02-25 23:54:20,220 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804460.220617
+INFO 2022-02-25 23:54:20,220 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804460.220949
+INFO 2022-02-25 23:54:20,221 [dag.py:369] (data_id=79 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:54:21,303 [dag.py:405] (data_id=79 log_id=0) Succ predict
+INFO 2022-02-25 23:55:16,707 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804516.7076397
+INFO 2022-02-25 23:55:16,708 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804516.7079988
+INFO 2022-02-25 23:55:16,708 [dag.py:369] (data_id=80 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:55:17,800 [dag.py:405] (data_id=80 log_id=0) Succ predict
+INFO 2022-02-25 23:56:33,480 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804593.480215
+INFO 2022-02-25 23:56:33,480 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804593.4805224
+INFO 2022-02-25 23:56:33,480 [dag.py:369] (data_id=81 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:56:34,614 [dag.py:405] (data_id=81 log_id=0) Succ predict
+INFO 2022-02-25 23:56:46,486 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804606.4860978
+INFO 2022-02-25 23:56:46,486 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804606.4863956
+INFO 2022-02-25 23:56:46,486 [dag.py:369] (data_id=82 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:56:47,570 [dag.py:405] (data_id=82 log_id=0) Succ predict
+INFO 2022-02-25 23:58:09,078 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645804689.078773
+INFO 2022-02-25 23:58:09,079 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645804689.0790935
+INFO 2022-02-25 23:58:09,079 [dag.py:369] (data_id=83 log_id=0) Succ Generate ID 
+INFO 2022-02-25 23:58:10,160 [dag.py:405] (data_id=83 log_id=0) Succ predict
+INFO 2022-02-26 01:09:01,058 [loader.py:54] Loading faiss with AVX2 support.
+INFO 2022-02-26 01:09:01,058 [loader.py:58] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'",)
+INFO 2022-02-26 01:09:01,058 [loader.py:64] Loading faiss.
+INFO 2022-02-26 01:09:01,091 [loader.py:66] Successfully loaded faiss.
+WARNING 2022-02-26 01:09:01,097 [pipeline_server.py:509] [CONF] build_dag_each_worker not set, use default: False
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] client_type not set, use default: brpc
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] use_profile not set, use default: False
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] channel_size not set, use default: 0
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] tracer not set, use default: {}
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] channel_recv_frist_arrive not set, use default: False
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] interval_s not set, use default: -1
+WARNING 2022-02-26 01:09:01,098 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:09:01,099 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:09:01,100 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+INFO 2022-02-26 01:09:01,107 [operator.py:181] local_service_conf: {'model_config': '../../models/general_PPLCNet_x2_5_lite_v1.0_serving', 'device_type': 1, 'devices': '0', 'client_type': 'local_predictor', 'fetch_list': ['features'], 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:09:01,107 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['features'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:09:01,107 [operator.py:285] rec 
+	input_ops: det,
+	server_endpoints: None
+	fetch_list: ['features']
+	client_config: ../../models/general_PPLCNet_x2_5_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:09:01,107 [operator.py:181] local_service_conf: {'client_type': 'local_predictor', 'device_type': 1, 'devices': '0', 'fetch_list': ['save_infer_model/scale_0.tmp_1'], 'model_config': '../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/', 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:09:01,108 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['save_infer_model/scale_0.tmp_1'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:09:01,108 [operator.py:285] det 
+	input_ops: @DAGExecutor,
+	server_endpoints: None
+	fetch_list: ['save_infer_model/scale_0.tmp_1']
+	client_config: ../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:09:01,108 [pipeline_server.py:215] ============= PIPELINE SERVER =============
+INFO 2022-02-26 01:09:01,108 [pipeline_server.py:218] 
+{
+    "worker_num":1,
+    "http_port":18081,
+    "rpc_port":9994,
+    "dag":{
+        "is_thread_op":false,
+        "retry":1,
+        "client_type":"brpc",
+        "use_profile":false,
+        "channel_size":0,
+        "tracer":{
+            "interval_s":-1
+        },
+        "channel_recv_frist_arrive":false
+    },
+    "op":{
+        "rec":{
+            "concurrency":1,
+            "local_service_conf":{
+                "model_config":"../../models/general_PPLCNet_x2_5_lite_v1.0_serving",
+                "device_type":1,
+                "devices":"0",
+                "client_type":"local_predictor",
+                "fetch_list":[
+                    "features"
+                ],
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        },
+        "det":{
+            "concurrency":1,
+            "local_service_conf":{
+                "client_type":"local_predictor",
+                "device_type":1,
+                "devices":"0",
+                "fetch_list":[
+                    "save_infer_model/scale_0.tmp_1"
+                ],
+                "model_config":"../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/",
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        }
+    },
+    "build_dag_each_worker":false
+}
+INFO 2022-02-26 01:09:01,108 [pipeline_server.py:223] -------------------------------------------
+INFO 2022-02-26 01:09:01,108 [operator.py:308] Op(rec) use local rpc service at port: []
+INFO 2022-02-26 01:09:01,108 [operator.py:308] Op(det) use local rpc service at port: []
+INFO 2022-02-26 01:09:01,122 [dag.py:496] [DAG] Succ init
+INFO 2022-02-26 01:09:01,123 [dag.py:659] ================= USED OP =================
+INFO 2022-02-26 01:09:01,123 [dag.py:662] rec
+INFO 2022-02-26 01:09:01,123 [dag.py:662] det
+INFO 2022-02-26 01:09:01,123 [dag.py:663] -------------------------------------------
+INFO 2022-02-26 01:09:01,123 [dag.py:680] ================== DAG ====================
+INFO 2022-02-26 01:09:01,123 [dag.py:682] (VIEW 0)
+INFO 2022-02-26 01:09:01,123 [dag.py:684]   [@DAGExecutor]
+INFO 2022-02-26 01:09:01,123 [dag.py:686]     - det
+INFO 2022-02-26 01:09:01,123 [dag.py:682] (VIEW 1)
+INFO 2022-02-26 01:09:01,123 [dag.py:684]   [det]
+INFO 2022-02-26 01:09:01,123 [dag.py:686]     - rec
+INFO 2022-02-26 01:09:01,123 [dag.py:682] (VIEW 2)
+INFO 2022-02-26 01:09:01,123 [dag.py:684]   [rec]
+INFO 2022-02-26 01:09:01,123 [dag.py:687] -------------------------------------------
+INFO 2022-02-26 01:09:01,144 [dag.py:730] op:det add input channel.
+INFO 2022-02-26 01:09:01,160 [dag.py:730] op:rec add input channel.
+INFO 2022-02-26 01:09:01,160 [dag.py:739] pred_op:det add output channel
+INFO 2022-02-26 01:09:01,176 [dag.py:759] last op:rec add output channel
+INFO 2022-02-26 01:09:01,177 [dag.py:800] [DAG] Succ build DAG
+INFO 2022-02-26 01:09:01,182 [dag.py:832] [DAG] start
+INFO 2022-02-26 01:09:01,183 [dag.py:182] [DAG] set in channel succ, name [@DAGExecutor]
+INFO 2022-02-26 01:09:01,187 [pipeline_server.py:51] [PipelineServicer] succ init
+INFO 2022-02-26 01:09:01,225 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:09:01,226 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:09:01,226 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:09:01,234 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:09:01,235 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:09:01,236 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:09:02,646 [local_predict.py:137] pdmodel_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:09:02,647 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/general_PPLCNet_x2_5_lite_v1.0_serving, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:09:02,647 [local_predict.py:137] pdmodel_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:09:02,647 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:09:03,118 [operator.py:1317] [rec|0] Succ init
+INFO 2022-02-26 01:09:03,641 [operator.py:1317] [det|0] Succ init
+INFO 2022-02-26 01:09:31,970 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645808971.9705937
+INFO 2022-02-26 01:09:31,971 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645808971.9714336
+INFO 2022-02-26 01:09:31,971 [dag.py:369] (data_id=0 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:09:33,065 [dag.py:405] (data_id=0 log_id=0) Succ predict
+INFO 2022-02-26 01:10:39,338 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645809039.3386037
+INFO 2022-02-26 01:10:39,338 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645809039.3389165
+INFO 2022-02-26 01:10:39,339 [dag.py:369] (data_id=1 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:10:40,418 [dag.py:405] (data_id=1 log_id=0) Succ predict
+INFO 2022-02-26 01:10:52,287 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645809052.2875495
+INFO 2022-02-26 01:10:52,287 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645809052.287903
+INFO 2022-02-26 01:10:52,288 [dag.py:369] (data_id=2 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:10:53,434 [dag.py:405] (data_id=2 log_id=0) Succ predict
+INFO 2022-02-26 01:11:14,508 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645809074.5089152
+INFO 2022-02-26 01:11:14,509 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645809074.5092754
+INFO 2022-02-26 01:11:14,509 [dag.py:369] (data_id=3 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:11:15,616 [dag.py:405] (data_id=3 log_id=0) Succ predict
+INFO 2022-02-26 01:34:37,974 [loader.py:54] Loading faiss with AVX2 support.
+INFO 2022-02-26 01:34:37,974 [loader.py:58] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'",)
+INFO 2022-02-26 01:34:37,974 [loader.py:64] Loading faiss.
+INFO 2022-02-26 01:34:37,988 [loader.py:66] Successfully loaded faiss.
+WARNING 2022-02-26 01:34:37,993 [pipeline_server.py:509] [CONF] build_dag_each_worker not set, use default: False
+WARNING 2022-02-26 01:34:37,993 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] client_type not set, use default: brpc
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] use_profile not set, use default: False
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] channel_size not set, use default: 0
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] tracer not set, use default: {}
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] channel_recv_frist_arrive not set, use default: False
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] interval_s not set, use default: -1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:34:37,994 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:34:37,995 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:34:37,996 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:34:37,996 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+INFO 2022-02-26 01:34:38,002 [operator.py:181] local_service_conf: {'model_config': '../../models/general_PPLCNet_x2_5_lite_v1.0_serving', 'device_type': 1, 'devices': '0', 'client_type': 'local_predictor', 'fetch_list': ['features'], 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:34:38,002 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['features'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:34:38,002 [operator.py:285] rec 
+	input_ops: det,
+	server_endpoints: None
+	fetch_list: ['features']
+	client_config: ../../models/general_PPLCNet_x2_5_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:34:38,002 [operator.py:181] local_service_conf: {'client_type': 'local_predictor', 'device_type': 1, 'devices': '0', 'fetch_list': ['save_infer_model/scale_0.tmp_1'], 'model_config': '../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/', 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:34:38,002 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['save_infer_model/scale_0.tmp_1'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:34:38,002 [operator.py:285] det 
+	input_ops: @DAGExecutor,
+	server_endpoints: None
+	fetch_list: ['save_infer_model/scale_0.tmp_1']
+	client_config: ../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:34:38,003 [pipeline_server.py:215] ============= PIPELINE SERVER =============
+INFO 2022-02-26 01:34:38,003 [pipeline_server.py:218] 
+{
+    "worker_num":1,
+    "http_port":18081,
+    "rpc_port":9994,
+    "dag":{
+        "is_thread_op":false,
+        "retry":1,
+        "client_type":"brpc",
+        "use_profile":false,
+        "channel_size":0,
+        "tracer":{
+            "interval_s":-1
+        },
+        "channel_recv_frist_arrive":false
+    },
+    "op":{
+        "rec":{
+            "concurrency":1,
+            "local_service_conf":{
+                "model_config":"../../models/general_PPLCNet_x2_5_lite_v1.0_serving",
+                "device_type":1,
+                "devices":"0",
+                "client_type":"local_predictor",
+                "fetch_list":[
+                    "features"
+                ],
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        },
+        "det":{
+            "concurrency":1,
+            "local_service_conf":{
+                "client_type":"local_predictor",
+                "device_type":1,
+                "devices":"0",
+                "fetch_list":[
+                    "save_infer_model/scale_0.tmp_1"
+                ],
+                "model_config":"../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/",
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        }
+    },
+    "build_dag_each_worker":false
+}
+INFO 2022-02-26 01:34:38,003 [pipeline_server.py:223] -------------------------------------------
+INFO 2022-02-26 01:34:38,003 [operator.py:308] Op(rec) use local rpc service at port: []
+INFO 2022-02-26 01:34:38,003 [operator.py:308] Op(det) use local rpc service at port: []
+INFO 2022-02-26 01:34:38,012 [dag.py:496] [DAG] Succ init
+INFO 2022-02-26 01:34:38,013 [dag.py:659] ================= USED OP =================
+INFO 2022-02-26 01:34:38,013 [dag.py:662] rec
+INFO 2022-02-26 01:34:38,013 [dag.py:662] det
+INFO 2022-02-26 01:34:38,013 [dag.py:663] -------------------------------------------
+INFO 2022-02-26 01:34:38,013 [dag.py:680] ================== DAG ====================
+INFO 2022-02-26 01:34:38,013 [dag.py:682] (VIEW 0)
+INFO 2022-02-26 01:34:38,013 [dag.py:684]   [@DAGExecutor]
+INFO 2022-02-26 01:34:38,013 [dag.py:686]     - det
+INFO 2022-02-26 01:34:38,014 [dag.py:682] (VIEW 1)
+INFO 2022-02-26 01:34:38,014 [dag.py:684]   [det]
+INFO 2022-02-26 01:34:38,014 [dag.py:686]     - rec
+INFO 2022-02-26 01:34:38,014 [dag.py:682] (VIEW 2)
+INFO 2022-02-26 01:34:38,014 [dag.py:684]   [rec]
+INFO 2022-02-26 01:34:38,014 [dag.py:687] -------------------------------------------
+INFO 2022-02-26 01:34:38,034 [dag.py:730] op:det add input channel.
+INFO 2022-02-26 01:34:38,050 [dag.py:730] op:rec add input channel.
+INFO 2022-02-26 01:34:38,051 [dag.py:739] pred_op:det add output channel
+INFO 2022-02-26 01:34:38,066 [dag.py:759] last op:rec add output channel
+INFO 2022-02-26 01:34:38,067 [dag.py:800] [DAG] Succ build DAG
+INFO 2022-02-26 01:34:38,073 [dag.py:832] [DAG] start
+INFO 2022-02-26 01:34:38,074 [dag.py:182] [DAG] set in channel succ, name [@DAGExecutor]
+INFO 2022-02-26 01:34:38,083 [pipeline_server.py:51] [PipelineServicer] succ init
+INFO 2022-02-26 01:34:38,107 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:34:38,108 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:34:38,108 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:34:38,134 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:34:38,134 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:34:38,135 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:34:39,029 [local_predict.py:137] pdmodel_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:34:39,030 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/general_PPLCNet_x2_5_lite_v1.0_serving, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:34:39,064 [local_predict.py:137] pdmodel_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:34:39,064 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:34:39,239 [operator.py:1317] [rec|0] Succ init
+INFO 2022-02-26 01:34:39,715 [operator.py:1317] [det|0] Succ init
+INFO 2022-02-26 01:34:43,089 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645810483.0888956
+INFO 2022-02-26 01:34:43,089 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645810483.0897582
+INFO 2022-02-26 01:34:43,090 [dag.py:369] (data_id=0 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:34:44,202 [dag.py:405] (data_id=0 log_id=0) Succ predict
+INFO 2022-02-26 01:40:09,866 [loader.py:54] Loading faiss with AVX2 support.
+INFO 2022-02-26 01:40:09,867 [loader.py:58] Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'",)
+INFO 2022-02-26 01:40:09,867 [loader.py:64] Loading faiss.
+INFO 2022-02-26 01:40:09,880 [loader.py:66] Successfully loaded faiss.
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] build_dag_each_worker not set, use default: False
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] client_type not set, use default: brpc
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] use_profile not set, use default: False
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] channel_size not set, use default: 0
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] tracer not set, use default: {}
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] channel_recv_frist_arrive not set, use default: False
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] interval_s not set, use default: -1
+WARNING 2022-02-26 01:40:09,893 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] timeout not set, use default: -1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] retry not set, use default: 1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] batch_size not set, use default: 1
+WARNING 2022-02-26 01:40:09,894 [pipeline_server.py:509] [CONF] auto_batching_timeout not set, use default: -1
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] workdir not set, use default: 
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] thread_num not set, use default: 2
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] mem_optim not set, use default: True
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] ir_optim not set, use default: False
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] precision not set, use default: fp32
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] use_calib not set, use default: False
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] use_mkldnn not set, use default: False
+WARNING 2022-02-26 01:40:09,895 [pipeline_server.py:509] [CONF] mkldnn_cache_capacity not set, use default: 0
+INFO 2022-02-26 01:40:09,900 [operator.py:181] local_service_conf: {'model_config': '../../models/general_PPLCNet_x2_5_lite_v1.0_serving', 'device_type': 1, 'devices': '0', 'client_type': 'local_predictor', 'fetch_list': ['features'], 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:40:09,900 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['features'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:40:09,900 [operator.py:285] rec 
+	input_ops: det,
+	server_endpoints: None
+	fetch_list: ['features']
+	client_config: ../../models/general_PPLCNet_x2_5_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:40:09,900 [operator.py:181] local_service_conf: {'client_type': 'local_predictor', 'device_type': 1, 'devices': '0', 'fetch_list': ['save_infer_model/scale_0.tmp_1'], 'model_config': '../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/', 'workdir': '', 'thread_num': 2, 'mem_optim': True, 'ir_optim': False, 'precision': 'fp32', 'use_calib': False, 'use_mkldnn': False, 'mkldnn_cache_capacity': 0}
+INFO 2022-02-26 01:40:09,900 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:['save_infer_model/scale_0.tmp_1'], precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:40:09,900 [operator.py:285] det 
+	input_ops: @DAGExecutor,
+	server_endpoints: None
+	fetch_list: ['save_infer_model/scale_0.tmp_1']
+	client_config: ../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/serving_server_conf.prototxt
+	concurrency: 1,
+	timeout(s): -1,
+	retry: 1,
+	batch_size: 1,
+	auto_batching_timeout(s): None
+INFO 2022-02-26 01:40:09,901 [pipeline_server.py:215] ============= PIPELINE SERVER =============
+INFO 2022-02-26 01:40:09,901 [pipeline_server.py:218] 
+{
+    "worker_num":1,
+    "http_port":18081,
+    "rpc_port":9994,
+    "dag":{
+        "is_thread_op":false,
+        "retry":1,
+        "client_type":"brpc",
+        "use_profile":false,
+        "channel_size":0,
+        "tracer":{
+            "interval_s":-1
+        },
+        "channel_recv_frist_arrive":false
+    },
+    "op":{
+        "rec":{
+            "concurrency":1,
+            "local_service_conf":{
+                "model_config":"../../models/general_PPLCNet_x2_5_lite_v1.0_serving",
+                "device_type":1,
+                "devices":"0",
+                "client_type":"local_predictor",
+                "fetch_list":[
+                    "features"
+                ],
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        },
+        "det":{
+            "concurrency":1,
+            "local_service_conf":{
+                "client_type":"local_predictor",
+                "device_type":1,
+                "devices":"0",
+                "fetch_list":[
+                    "save_infer_model/scale_0.tmp_1"
+                ],
+                "model_config":"../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/",
+                "workdir":"",
+                "thread_num":2,
+                "mem_optim":true,
+                "ir_optim":false,
+                "precision":"fp32",
+                "use_calib":false,
+                "use_mkldnn":false,
+                "mkldnn_cache_capacity":0
+            },
+            "timeout":-1,
+            "retry":1,
+            "batch_size":1,
+            "auto_batching_timeout":-1
+        }
+    },
+    "build_dag_each_worker":false
+}
+INFO 2022-02-26 01:40:09,901 [pipeline_server.py:223] -------------------------------------------
+INFO 2022-02-26 01:40:09,901 [operator.py:308] Op(rec) use local rpc service at port: []
+INFO 2022-02-26 01:40:09,901 [operator.py:308] Op(det) use local rpc service at port: []
+INFO 2022-02-26 01:40:09,910 [dag.py:496] [DAG] Succ init
+INFO 2022-02-26 01:40:09,911 [dag.py:659] ================= USED OP =================
+INFO 2022-02-26 01:40:09,911 [dag.py:662] rec
+INFO 2022-02-26 01:40:09,911 [dag.py:662] det
+INFO 2022-02-26 01:40:09,911 [dag.py:663] -------------------------------------------
+INFO 2022-02-26 01:40:09,911 [dag.py:680] ================== DAG ====================
+INFO 2022-02-26 01:40:09,911 [dag.py:682] (VIEW 0)
+INFO 2022-02-26 01:40:09,911 [dag.py:684]   [@DAGExecutor]
+INFO 2022-02-26 01:40:09,911 [dag.py:686]     - det
+INFO 2022-02-26 01:40:09,911 [dag.py:682] (VIEW 1)
+INFO 2022-02-26 01:40:09,911 [dag.py:684]   [det]
+INFO 2022-02-26 01:40:09,911 [dag.py:686]     - rec
+INFO 2022-02-26 01:40:09,911 [dag.py:682] (VIEW 2)
+INFO 2022-02-26 01:40:09,911 [dag.py:684]   [rec]
+INFO 2022-02-26 01:40:09,911 [dag.py:687] -------------------------------------------
+INFO 2022-02-26 01:40:09,932 [dag.py:730] op:det add input channel.
+INFO 2022-02-26 01:40:09,950 [dag.py:730] op:rec add input channel.
+INFO 2022-02-26 01:40:09,950 [dag.py:739] pred_op:det add output channel
+INFO 2022-02-26 01:40:09,966 [dag.py:759] last op:rec add output channel
+INFO 2022-02-26 01:40:09,966 [dag.py:800] [DAG] Succ build DAG
+INFO 2022-02-26 01:40:09,972 [dag.py:832] [DAG] start
+INFO 2022-02-26 01:40:09,973 [dag.py:182] [DAG] set in channel succ, name [@DAGExecutor]
+INFO 2022-02-26 01:40:09,976 [pipeline_server.py:51] [PipelineServicer] succ init
+INFO 2022-02-26 01:40:10,019 [local_service_handler.py:172] Models(../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:40:10,020 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:40:10,020 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:40:10,021 [local_service_handler.py:172] Models(../../models/general_PPLCNet_x2_5_lite_v1.0_serving) will be launched by device gpu. use_gpu:True, use_trt:False, use_lite:False, use_xpu:False, device_type:1, devices:[0], mem_optim:True, ir_optim:False, use_profile:False, thread_num:2, client_type:local_predictor, fetch_names:None, precision:fp32, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None
+INFO 2022-02-26 01:40:10,021 [operator.py:1306] Init cuda env in process 0
+INFO 2022-02-26 01:40:10,021 [local_service_handler.py:208] GET_CLIENT : concurrency_idx=0, device_num=1
+INFO 2022-02-26 01:40:10,979 [local_predict.py:137] pdmodel_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:40:10,979 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving/, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:40:11,085 [local_predict.py:137] pdmodel_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdmodel'], pdiparams_file_list:['../../models/general_PPLCNet_x2_5_lite_v1.0_serving/inference.pdiparams']
+INFO 2022-02-26 01:40:11,085 [local_predict.py:153] LocalPredictor load_model_config params: model_path:../../models/general_PPLCNet_x2_5_lite_v1.0_serving, use_gpu:True, gpu_id:0, use_profile:False, thread_num:2, mem_optim:True, ir_optim:False, use_trt:False, use_lite:False, use_xpu:False, precision:fp32, use_calib:False, use_mkldnn:False, mkldnn_cache_capacity:0, mkldnn_op_list:None, mkldnn_bf16_op_list:None, use_feed_fetch_ops:False, 
+INFO 2022-02-26 01:40:11,290 [operator.py:1317] [rec|0] Succ init
+INFO 2022-02-26 01:40:11,656 [operator.py:1317] [det|0] Succ init
+INFO 2022-02-26 01:44:50,253 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811090.2538123
+INFO 2022-02-26 01:44:50,254 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811090.2546892
+INFO 2022-02-26 01:44:50,255 [dag.py:369] (data_id=0 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:44:51,380 [dag.py:405] (data_id=0 log_id=0) Succ predict
+INFO 2022-02-26 01:45:37,786 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811137.7864127
+INFO 2022-02-26 01:45:37,786 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811137.7867377
+INFO 2022-02-26 01:45:37,786 [dag.py:369] (data_id=1 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:45:38,935 [dag.py:405] (data_id=1 log_id=0) Succ predict
+INFO 2022-02-26 01:46:34,153 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811194.1534257
+INFO 2022-02-26 01:46:34,153 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811194.1537552
+INFO 2022-02-26 01:46:34,153 [dag.py:369] (data_id=2 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:46:35,218 [dag.py:405] (data_id=2 log_id=0) Succ predict
+INFO 2022-02-26 01:46:50,559 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811210.5590801
+INFO 2022-02-26 01:46:50,559 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811210.559431
+INFO 2022-02-26 01:46:50,559 [dag.py:369] (data_id=3 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:46:51,570 [dag.py:405] (data_id=3 log_id=0) Succ predict
+INFO 2022-02-26 01:47:19,294 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811239.2939801
+INFO 2022-02-26 01:47:19,294 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811239.2942965
+INFO 2022-02-26 01:47:19,294 [dag.py:369] (data_id=4 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:47:20,187 [dag.py:405] (data_id=4 log_id=0) Succ predict
+INFO 2022-02-26 01:52:54,087 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811574.087611
+INFO 2022-02-26 01:52:54,088 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811574.087995
+INFO 2022-02-26 01:52:54,088 [dag.py:369] (data_id=5 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:52:55,086 [dag.py:405] (data_id=5 log_id=0) Succ predict
+INFO 2022-02-26 01:54:38,508 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811678.508939
+INFO 2022-02-26 01:54:38,509 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811678.5092723
+INFO 2022-02-26 01:54:38,509 [dag.py:369] (data_id=6 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:54:39,581 [dag.py:405] (data_id=6 log_id=0) Succ predict
+INFO 2022-02-26 01:55:51,589 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645811751.5889611
+INFO 2022-02-26 01:55:51,589 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645811751.5892794
+INFO 2022-02-26 01:55:51,589 [dag.py:369] (data_id=7 log_id=0) Succ Generate ID 
+INFO 2022-02-26 01:55:52,650 [dag.py:405] (data_id=7 log_id=0) Succ predict
+INFO 2022-02-26 02:01:22,231 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645812082.23127
+INFO 2022-02-26 02:01:22,231 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645812082.2315829
+INFO 2022-02-26 02:01:22,231 [dag.py:369] (data_id=8 log_id=0) Succ Generate ID 
+INFO 2022-02-26 02:01:23,293 [dag.py:405] (data_id=8 log_id=0) Succ predict
+INFO 2022-02-26 02:03:56,928 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645812236.9267745
+INFO 2022-02-26 02:03:56,929 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645812236.9291866
+INFO 2022-02-26 02:03:56,929 [dag.py:369] (data_id=9 log_id=0) Succ Generate ID 
+INFO 2022-02-26 02:03:57,995 [dag.py:405] (data_id=9 log_id=0) Succ predict
+INFO 2022-02-26 02:07:55,845 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645812475.8459058
+INFO 2022-02-26 02:07:55,846 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645812475.8462257
+INFO 2022-02-26 02:07:55,846 [dag.py:369] (data_id=10 log_id=0) Succ Generate ID 
+INFO 2022-02-26 02:07:56,794 [dag.py:405] (data_id=10 log_id=0) Succ predict
+INFO 2022-02-26 02:18:03,677 [pipeline_server.py:56] (log_id=0) inference request name:recognition self.name:recognition time:1645813083.677227
+INFO 2022-02-26 02:18:03,677 [operator.py:1723] RequestOp unpack one request. log_id:0, clientip:             name:recognition, method:prediction, time:1645813083.6775415
+INFO 2022-02-26 02:18:03,677 [dag.py:369] (data_id=11 log_id=0) Succ Generate ID 
+INFO 2022-02-26 02:18:04,741 [dag.py:405] (data_id=11 log_id=0) Succ predict
