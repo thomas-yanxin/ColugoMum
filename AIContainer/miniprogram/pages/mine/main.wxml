@@ -3,7 +3,7 @@
   <!-- 登录及头像模块 -->
   <block wx:if="{{!hasUserInfo}}">
     <view class="UCenter-bg" >
-        <button bindtap="getUserProfile" class="cu-btn bg-green shadow-blur round lg">登录</button>
+        <button bindtap="getUserProfile" class="cu-btn bg-green shadow-blur round lg" style="font-family: SimHei;">登录</button>
     </view>
   </block>
   <block wx:else>
@@ -38,19 +38,19 @@
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/mine/information/information" hover-class="none">
         <text class="cuIcon-profile text-green"></text>
-        <text class="text-grey">账号信息</text>
+        <text class="text-grey" style="font-family: SimHei;">账号信息</text>
       </navigator>
     </view>
     <view class="cu-item arrow">
       <button class="cu-btn content" open-type="feedback">
         <text class="cuIcon-writefill text-cyan"></text>
-        <text class="text-grey">意见反馈</text>
+        <text class="text-grey" style="font-family: SimHei;">意见反馈</text>
       </button>
     </view>
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/test/list" hover-class="none">
         <text class="cuIcon-creativefill text-orange"></text>
-        <text class="text-grey">Bug测试</text>
+        <text class="text-grey" style="font-family: SimHei;">Bug测试</text>
       </navigator>
     </view>
   </view>

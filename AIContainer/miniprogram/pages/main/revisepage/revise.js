@@ -63,7 +63,7 @@ Page({
       })
       //请求商品列表数据
       wx.request({
-        url: 'http://106.12.78.130/search/',
+        url: app.globalData.ip+'/search/',
         data:{
           'sessionID':wx.getStorageSync('sessionID'),
           'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
@@ -105,7 +105,7 @@ Page({
       })
       //请求商品列表数据
       wx.request({
-        url: 'http://106.12.78.130/search/',
+        url: app.globalData.ip+'/search/',
         data:{
           'sessionID':wx.getStorageSync('sessionID'),
           'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
@@ -137,7 +137,7 @@ Page({
     var that = this
     if(this.data.searchtarget){
       wx.request({
-        url: 'http://106.12.78.130/find/',
+        url: app.globalData.ip+'/find/',
         data:{
           'sessionID':wx.getStorageSync('sessionID'),
           'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
@@ -194,7 +194,7 @@ Page({
   },
   //开商品详情页
   showModal(e) {
-    this.data.imgList.push('http://106.12.78.130:8080/pictures/PaddleClas/dataset/retail/'+e.currentTarget.dataset.product[3])
+    this.data.imgList.push('http://47.100.88.229/'+e.currentTarget.dataset.product[3])
     this.setData({
       modalName: e.currentTarget.dataset.product,
       imgList:this.data.imgList,
@@ -250,7 +250,7 @@ Page({
     var formData = e.detail.value
     if(e.detail.target.dataset.choice=='revise'){
       //判断表单是否为空
-      if(formData.productname&&formData.productunitprice&&this.data.imgList[0]!=null){
+      if(formData.productname&&formData.productunitprice&&formData.productstockadd&&this.data.imgList[0]!=null){
         wx.showModal({
           title: '修改确认',
           content: '请检查修改信息正确无误',
@@ -265,13 +265,14 @@ Page({
                 })
                 //上传表单
                 wx.uploadFile({
-                  url: 'http://106.12.78.130/replace/',
+                  url: app.globalData.ip+'/replace/',
                   filePath: this.data.imgList[0],
                   name: 'productimage',
                   formData:{
                     'number':this.data.modalName[0],
                     'container_name':formData.productname,
                     'container_price':formData.productunitprice,
+                    'container_stock':formData.productstockadd,
                     'isimageRevised':this.data.isimageRevised,
                     'sessionID':wx.getStorageSync('sessionID'),
                     'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
@@ -309,11 +310,12 @@ Page({
                 })
                 //提交表单
                 wx.request({
-                  url: 'http://106.12.78.130/replace/',
+                  url: app.globalData.ip+'/replace/',
                   data:{
                     'number':this.data.modalName[0],
                     'container_name':formData.productname,
                     'container_price':formData.productunitprice,
+                    'container_stock':formData.productstockadd,
                     'isimageRevised':this.data.isimageRevised,
                     'sessionID':wx.getStorageSync('sessionID'),
                     'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
@@ -372,7 +374,7 @@ Page({
             })
             console.log(this.data.modalName[0])
             wx.request({
-              url: 'http://106.12.78.130/delete/',
+              url: app.globalData.ip+'/delete/',
               data:{
                 'number':JSON.stringify(this.data.modalName[0]),
                 'container_name':formData.productname,

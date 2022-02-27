@@ -2,10 +2,10 @@
 <!-- 顶部操作条 -->
 <view class="box bg-gradual-blue" style="padding-top: {{statusbarheight}}px;">
 	<view class="cu-bar bg-gradual-blue">
-		<view class="action" bindtap="onClickBack"> 
+		<view class="action" bindtap="onClickBack" style="font-family: SimHei;"> 
 			<text class="cuIcon-back text-gray"></text> 返回
 		</view>
-		<view class="content text-bold">商品上传	</view>
+		<view class="content text-bold" style="font-family: SimHei;">商品上传	</view>
 	</view>
 </view>
 <!-- 上传页面提示 -->
@@ -13,24 +13,28 @@
 	<view class="solids-bottom padding-xs flex align-center">
     <view class="flex-sub text-center">
       <view class="solid-bottom text-xl padding">
-        <text class="text-black text-bold">商品信息</text>
+        <text class="text-black text-bold" style="font-family: SimHei;">商品信息</text>
       </view>
-      <view class="padding">输入商品名称、单价及图片后点击上传</view>
+      <view class="padding" style="font-family: SimHei;">输入商品名称、单价及图片后点击上传</view>
     </view>
   </view>
 </view>
 <!-- 上传表单 -->
 <form bindsubmit="formSubmit">	
-    <view class="cu-form-group margin-top">
-		<view class="title">商品名称</view>
-		<input placeholder="请输入商品名称" name="productname" value="{{formvalue}}"></input>
+  <view class="cu-form-group margin-top">
+		<view class="title" style="font-family: SimHei;">商品名称</view>
+		<input placeholder="请输入商品名称" name="productname" value="{{formvalue}}" style="font-family: SimHei;"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">商品单价</view>
-		<input placeholder="请输入商品单价(元)" name="productunitprice" value="{{formvalue}}"></input>
+		<view class="title" style="font-family: SimHei;">商品单价</view>
+		<input placeholder="请输入商品单价(元)" name="productunitprice" value="{{formvalue}}" style="font-family: SimHei;"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="font-family: SimHei;">商品库存</view>
+		<input placeholder="请输入商品库存(件)" name="productstock" value="{{formvalue}}" style="font-family: SimHei;"></input>
 	</view>
 	<view class="cu-bar bg-white margin-top">
-		<view class="action">
+		<view class="action" style="font-family: SimHei;">
 			商品图片
 		</view>
 		<view class="action">
@@ -53,7 +57,7 @@
 	<!-- 上传按钮 -->
 	<view class="box" style="margin-top: 150rpx;">
 		<view class="cu-bar btn-group">
-			<button class="cu-btn bg-green shadow-blur round lg" form-type="submit">上传</button>
+			<button class="cu-btn bg-green shadow-blur round lg" form-type="submit" style="font-family: SimHei;">上传</button>
 		</view>
 	</view>
 </form>

@@ -67,7 +67,7 @@ Page({
     var that = this
     var formData = e.detail.value
     //判断表单是否为空
-    if(formData.productname&&formData.productunitprice&&this.data.imgList[0]!=null){
+    if(formData.productname&&formData.productunitprice&&formData.productstock&&this.data.imgList[0]!=null){
       wx.showModal({
         title: '上传确认',
         content: '请检查上传信息正确无误',
@@ -101,12 +101,13 @@ Page({
             })
             //上传表单
             wx.uploadFile({
-              url: 'http://106.12.78.130/record/',
+              url: app.globalData.ip+'/record/',
               filePath: this.data.imgList[0],
               name: 'productimage',
               formData:{
                 'container_name':formData.productname,
                 'container_price':formData.productunitprice,
+                'container_stock':formData.productstock,
                 'sessionID':wx.getStorageSync('sessionID'),
                 'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
                 'code':JSON.stringify(wx.getStorageSync('code'))
@@ -116,7 +117,9 @@ Page({
                 'Content-Type':'multipart/form-data'
               },
               success(res){
+                console.log(res.data)
                 var result = JSON.parse(res.data)
+                console.log(result)
                 wx.hideLoading()
                 if(result.state=='true'){
                   app.globalData.sessionID = result.sessionID

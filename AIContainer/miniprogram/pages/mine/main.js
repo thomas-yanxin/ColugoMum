@@ -53,7 +53,7 @@ Page({
             if(res.code){
               console.log(app.globalData.userInfo)
               wx.request({
-                url: 'http://106.12.78.130/login_in/',
+                url: 'http://47.100.88.229:8001/login_in/',
                 data:{
                   'code':res.code,
                   'userinfo':JSON.stringify(app.globalData.userInfo)

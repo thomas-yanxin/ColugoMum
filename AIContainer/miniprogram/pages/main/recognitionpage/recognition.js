@@ -17,6 +17,8 @@ Page({
     result:[],
     //总价
     price_all:'',
+    //商品编号列表（数据库用）
+    numberlist:'',
   },
 
   /**
@@ -95,7 +97,7 @@ Page({
       success: res => {
         var image_base64 = res.data
           wx.request({
-            url: 'http://106.12.78.130/reference/',
+            url: app.globalData.ip+'/reference/',
             method:'POST',
             header: {"content-type": "application/x-www-form-urlencoded"},
             data:{
@@ -119,17 +121,20 @@ Page({
                 })
               }
               else{
-                for(var i=0;i<=res.data.container.length/2;i=i+2){
-                  var temp = []
-                  temp.push(res.data.container[i])
-                  temp.push(res.data.container[i+1])
-                  this.data.result.push(temp)
-                }
+                // for(var i=0;i<res.data.container.length/2;i=i+1){
+                //   var temp = []
+                //   temp.push(res.data.container[2*i])
+                //   temp.push(res.data.container[2*i+1])
+                //   this.data.result.push(temp)
+                // }
+                
                 this.setData({
                   isResult:true,
-                  result:this.data.result,
-                  resultimg:res.data.picture_test,
+                  // result:this.data.result,
+                  result:res.data.container,
+                  // resultimg:res.data.picture_test,
                   price_all:res.data.price_all,
+                  numberlist:res.data.number,
                 })
               }
             }
@@ -139,7 +144,26 @@ Page({
   },
   //下单付款按钮
   onClickBuy:function(){
-    
+    wx.showLoading({
+      title: '正在下单',
+    })
+    wx.request({
+      url: app.globalData.ip+'/stockSale/',
+      method:'POST',
+      header: {"content-type": "application/x-www-form-urlencoded"},
+      data:{
+        'sessionID':wx.getStorageSync('sessionID'),
+        'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),
+        'code':JSON.stringify(wx.getStorageSync('code')),
+        'numberlist':this.data.numberlist,
+      },
+      success:res=>{
+        wx.hideLoading()
+        wx.showModal({
+          title: '下单成功，是否返回首页',
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

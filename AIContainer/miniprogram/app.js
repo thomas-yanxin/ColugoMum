@@ -59,7 +59,8 @@ App({
         sessionid:null,
         code:null,
         isSKexpired:null,
-        statusBarHeight: 0
+        statusBarHeight: 0,
+        ip:'http://47.100.88.229:8001',
         // Paddlejs: paddlejs.runner
     },
 })

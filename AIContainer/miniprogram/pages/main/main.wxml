@@ -6,26 +6,26 @@
     <view class="cu-bar search" style="background-color: #191970;">
       <view class="search-form radius">
         <text class="cuIcon-search"></text>
-        <input type="text" placeholder="搜索商品" confirm-type="search" value="{{searchtarget}}" bindinput='inputBind' bindconfirm='getSearch'></input>
+        <input type="text" placeholder="搜索商品" confirm-type="search" value="{{searchtarget}}" style="font-family: SimHei;" bindinput='inputBind' bindconfirm='getSearch'></input>
         <view class="action" style="margin-right: 0rpx;" bindtap="onClickCleanSearch">
           <text class="cuIcon-close"></text>
         </view>
       </view>
       <view class="action">
-        <button class="cu-btn bg-green shadow-blur radius" bindtap="getSearch">搜索</button>
+        <button class="cu-btn bg-green shadow-blur radius" style="font-family: SimHei;" bindtap="getSearch">搜索</button>
       </view>
     </view>
   </view>
   <!-- 按钮 -->
-  <view class='nav-list' style="margin-top: 30rpx;">
+  <view class='nav-list' style="margin-top: 30rpx;" >
     <navigator open-type="navigate" hover-class='none' url="/pages/main/{{item.name}}page/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="index">
-      <view class="nav-title">{{item.title}}</view>
-      <view class="nav-name">{{item.name}}</view>
+      <view class="nav-title" style="font-family: SimHei;">{{item.title}}</view>
+      <view class="nav-name" style="font-family:'Times New Roman';">{{item.name}}</view>
       <text class='cuIcon-{{item.icon}}'></text>
     </navigator>
     <navigator open-type="navigate" hover-class='none' url="/pages/main/{{item.name}}page/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{element}}" wx:key="index"style="width: 95%;">
-      <view class="nav-title">{{item.title}}</view>
-      <view class="nav-name">{{item.name}}</view>
+      <view class="nav-title" style="font-family: SimHei;">{{item.title}}</view>
+      <view class="nav-name" style="font-family:'Times New Roman';">{{item.name}}</view>
       <text class='cuIcon-{{item.icon}}'></text>
     </navigator>
   </view>

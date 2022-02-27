@@ -58,7 +58,7 @@ Page({
     var that = this
     if(this.data.searchtarget){
       wx.request({
-        url: 'http://106.12.78.130/find/',
+        url: app.globalData.ip+'/find/',
         data:{
           'sessionID':wx.getStorageSync('sessionID'),
           'isSKexpired':JSON.stringify(wx.getStorageSync('isSKexpired')),

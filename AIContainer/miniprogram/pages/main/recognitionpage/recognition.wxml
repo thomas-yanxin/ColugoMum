@@ -1,8 +1,8 @@
 <!--pages/main/recognitionpage/recognition.wxml-->
 <!-- 顶部操作条 -->
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">商品识别 </view>
+  <view slot="backText" style="font-family: SimHei;">返回</view>
+  <view slot="content" style="font-family: SimHei;">商品识别 </view>
 </cu-custom>
 <block wx:if="{{!isResult}}">
   <!-- 相机页面 -->
@@ -14,7 +14,7 @@
   <view class="cameraimage" wx:else>
     <image class="cameraimage" src="{{photo}}" mode="aspectFit"></image>
     <cover-image class="cameraback" src="/images/back.png" bindtap="gobackCamera"></cover-image>
-    <button class="camerauploadbtn" type="primary" bindtap="photoUpload">确认上传</button>
+    <button class="camerauploadbtn" type="primary" bindtap="photoUpload" style="font-family: SimHei;">确认上传</button>
   </view>
 </block>
 <block wx:else>
@@ -23,8 +23,8 @@
   <view class="cu-card case" style="height: 400rpx;">
     <view class="cu-item shadow" style="height: 400rpx;">
       <view class="image" style="height: 400rpx;">
-        <image wx:if="{{resultimg}}" src="http://106.12.78.130:8080/pictures/output/{{resultimg}}" style="height: 400rpx;" mode="aspectFit"></image>
-        <image wx:else src="{{photo}}" style="height: 400rpx;" mode="aspectFit"></image>
+        <!-- <image wx:if="{{resultimg}}" src="http://47.100.88.229/output/{{resultimg}}" style="height: 400rpx;" mode="aspectFit"></image> -->
+        <image src="{{photo}}" style="height: 370rpx;" mode="aspectFit"></image>
       </view>
     </view>
   </view>
@@ -34,7 +34,7 @@
       <view class="cu-item" wx:for="{{result}}" wx:key="index" style="min-height: 100rpx;display: flex;align-items: center;">
         <view class="content" style="margin-left: 15rpx;display: flex;flex-direction: row;">
           <text class="text-black" style="width: 60%;font-size: 1.2em;font-weight: bold;font-family:SimSun;text-overflow:ellipsis;overflow: hidden;word-break: break-all;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">{{item[0]}}</text>
-          <view class="text-gray text-sm" style="width: 40%;font-size: 1.2em;">单价：{{item[1]}}元</view>
+          <view class="text-gray text-sm" style="width: 40%;font-size: 1.2em;" style="font-family: SimHei;">单价：{{item[1]}}元</view>
         </view>
       </view>
     </view>
@@ -44,7 +44,7 @@
   <view class="box" style="position: absolute;bottom: 0rpx;width: 98%;left: 1%;padding-bottom: 7.5rpx;padding-top: 7.5rpx;">
     <view class="cu-bar flex bg-white tabbar border shop">
       <view class="radius" style="width: 65%;display: flex;align-items: center;">
-        <text class="text-black" style="font-size: 1.2em;font-family:Arial, Helvetica, sans-serif;margin-left: 50rpx;">总价: {{price_all}}元</text>
+        <text class="text-black" style="font-size: 1.2em;font-family: SimHei;margin-left: 50rpx;">总价: {{price_all}}元</text>
       </view>
       <view class="radius bg-green submit" style="width: 35%;" bindtap="onClickBuy">立即下单</view>
     </view>
