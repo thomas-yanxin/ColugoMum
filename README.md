@@ -129,17 +129,22 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 <img src="./image/wx_all.png" width = "1080" height = "540"/>
 </div>
 
+- 大数据可视化分析界面
+	<div align="center">
+<img src="./image/datacenter.jpg" width = "1080" height = "540"/>
+</div>  
+
 
 ## ⛽️待完成⛽️
 
   
  |  序号  | 完成度 |  优先级 |  分属类别  |  功能描述  | 
  | :----: | :---- | :---- | :---- | :---- |
- |  1  |  在做了  |★★★★★  | 小程序 |  添加库存信息显示，增添数据分析模块|
+ |  1  |  已完成  |★★★★★  | 小程序 | ~~添加库存信息显示，增添数据分析模块~~|
  |  2  |  在做了  |★★★★★  | 小程序 |  初始功能上线  |
- |  3  |  在做了  |★★★★★  | 端侧 |  Jetson Nano的深度适配  |
+ |  3  |  已完成  |★★★★★  | 端侧 |   ~~Jetson Nano的深度适配 ~~  |
  |  4  |  规划中  |★★★★  | 小程序 |  面向管理者及顾客的功能分离  |
- |  5  |  规划中  |★★★★  | web |  基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立  |
+ |  5  |  规划中  |★★★★  | web |   ~~基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立 ~~  |
  |  6  |  规划中  |★★★  | 小程序 |  接入[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)实现商品名称的自动录入  |
  |  7  |  规划中  |★★  | APP |  Android and IOS 客户端的打通部署  |
 
