@@ -7,7 +7,7 @@
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
-- [gitee 支持国产](https://gitee.com/garbage_classfication/Smart_container)
+- [gitee 支持国产](https://gitee.com/E_Light/Smart_container)
 - [github](https://github.com/thomas-yanxin/Smart_container)
 > 求求了，点个Star吧
 
