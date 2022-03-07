@@ -1,4 +1,7 @@
-
+<div align="center">
+<img src="./image/background-img.png" width = "1080" height = "480"/>
+</div>  
+ 
 <h1 > 袋鼯麻麻——智能零售结算平台</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
