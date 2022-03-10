@@ -15,7 +15,7 @@
 > 求求了，点个Star吧
 
 ## 😉近期更新😉  
-
+-  **代码bug修复**： Pipeline部署方式下检索库更新后需重启服务；
 -  **精度大幅提升**：自采集数据集测试精度高达**98.306%**；
 -  **文档全面升级**：提供[PP-ShiTu模型训练及部署详细文档](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
 -  **部署方式优化**：预测速度提升**65**%，基于CPU整体流程控制在**0.9s**左右； 
