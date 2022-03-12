@@ -94,6 +94,16 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 
 目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。 </font>
+## 消融实验 ##
+ |  model  | num epoch |  batch size/gpu cards |  learning rate  |  use cutout  |  use ssld  |  top1 recall  |
+ | :----: | :---- | :---- | :---- | :---- | :---- | :---- |
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | N | N | 97.97% |
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.005 | Y | N | 92.23% |
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.001 | Y | N | 98.26% |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.005 | Y | Y | 98.30% |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | 98.37% |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | 98.39% |
+ 
 
 
 ## 🌍部署方式🌍
