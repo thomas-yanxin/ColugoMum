@@ -122,7 +122,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 <font size=3 >
   
   - Windows 端  
-  <本项目提供了较为简单的demo演示版本>
+  [本项目提供了较为简单的demo演示版本]  
+	
     使用[QPT](https://github.com/QPT-Family/QPT)打包   
     链接：https://pan.baidu.com/s/194ApbJuDJWyV7tv5sCaGsg  提取码：wy7i  
 	  
