@@ -107,7 +107,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | [98.38%](./exprements/log/98383.log) |
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | [98.39%]((./exprements/log/98395.log)) |
  | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) |
- 
+ | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | Y | Y | 98.38% |
  **注**:
  1. 本实验均基于 GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB 进行训练并测试；
  2. 本实验均基于上述[零售商品特征学习数据集](https://aistudio.baidu.com/aistudio/datasetdetail/113685)进行训练和测试;
