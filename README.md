@@ -192,5 +192,5 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
 
 ## ❤️欢迎共建❤️
-  我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交issue or Pull Requests。
+  我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交Issue or Pull Requests。
 
