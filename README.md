@@ -101,13 +101,13 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | N | N | 97.97% |
  | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | Y | N | [98.21%](./exprements/log/98216.log) |
  | PP_LCNet_x2_5 | 400 | 256/4 | 0.005 | Y | N | 98.23% |
- | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | Y | Y | 98.29% |
+ | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | Y | Y | [98.29%](./exprements/log/98291.log) |
  | PP_LCNet_x2_5 | 400 | 256/4 | 0.001 | Y | N | 98.26% |
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.005 | Y | Y | 98.30% |
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | 98.37% |
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | 98.38% |
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | 98.39% |
- | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | 98.44% |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | [98.37%](./exprements/log/98379.log) |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | [98.38%](./exprements/log/98383.log) |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | [98.39%]((./exprements/log/98395.log)) |
+ | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) |
  
  **注**:
  1. 本实验均基于 GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB 进行训练并测试；
