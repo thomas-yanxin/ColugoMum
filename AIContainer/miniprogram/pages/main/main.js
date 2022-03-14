@@ -27,7 +27,13 @@ Page({
       name : 'recognition',
       icon:'explorefill',
       color:'cyan'
-    }
+    },
+    {
+      title : '分析',
+      name : 'analysis',
+      icon:'rankfill',
+      color:'cyan'
+    },
   ]
 
   },

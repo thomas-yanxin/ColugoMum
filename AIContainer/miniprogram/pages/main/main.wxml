@@ -23,7 +23,7 @@
       <view class="nav-name" style="font-family:'Times New Roman';">{{item.name}}</view>
       <text class='cuIcon-{{item.icon}}'></text>
     </navigator>
-    <navigator open-type="navigate" hover-class='none' url="/pages/main/{{item.name}}page/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{element}}" wx:key="index"style="width: 95%;">
+    <navigator open-type="navigate" hover-class='none' url="/pages/main/{{item.name}}page/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{element}}" wx:key="index">
       <view class="nav-title" style="font-family: SimHei;">{{item.title}}</view>
       <view class="nav-name" style="font-family:'Times New Roman';">{{item.name}}</view>
       <text class='cuIcon-{{item.icon}}'></text>

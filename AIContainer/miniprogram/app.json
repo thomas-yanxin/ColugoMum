@@ -5,7 +5,8 @@
     "pages/main/uploadpage/upload",
     "pages/main/revisepage/revise",
     "pages/mine/information/information",
-    "pages/main/recognitionpage/recognition"
+    "pages/main/recognitionpage/recognition",
+    "pages/main/analysispage/analysis" 
   ],
   "window": {
     "backgroundColor": "#00FF00",
