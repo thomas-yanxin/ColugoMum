@@ -1,7 +1,8 @@
 <div align="center">
 <img src="./image/background-img.png" width = "1080" height = "480"/>
 </div>  
- 
+
+
 <h1 > 袋鼯麻麻——智能零售结算平台</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
@@ -9,9 +10,8 @@
 ![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
-![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
-- [gitee 支持国产](https://gitee.com/E_Light/Smart_container)
-- [github](https://github.com/thomas-yanxin/Smart_container)
+![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
+简体中文 | [English](./README_EN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
 > 求求了，点个Star吧
 
 ## 😉近期更新😉  
