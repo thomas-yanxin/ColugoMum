@@ -40,7 +40,7 @@ With the development of computer vision technology, as well as the unmanned and 
    4. **Tens of thousands of commodity categories**：There is no way to put all categories into the training set beforehand。
 
 ## 🍑Realize function🍑
-<font size=3 >**ColugoMum——Intelligent Retail Rettlement Platform**realize automatic settlement of goods purchased by users in the retail process. We take advantage of the PaddleClas team's open source [PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf) technology, precise positioning of customers to buy goods, and intelligent, automatic price settlement. When customers place their chosen products in the designated area, **ColugoMum——Intelligent Retail Rettlement Platform** can accurately locate and identify each product, and can return a complete shopping list and the actual total price of goods that customers should pay. When the system has a new product increase, the system only need to update the retrieval database, without retraining the model.   
+<font size=3 >**ColugoMumr**ealize automatic settlement of goods purchased by users in the retail process. We take advantage of the PaddleClas team's open source [PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf) technology, precise positioning of customers to buy goods, and intelligent, automatic price settlement. When customers place their chosen products in the designated area, **ColugoMum** can accurately locate and identify each product, and can return a complete shopping list and the actual total price of goods that customers should pay. When the system has a new product increase, the system only need to update the retrieval database, without retraining the model.   
     
 This project is a lightweight general PP - ShiTu image recognition system provides the solid ground application cases, the new one of the retail industry and retail visual intelligent solution provides a very good basis and train of thought, especially for solving many categories, small sample, high similarity, and frequently updated the special image recognition scene pain difficulties provides reference of demonstrations, Greatly reduce the retail industry in the actual operation of the huge human cost, improve the retail industry unmanned, automation, intelligent level.  </font>  
 
@@ -123,7 +123,7 @@ The processed dataset is now open source in [AIStudio](https://aistudio.baidu.co
 <font size=3 >
   
   - Windows  
-  [ColugoMum provides a relatively simple demo version]  
+  [**ColugoMum** provides a relatively simple demo version]  
 	
     We use [QPT](https://github.com/QPT-Family/QPT) for packaging.   
     Download the project code, enter the QPT_client folder, and Click the "启动程序.exe".
