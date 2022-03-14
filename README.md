@@ -2,7 +2,7 @@
 <img src="./image/background-img.png" width = "1080" height = "480"/>
 </div>  
  
- English | [简体中文](./README_CN.md)
+
 <h1 > ColugoMum——Intelligent Retail Rettlement Platform</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
@@ -10,10 +10,10 @@
 ![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
-![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
-- [gitee 支持国产](https://gitee.com/E_Light/Smart_container)
-- [github](https://github.com/thomas-yanxin/Smart_container)
-> Remember to give it a **star**!
+![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
+ English | [简体中文](./README_CN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
+
+> Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)!
 
 ## 😉Recent Update😉  
 -  **Release training code**：Publish model training code and experimental results for adaptive tuning;
