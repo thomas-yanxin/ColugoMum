@@ -2,6 +2,7 @@
 <img src="./image/background-img.png" width = "1080" height = "480"/>
 </div>  
  
+
 <h1 > ColugoMum——Intelligent Retail Rettlement Platform</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
@@ -9,10 +10,10 @@
 ![GitHub](https://img.shields.io/github/license/thomas-yanxin/Smart_container)
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
-![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)
-- [gitee 支持国产](https://gitee.com/E_Light/Smart_container)
-- [github](https://github.com/thomas-yanxin/Smart_container)
-> Remember to give it a **star**!
+![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
+ English | [简体中文](./README_CN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
+
+> Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)!
 
 ## 😉Recent Update😉  
 -  **Release training code**：Publish model training code and experimental results for adaptive tuning;
@@ -112,7 +113,7 @@ The processed dataset is now open source in [AIStudio](https://aistudio.baidu.co
 
 **Attention**:
 1. This experiment is based on GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB for training and testing;
-2. The experiments are based on the above data set [Retail Product Characteristics Study Data Set] (https://aistudio.baidu.com/aistudio/datasetdetail/113685) for training and testing;
+2. The experiments are based on the above data set [Retail Product Characteristics Study Data Set](https://aistudio.baidu.com/aistudio/datasetdetail/113685) for training and testing;
 3. Evaluation of RP2K and other large open source data sets of retail products will be carried out soon.
    
 
@@ -133,7 +134,7 @@ The processed dataset is now open source in [AIStudio](https://aistudio.baidu.co
       python client.py
      ```
   
-  - For details of the image recognition part deployment, you can see [PP-ShiTu部署](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
+  - For details of the image recognition part deployment, you can see [PP-ShiTu Development](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
   
   - Wechat applet 
    Open the wechat developer tool, import the AIContainer folder under the system folder and run it；
@@ -194,4 +195,3 @@ A cup of coffee will refresh your mind, and product updates will be faster and b
 
 ## ❤️Welcome to build together❤️
   We welcome you to contribute code or provide suggestions for "**ColugoMum**". Whether you have a bug, fix a bug, or add a new feature, feel free to submit Issue or Pull Requests.
-
