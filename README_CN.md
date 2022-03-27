@@ -107,8 +107,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | [98.37%](./exprements/log/98379.log) | 配置文件 |
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | [98.38%](./exprements/log/98383.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002.yaml) |
  | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | [98.39%]((./exprements/log/98395.log)) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002_cutout.yaml) |
- | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004.yaml) |
- | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | Y | Y | [98.38%](./exprements/log/98376.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004_cutout.yaml) |
+<!--  | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004.yaml) |
+ | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | Y | Y | [98.38%](./exprements/log/98376.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004_cutout.yaml) | -->
 
 **注**:
  1. 本实验均基于 GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB 进行训练并测试；
