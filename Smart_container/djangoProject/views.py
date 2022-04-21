@@ -173,10 +173,7 @@ def reference(request):
                             # rec_docs_price.append(res.number)
                             rec_docs_price.append(rec_docs_sig)
                             rec_docs_price.append(rec_price)
-            print("你是傻逼")
             print(rec_docs_price)
-            print("你是傻逼")
-
             os.remove(log_path)
             return JsonResponse({"state": 'true', "container": rec_docs_price, "price_all": price_all, "picture_test":'test1.jpg'})
     else:
@@ -214,7 +211,6 @@ def login_in(request):
     else:
         models.TUser.objects.filter(openid=s_openid).update(session_key=s_session_key)  #替换session_key
 
-
     return JsonResponse({"sessionID": sessionID})
 
 
@@ -231,9 +227,7 @@ def record(request):             #增加模块
 
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
-
         value_name = s_container_name
-
 
         p = Pinyin()                 
         name = p.get_pinyin(value_name).replace('-','')
@@ -268,7 +262,6 @@ def record(request):             #增加模块
         return JsonResponse({"state": 'false'})
 
 
-
 def delete(request):                #删除模块
     if request.method == "POST":
         sessionID = request.POST.get('sessionID')
@@ -278,7 +271,6 @@ def delete(request):                #删除模块
         d_container_name = request.POST.get('container_name')
 
         value_name = d_container_name
-
 
         p = Pinyin()                 
         name = p.get_pinyin(value_name).replace('-','')
@@ -409,7 +401,6 @@ def stock_sale(request):   #商品销售
         return JsonResponse({"state": 'false'})
 
 
-
 def reference_client(request):
     if request.method == 'POST':
         req = json.loads(request.body) #将json编码的字符串再转换为python的数据结构
@@ -432,7 +423,6 @@ def reference_client(request):
 
         os.system('python3 /root/Smart_container/PaddleClas/deploy/python/predict_client.py -c /root/Smart_container/PaddleClas/deploy/configs/inference_client.yaml -o Global.use_gpu=False')
 
-	    
         log_path = '/root/Smart_container/PaddleClas/dataset/log_client.txt'
         
         with open(log_path, 'r', encoding='utf8') as F:
@@ -458,8 +448,6 @@ def reference_client(request):
 
                     rec_docs = dict_result['rec_docs']  # 结果
                     rec_docs_list.append(rec_docs)
-
-
 
                 for rec_docs_sig in rec_docs_list:
                     for res in res_all:

@@ -2,7 +2,6 @@
 <img src="./image/background-img.png" width = "1080" height = "480"/>
 </div>  
  
-
 <h1 > ColugoMum——Intelligent Retail Rettlement Platform</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)

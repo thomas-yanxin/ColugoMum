@@ -10,9 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
-
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',	# 要连接的 数据库类型
         'HOST': 'localhost',	# 要连接的远程数据库的 ip地址
         'PORT': '3306',	# 数据库连接端口，mysql默认3306
-        'USER': 'SM_C',		# 数据库已有用户名`
-        'PASSWORD': '105316',	# 数据库已有用户密码
+        'USER': 'SM_C',		# 数据库已有用户名`，需要更改
+        'PASSWORD': 'XXXXX',	# 数据库已有用户密码，需要更改
         'NAME': 'container',	# 要连接的 数据库名
     }
 }
