@@ -1,0 +1,11 @@
+2022-04-21 14:50:42,167 INFO: QPT Runtime版本号为1.0b2.dev8，若无法使用该程序，可向程序发布者或GitHub: QPT-Family/QPT提交issue寻求帮助
+2022-04-21 14:50:42,174 INFO: 
+如在本信息之后停留时间较长，请升级Windows Powershell至版本5即可解决该问题，下载地址：
+官方地址：https://www.microsoft.com/en-us/download/details.aspx?id=54616
+团子云镜像：https://s.dango.cloud/s/GVbhB 下载码：zAkjpradJA2eHiC
+2022-04-21 14:50:42,541 INFO: 检测结束，当前Powershell满足使用需求。
+2022-04-21 14:50:42,571 INFO: 
+如在本信息之后停留时间较长，请升级Windows Powershell至版本5即可解决该问题，下载地址：
+官方地址：https://www.microsoft.com/en-us/download/details.aspx?id=54616
+团子云镜像：https://s.dango.cloud/s/GVbhB 下载码：zAkjpradJA2eHiC
+2022-04-21 14:50:42,936 INFO: 检测结束，当前Powershell满足使用需求。
