@@ -17,7 +17,7 @@
 ## 😉Recent Update😉  
 -  **Release training code**：Publish model training code and experimental results for adaptive tuning;
 -  **Fixe Code Bug**： Restart the service after the database is updated in Pipeline deployment mode;
--  **Improve Accuracy Greatly**：The test accuracy of the self-collected data set is **98.442%**；
+-  **Improve Accuracy Greatly**：The test accuracy of the self-collected data set is **99.098%**；
 -  **Upgrade Document**：Provides detailed documentation of [PP-ShiTu model training and deployment](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
 -  **Optimize Deployment Mode**：The predicted speed increase is **65**%, based on the overall CPU flow control at **0.9s**； 
 -  **Upgrade Product Function**：Add inventory information management function, provide one-click data visualization analysis platform;
