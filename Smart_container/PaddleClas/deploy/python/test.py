@@ -23,7 +23,7 @@ from app01 import models
 # Create your views here.
 
 KEY='mHAxsLYz'      #秘钥
-PICTURE_ROOT = '/root/Smart_container/PaddleClas/dataset/retail'
+PICTURE_ROOT = './PaddleClas/dataset/retail'
 
 def des_encrypt(s):
     """
@@ -92,7 +92,7 @@ def information():
 def update():
     container_all = information()
 
-    TXT_PATH='/root/Smart_container/PaddleClas/dataset/retail/data_update.txt'
+    TXT_PATH='./PaddleClas/dataset/retail/data_update.txt'
              
     with open(os.path.abspath(TXT_PATH),'w+',encoding='utf-8') as fh:
 
@@ -103,7 +103,7 @@ def update():
             fh.write(container_address + '\t' + container_name + '\n')
         fh.close()
    #有问题要修改
-    os.system('python3 python/build_gallery.py -c configs/build_product.yaml -o IndexProcess.data_file="/root/Smart_container/PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="/root/Smart_container/PaddleClas/dataset/retail/index_update"')
+    os.system('python3 python/build_gallery.py -c configs/build_product.yaml -o IndexProcess.data_file="./PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="./PaddleClas/dataset/retail/index_update"')
 
 
 # 识别模块
@@ -123,7 +123,7 @@ def reference(request):
         
         print(image_name)
 
-        image_file = '/root/Smart_container/PaddleClas/dataset/retail/test1.jpg'
+        image_file = './PaddleClas/dataset/retail/test1.jpg'
         with open(image_file, "wb") as fh:
              fh.write(image_name)
              fh.close()
@@ -141,9 +141,9 @@ def reference(request):
         # cv2.imwrite(self.picture_file, self.image)
 
         os.system(
-            'python /root/Smart_container/PaddleClas/deploy/python/predict_system.py -c /root/Smart_container/PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
+            'python ./PaddleClas/deploy/python/predict_system.py -c ./PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
         print('3')
-        log_path = '/root/Smart_container/PaddleClas/dataset/log.txt'
+        log_path = './PaddleClas/dataset/log.txt'
         
 
         rec_docs_str = ''

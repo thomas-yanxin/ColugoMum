@@ -26,7 +26,7 @@ from xpinyin import Pinyin
 # Create your views here.
 
 KEY='mHAxsLYz'      #秘钥
-PICTURE_ROOT = '/root/Smart_container/PaddleClas/dataset/retail'
+PICTURE_ROOT = './PaddleClas/dataset/retail'
 
 def des_encrypt(s):
     """
@@ -95,9 +95,9 @@ def information():
 
 def update():
     container_all = information()
-    os.remove('/root/Smart_container/PaddleClas/dataset/retail/data_update.txt')
+    os.remove('./PaddleClas/dataset/retail/data_update.txt')
              
-    with open('/root/Smart_container/PaddleClas/dataset/retail/data_update.txt','a+',encoding='utf-8') as fh:
+    with open('./PaddleClas/dataset/retail/data_update.txt','a+',encoding='utf-8') as fh:
 
         for container_single in container_all:
             container_name = container_single[1]
@@ -105,7 +105,7 @@ def update():
             fh.write(container_address + '\t' + container_name + '\n')
         fh.close()
    #有问题要修改
-    os.system('python3 /root/Smart_container/PaddleClas/deploy/python/build_gallery.py -c /root/Smart_container/PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="/root/Smart_container/PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="/root/Smart_container/PaddleClas/dataset/retail/index_update"')
+    os.system('python3 ./PaddleClas/deploy/python/build_gallery.py -c ./PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="./PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="./PaddleClas/dataset/retail/index_update"')
 
 
 
@@ -124,7 +124,7 @@ def reference(request):
 
         image_name = base64.b64decode(value)
 
-        image_file = '/root/Smart_container/PaddleClas/dataset/retail/test1.jpg'
+        image_file = './PaddleClas/dataset/retail/test1.jpg'
         with open(image_file, "wb") as fh:
              fh.write(image_name)
              fh.close()
@@ -135,10 +135,10 @@ def reference(request):
 
         price_all = 0.0
 
-        os.system('python3 /root/Smart_container/PaddleClas/deploy/python/predict_system.py -c /root/Smart_container/PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
+        os.system('python3 ./PaddleClas/deploy/python/predict_system.py -c ./PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
 
 	    
-        log_path = '/root/Smart_container/PaddleClas/dataset/log.txt'
+        log_path = './PaddleClas/dataset/log.txt'
 
         with open(log_path, 'r', encoding='utf8') as F:
 
@@ -412,7 +412,7 @@ def reference_client(request):
         img_np_ = np.frombuffer(img_decode, np.uint8)
         img = cv2.imdecode(img_np_, cv2.COLOR_RGB2BGR) #转为opencv格式
 
-        cv2.imwrite('/root/Smart_container/PaddleClas/dataset/test_pic/test_client.jpg', img) #存储路径
+        cv2.imwrite('./PaddleClas/dataset/test_pic/test_client.jpg', img) #存储路径
 
         ###      商品识别
         res_all = models.TContainer.objects.all()
@@ -421,9 +421,9 @@ def reference_client(request):
 
         price_all = 0.0
 
-        os.system('python3 /root/Smart_container/PaddleClas/deploy/python/predict_client.py -c /root/Smart_container/PaddleClas/deploy/configs/inference_client.yaml -o Global.use_gpu=False')
+        os.system('python3 ./PaddleClas/deploy/python/predict_client.py -c ./PaddleClas/deploy/configs/inference_client.yaml -o Global.use_gpu=False')
 
-        log_path = '/root/Smart_container/PaddleClas/dataset/log_client.txt'
+        log_path = './PaddleClas/dataset/log_client.txt'
         
         with open(log_path, 'r', encoding='utf8') as F:
 

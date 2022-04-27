@@ -1,5 +1,5 @@
 Global:
-  rec_inference_model_dir: "/root/Smart_container/PaddleClas/deploy/models/general_PPLCNet_x2_5_lite_v1.0_infer"
+  rec_inference_model_dir: "./PaddleClas/deploy/models/general_PPLCNet_x2_5_lite_v1.0_infer"
   batch_size: 256
   use_gpu: False
   enable_mkldnn: True
@@ -27,9 +27,9 @@ RecPostProcess: null
 # indexing engine config
 IndexProcess:
   index_method: "HNSW32" # supported: HNSW32, IVF, Flat
-  index_dir: "/root/Smart_container/PaddleClas/dataset/retail/index"
-  image_root: "/root/Smart_container/PaddleClas/dataset/retail"
-  data_file:  "/root/Smart_container/PaddleClas/dataset/retail/data_update.txt"
+  index_dir: "./PaddleClas/dataset/retail/index"
+  image_root: "./PaddleClas/dataset/retail"
+  data_file:  "./PaddleClas/dataset/retail/data_update.txt"
   index_operation: "new" # suported: "append", "remove", "new"
   delimiter: "\t"
   dist_type: "IP"

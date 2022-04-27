@@ -139,12 +139,12 @@ def main(config):
  
         if output==[]:
             i = "Please connect root to upload container's name and it's price!"
-            with open('/root/Smart_container/PaddleClas/dataset/log_client.txt','a+',encoding='utf8') as f:
+            with open('./PaddleClas/dataset/log_client.txt','a+',encoding='utf8') as f:
                 f.write(str(i)+'\n')
                 f.close()
         else:
             for i in output:
-                with open('/root/Smart_container/PaddleClas/dataset/log_client.txt','a+',encoding='utf8') as f:
+                with open('./PaddleClas/dataset/log_client.txt','a+',encoding='utf8') as f:
                     f.write(str(i)+'\n')
                     f.close()
                 print(i)

@@ -1,7 +1,7 @@
 Global:
-  infer_imgs: "/root/Smart_container/PaddleClas/dataset/test_pic/test_client.jpg"
-  det_inference_model_dir: "/root/Smart_container/PaddleClas/deploy/models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer"
-  rec_inference_model_dir: "/root/Smart_container/PaddleClas/deploy/models/general_PPLCNet_x2_5_lite_v1.0_infer"
+  infer_imgs: "./PaddleClas/dataset/test_pic/test_client.jpg"
+  det_inference_model_dir: "./PaddleClas/deploy/models/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_infer"
+  rec_inference_model_dir: "./PaddleClas/deploy/models/general_PPLCNet_x2_5_lite_v1.0_infer"
   rec_nms_thresold: 0.05
   
   batch_size: 1
@@ -50,6 +50,6 @@ RecPostProcess: null
 
 # indexing engine config
 IndexProcess:
-  index_dir: "/root/Smart_container/PaddleClas/dataset/retail/index_update"
+  index_dir: "./PaddleClas/dataset/retail/index_update"
   return_k: 5
   score_thres: 0.5
