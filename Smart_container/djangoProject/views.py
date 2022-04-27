@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import sys
+import time
 from typing import Container
 
 import cv2
@@ -25,8 +26,16 @@ from xpinyin import Pinyin
 
 # Create your views here.
 
+url = "http://127.0.0.1:18081/recognition/prediction"
+
+
 KEY='mHAxsLYz'      #秘钥
 PICTURE_ROOT = './PaddleClas/dataset/retail'
+
+
+def cv2_to_base64(image):
+    return base64.b64encode(image).decode('utf8')
+
 
 def des_encrypt(s):
     """
@@ -60,8 +69,8 @@ def SKexpired(old_sessionID, code):
     
     s_openid = des_descrypt(old_sessionID)
 
-    appid = "wx433732b2940b7d4c"
-    secret = "b4e95c5b998cd13ba9d09e077343f2e7"
+    appid = "*********" # 需要修改 
+    secret = "**********" # 需要修改
     code2SessionUrl = "https://api.weixin.qq.com/sns/jscode2session?appid={appid}&secret={secret}&js_code={code}&grant_type=authorization_code".format(
         appid=appid, secret=secret, code=code)
     resp = requests.get(code2SessionUrl)
@@ -74,7 +83,6 @@ def SKexpired(old_sessionID, code):
     models.TUser.objects.filter(openid=s_openid).update(session_key=s_session_key) 
 
     return sessionID
-
 
 
 def information():
@@ -104,7 +112,7 @@ def update():
             container_address = container_single[3]
             fh.write(container_address + '\t' + container_name + '\n')
         fh.close()
-   #有问题要修改
+
     os.system('python3 ./PaddleClas/deploy/python/build_gallery.py -c ./PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="./PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="./PaddleClas/dataset/retail/index_update"')
 
 
@@ -118,11 +126,14 @@ def reference(request):
         value = request.POST.get('picture')
 
         res_all = models.TContainer.objects.all()
-
+  
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
 
         image_name = base64.b64decode(value)
+	
+        start_time = time.time()
+
 
         image_file = './PaddleClas/dataset/retail/test1.jpg'
         with open(image_file, "wb") as fh:
@@ -135,47 +146,47 @@ def reference(request):
 
         price_all = 0.0
 
-        os.system('python3 ./PaddleClas/deploy/python/predict_system.py -c ./PaddleClas/deploy/configs/inference_product.yaml -o Global.use_gpu=False')
 
-	    
-        log_path = './PaddleClas/dataset/log.txt'
+        with open(os.path.join(".",  image_file), 'rb') as file:
+            image_data1 = file.read()
+            image = cv2_to_base64(image_data1)
+            data = {"key": ["image"], "value": [image]}
 
-        with open(log_path, 'r', encoding='utf8') as F:
+            for i in range(1):
+                r = requests.post(url=url, data=json.dumps(data))
+                result = r.json()['value'][0]
+                result=eval(result)
 
-            str_result_list = F.readlines()
+                if result == []:
+                    rec_deplay_str_all = "Please connect root to upload container's name and it's price!\n"
+                    return JsonResponse({"state": 'true',"container": rec_deplay_str_all})
 
+                else:   
 
-            if str_result_list[0] == "Please connect root to upload container's name and it's price!\n":
+                    print(type(result))
+                    for rec_docs in result:
+                        price_all = 0
+                        rec_docs_price = []
+                        rec_docs_list.append(rec_docs['rec_docs'])
 
-                rec_deplay_str_all = str_result_list[0]
-                os.remove(log_path)
-                return JsonResponse({"state": 'true',"container": rec_deplay_str_all})
+                    number_list = []
 
-            else:
-                for str_result in str_result_list:
+                    for rec_docs_sig in rec_docs_list:
+                        for res in res_all:
+                            if  res.container_name== rec_docs_sig:
+                                temp = []
+                                rec_price = res.container_price
+                                price_all += float(rec_price)
+                                number_list.append(res.number)
+                                temp.append(rec_docs_sig)
+                                temp.append(rec_price)
+                                rec_docs_price.append(temp)
 
-                    price_all = 0
-
-                    rec_docs_price = []
-
-                    dict_result = eval(str_result)
-
-                    rec_docs = dict_result['rec_docs']  # 结果
-                    rec_docs_list.append(rec_docs)
-
-
-
-                for rec_docs_sig in rec_docs_list:
-                    for res in res_all:
-                        if  res.container_name== rec_docs_sig:
-                            rec_price = res.container_price
-                            price_all += float(rec_price)
-                            # rec_docs_price.append(res.number)
-                            rec_docs_price.append(rec_docs_sig)
-                            rec_docs_price.append(rec_price)
-            print(rec_docs_price)
-            os.remove(log_path)
-            return JsonResponse({"state": 'true', "container": rec_docs_price, "price_all": price_all, "picture_test":'test1.jpg'})
+                print(rec_docs_price)
+                stop_time = time.time()
+                print(stop_time-start_time)
+             
+                return JsonResponse({"state": 'true', "number":number_list ,"container": rec_docs_price, "price_all": price_all, "picture_test":'test1.jpg'})
     else:
         return JsonResponse({"state": 'false'})
 
@@ -211,6 +222,7 @@ def login_in(request):
     else:
         models.TUser.objects.filter(openid=s_openid).update(session_key=s_session_key)  #替换session_key
 
+
     return JsonResponse({"sessionID": sessionID})
 
 
@@ -221,14 +233,37 @@ def record(request):             #增加模块
         code = request.POST.get('code')
         s_container_name = request.POST.get('container_name')         #商品名称 str
         s_container_price = request.POST.get('container_price')       #商品单价 float
-        s_stock = requests.POST.get('container_stock')                #商品库存 int
+        s_stock = request.POST.get('container_stock')                #商品库存 int
 
         picture = request.FILES['productimage']   #照片
 
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
-        value_name = s_container_name
 
+        value_name = s_container_name
+        print(s_container_name)
+        pid = os.popen("lsof -i:9994").read()
+        if pid == '':
+            pass
+        else:
+
+            r = os.popen("lsof -i:9994").read()
+            print(r.split('python3 ')[1].split(' root')[0])
+            with open('pid.txt','w',encoding='utf8') as f:
+                f.write(r)
+                f.close()
+            with open('pid.txt','r',encoding='utf8') as f:
+                m = f.readlines()
+            for i in m[1:]:
+            # print(i)
+                Pid_1 = i.split(' root')[0].split('python3 ')[-1]
+                print(Pid_1)
+                # os.kill(Pid_1)
+                # print(int(PID))
+                # 调用kill函数，终止进程
+                os.system('kill '+str(Pid_1))
+            os.system('lsof -i:9994')
+        
         p = Pinyin()                 
         name = p.get_pinyin(value_name).replace('-','')
         
@@ -247,19 +282,26 @@ def record(request):             #增加模块
         
         old_container = models.TContainer.objects.filter(container_name=s_container_name)     
         old_container = old_container.values() 
-
+        print(s_stock)
+        # os.system('nohup python3 /root/Smart_container/PaddleClas/deploy/paddleserving/recognition/recognition_web_service.py &>log.txt & > myout.log 2>&1 &')   
+        os.system('python3 ./PaddleClas/deploy/paddleserving/recognition/recognition_web_service.py &>log.txt &')   
+        
+        print('启动成功')
         if not bool(old_container): 
 
-            s_container = models.TContainer(number=s_number, container_name=s_container_name, container_price=s_container_price,
-                                            picture_address=s_picture_address, stock=s_stock)
+            s_container = models.TContainer(number=s_number, container_name=s_container_name, container_price=s_container_price,stock = s_stock, picture_address=s_picture_address)
             s_container.save()
             update()
+            
+            print("库存为："+s_stock)
+
             return JsonResponse({"state": 'true', "sessionID": sessionID})
 
         else:
             return JsonResponse({"state": 'true', "sessionID": sessionID})
     else:
         return JsonResponse({"state": 'false'})
+
 
 
 def delete(request):                #删除模块
@@ -271,8 +313,31 @@ def delete(request):                #删除模块
         d_container_name = request.POST.get('container_name')
 
         value_name = d_container_name
+        p = Pinyin()         
+        # os.system("netstat -nlp |grep :9994 |grep -v grep|awk '{print $7}' |awk -F '/' '{print $1}' |xargs kill -9")
+        # 读取pid
+        pid = os.popen("lsof -i:9994").read()
+        if pid == '':
+            pass
+        else:
 
-        p = Pinyin()                 
+            r = os.popen("lsof -i:9994").read()
+            print(r.split('python3 ')[1].split(' root')[0])
+            with open('pid.txt','w',encoding='utf8') as f:
+                f.write(r)
+                f.close()
+            with open('pid.txt','r',encoding='utf8') as f:
+                m = f.readlines()
+            for i in m[1:]:
+            # print(i)
+                Pid_1 = i.split(' root')[0].split('python3 ')[-1]
+                print(Pid_1)
+                # os.kill(Pid_1)
+                # print(int(PID))
+                # 调用kill函数，终止进程
+                os.system('kill '+str(Pid_1))
+            os.system('lsof -i:9994')     
+        
         name = p.get_pinyin(value_name).replace('-','')
         
         s_picture_address = os.path.join(PICTURE_ROOT,'gallery/'+ name + '.jpg')
@@ -284,7 +349,9 @@ def delete(request):                #删除模块
         d_number = int(d_number)
         old_container = models.TContainer.objects.filter(number = d_number)     #查询t_container表中所有数据，判断表中是否已经包含目标商品
         old_container = old_container.values()
-
+        os.system('python3 ./PaddleClas/deploy/paddleserving/recognition/recognition_web_service.py &>log.txt &')   
+        
+        print('启动成功')
         if not bool(old_container):                                         #表内不含待删除商品
             return JsonResponse({"state": 'false', "sessionID": sessionID})
         else:
@@ -307,9 +374,40 @@ def replace(request):               #修改模块
         r_container_price = request.POST.get('container_price')
         r_stock = request.POST.get('container_stock')
         isimageRevised = request.POST.get('isimageRevised')
+        # os.system("netstat -nlp |grep :9994 |grep -v grep|awk '{print $7}' |awk -F '/' '{print $1}' |xargs kill -9")
 
+        print('1')
+        # # 调用kill函数，终止进程
+        pid = os.popen("lsof -i:9994").read()
+
+        if pid == '':
+            pass
+        else:
+        # # print('1'*100)
+        #     print(pid.split('python3 ')[1].split(' root')[0])
+        #     Pid_1 = pid.split('python3 ')[1].split(' root')[0]
+
+            r = os.popen("lsof -i:9994").read()
+            print(r.split('python3 ')[1].split(' root')[0])
+            with open('pid.txt','w',encoding='utf8') as f:
+                f.write(r)
+                f.close()
+            with open('pid.txt','r',encoding='utf8') as f:
+                m = f.readlines()
+            for i in m[1:]:
+            # print(i)
+                Pid_1 = i.split(' root')[0].split('python3 ')[-1]
+                print(Pid_1)
+                # os.kill(Pid_1)
+                # print(int(PID))
+                # 调用kill函数，终止进程
+                os.system('kill '+str(Pid_1))
+            print('1')
+            os.system('lsof -i:9994')
+            print('1')
         if isimageRevised == True:
             r_picture = request.FILES['productimage']
+            
             p = Pinyin()                 
             name = p.get_pinyin(r_container_name).replace('-','')
             s_picture_address = os.path.join(PICTURE_ROOT,'gallery/'+ name + '.jpg')
@@ -319,14 +417,25 @@ def replace(request):               #修改模块
 
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
-     
+
+            
+        numbers = int(number)
+
+        containers = models.TContainer.objects.all()
+
+        for i in containers:
+            if i.number == numbers:
+                stock = i.stock + int(r_stock)
+                break
+
         models.TContainer.objects.filter(number=number).update(container_name=r_container_name)
 
         models.TContainer.objects.filter(number=number).update(container_price=r_container_price)
-        
-        models.TContainer.objects.filter(number=number).updata(stock=r_stock)
+
+        models.TContainer.objects.filter(number=number).update(stock=stock)
 
         update()
+
         return JsonResponse({"state": 'true', "sessionID": sessionID})
         
     else:
@@ -372,6 +481,7 @@ def find(request):    #检索模块
                 temp.append(i.container_name)
                 temp.append(i.container_price)
                 temp.append(i.picture_address)
+                temp.append(i.stock)
                 find_result.append(temp)
 
         return JsonResponse({"state": 'true', "sessionID": sessionID,"container_all":find_result})
@@ -384,17 +494,41 @@ def stock_sale(request):   #商品销售
         sessionID = request.POST.get('sessionID')
         isSKexpried = request.POST.get('isSKexpried')
         code = request.POST.get('code')
-        container_sale = request.POST.get('stocksale')
+        number_s = request.POST.get('numberlist')
 
         if isSKexpried:
             sessionID = SKexpired(sessionID, code)
+        
+        print(number_s)
+        
+        number_s = number_s.split(',')
+        number_s = list(map(int, number_s))
+        print(number_s)
+
+        classify = []
+        container_sale = []
+
+        for i in number_s:
+            Temp = []
+            if i not in classify:
+                Temp.append(i)
+                classify.append(i)
+                temp = 0
+                for j in number_s:
+                    if Temp[0] == j:
+                        temp = temp + 1
+                Temp.append(temp)
+                container_sale.append(Temp)
+
+        print(container_sale)
 
         container = models.TContainer.objects.all()
 
         for i in container_sale:                    #[['number','stock'],.....]
             for j in container:
                 if j.number == i[0]:
-                    models.TContainer.objects.filter(number=i[0]).update(stock=j.stock - i[1])
+                    stock = j.stock - i[1]
+                    models.TContainer.objects.filter(number=i[0]).update(stock=stock)
                     break
         return JsonResponse({"state": 'true', "sessionID": sessionID})
     else:
@@ -411,9 +545,8 @@ def reference_client(request):
         img_decode = base64.b64decode(img_decode_) #解base64编码，得图片的二进制
         img_np_ = np.frombuffer(img_decode, np.uint8)
         img = cv2.imdecode(img_np_, cv2.COLOR_RGB2BGR) #转为opencv格式
-
-        cv2.imwrite('./PaddleClas/dataset/test_pic/test_client.jpg', img) #存储路径
-
+        img_path_client = './PaddleClas/dataset/test_pic/test_client.jpg'
+        cv2.imwrite(img_path_client, img) #存储路径
         ###      商品识别
         res_all = models.TContainer.objects.all()
 
@@ -421,45 +554,37 @@ def reference_client(request):
 
         price_all = 0.0
 
-        os.system('python3 ./PaddleClas/deploy/python/predict_client.py -c ./PaddleClas/deploy/configs/inference_client.yaml -o Global.use_gpu=False')
+        with open(os.path.join(".",  img_path_client), 'rb') as file:
+            image_data1 = file.read()
+            image = cv2_to_base64(image_data1)
+            data = {"key": ["image"], "value": [image]}
 
-        log_path = './PaddleClas/dataset/log_client.txt'
-        
-        with open(log_path, 'r', encoding='utf8') as F:
+            for i in range(1):
+                r = requests.post(url=url, data=json.dumps(data))
+                result = r.json()['value'][0]
+                result=eval(result)
 
-            str_result_list = F.readlines()
-            # print(str_result_list)
+                if result == []:
+                    rec_deplay_str_all = "Please connect root to upload container's name and it's price!\n"
+                    return JsonResponse({"state": 'true',"container": rec_deplay_str_all})
+                else:   
+                    print(type(result))
+                    for rec_docs in result:
+                        price_all = 0
+                        rec_docs_price = []
+                        rec_docs_list.append(rec_docs['rec_docs'])
+                    print(rec_docs_list)
+                    for rec_docs_sig in rec_docs_list:
+                        for res in res_all:
+                            if  res.container_name== rec_docs_sig:
+                                rec_price = res.container_price
+                                price_all += float(rec_price)
+                                rec_docs_price.append(rec_docs_sig)
+                                rec_docs_price.append(rec_price)
 
-            if str_result_list[0] == "Please connect root to upload container's name and it's price!\n":
-
-                rec_deplay_str_all = str_result_list[0]
-                os.remove(log_path)
-                return JsonResponse({"state": 'true',"container": rec_deplay_str_all})
-
-            else:
-
-                for str_result in str_result_list:
-
-                    price_all = 0
-
-                    rec_docs_price = []
-
-                    dict_result = eval(str_result)
-
-                    rec_docs = dict_result['rec_docs']  # 结果
-                    rec_docs_list.append(rec_docs)
-
-                for rec_docs_sig in rec_docs_list:
-                    for res in res_all:
-                        if  res.container_name== rec_docs_sig:
-                            rec_price = res.container_price
-                            price_all += float(rec_price)
-                            rec_docs_price.append(rec_docs_sig)
-                            rec_docs_price.append(rec_price)
-
-
-            os.remove(log_path)
-            return JsonResponse({"state": 'true',"container": rec_docs_price,"price_all": price_all,"picture_test":'test_client.jpg'})
+                print(rec_docs_price)
+                return JsonResponse({"state": 'true',"container": rec_docs_price,"price_all": price_all,"picture_test":'test_client.jpg'})
 
     else:
         return JsonResponse({"state": 'false'})
+
