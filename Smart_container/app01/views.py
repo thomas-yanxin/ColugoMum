@@ -46,7 +46,7 @@ url = "http://127.0.0.1:18081/recognition/prediction"
 
 
 KEY='mHAxsLYz'      #秘钥
-PICTURE_ROOT = '/root/Smart_container/PaddleClas/dataset/retail'
+PICTURE_ROOT = './PaddleClas/dataset/retail'
 
 
 
@@ -120,9 +120,9 @@ def information():
 
 def update():
     container_all = information()
-    os.remove('/root/Smart_container/PaddleClas/dataset/retail/data_update.txt')
+    os.remove('./PaddleClas/dataset/retail/data_update.txt')
              
-    with open('/root/Smart_container/PaddleClas/dataset/retail/data_update.txt','a+',encoding='utf-8') as fh:
+    with open('./PaddleClas/dataset/retail/data_update.txt','a+',encoding='utf-8') as fh:
 
         for container_single in container_all:
             container_name = container_single[1]
@@ -130,7 +130,7 @@ def update():
             fh.write(container_address + '\t' + container_name + '\n')
         fh.close()
 
-    os.system('python3 /root/Smart_container/PaddleClas/deploy/python/build_gallery.py -c /root/Smart_container/PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="/root/Smart_container/PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="/root/Smart_container/PaddleClas/dataset/retail/index_update"')
+    os.system('python3 ./PaddleClas/deploy/python/build_gallery.py -c ./PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="./PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="./PaddleClas/dataset/retail/index_update"')
 
 
 
@@ -151,7 +151,7 @@ def reference(request):
         start_time = time.time()
 
 
-        image_file = '/root/Smart_container/PaddleClas/dataset/retail/test1.jpg'
+        image_file = './PaddleClas/dataset/retail/test1.jpg'
         with open(image_file, "wb") as fh:
              fh.write(image_name)
              fh.close()
@@ -485,7 +485,7 @@ def reference_client(request):
         img_decode = base64.b64decode(img_decode_) #解base64编码，得图片的二进制
         img_np_ = np.frombuffer(img_decode, np.uint8)
         img = cv2.imdecode(img_np_, cv2.COLOR_RGB2BGR) #转为opencv格式
-        img_path_client = '/root/Smart_container/PaddleClas/dataset/test_pic/test_client.jpg'
+        img_path_client = './PaddleClas/dataset/test_pic/test_client.jpg'
         cv2.imwrite(img_path_client, img) #存储路径
         ###      商品识别
         res_all = models.TContainer.objects.all()
