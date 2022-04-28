@@ -111,7 +111,7 @@ class RecOp(Op):
                       False), Transpose((2, 0, 1))
         ])
 
-        index_dir = "./PaddleClas/dataset/retail/index_update"
+        index_dir = "../../../dataset/retail/index_update"
         assert os.path.exists(os.path.join(
             index_dir, "vector.index")), "vector.index not found ..."
         assert os.path.exists(os.path.join(
