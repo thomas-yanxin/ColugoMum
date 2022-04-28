@@ -170,7 +170,7 @@ The processed dataset is now open source in [AIStudio](https://aistudio.baidu.co
  |  2  |  Doing  |★★★★★  | Applets |  Initial function online  |
  |  3  |  completed  |★★★★★  | Client Side |   ~~Jetson Nano Depth adaptation~~  |
  |  4  |  planning  |★★★★  | Applets |  Separation of functions for managers and customers  |
- |  5  |  completed  |★★★★  | web |   ~~ the establishment of web information management system~~  |
+ |  5  |  completed  |★★★★  | web |   ~~the establishment of web information management system~~  |
  |  6  |  planning  |★★★  | Applets |  Realize the automatic entry of commodity name  |
  |  7  |  planning  |★★  | APP | Enabling deployment on the IOS and Android  |
 
