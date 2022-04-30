@@ -192,6 +192,7 @@ A cup of coffee will refresh your mind, and product updates will be faster and b
 ## 🌟Thanks🌟
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) provides the image recognition core function development;
   - [QPT](https://github.com/QPT-Family/QPT) provides Windows side package;
+  - [jkfx](https://github.com/jkfx) fixed some bugs.
 
 ## ❤️Welcome to build together❤️
   We welcome you to contribute code or provide suggestions for "**ColugoMum**". Whether you have a bug, fix a bug, or add a new feature, feel free to submit Issue or Pull Requests.
