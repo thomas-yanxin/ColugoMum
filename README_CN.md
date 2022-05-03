@@ -1,9 +1,7 @@
-<div align="center">
-<img src="./image/background-img.png" width = "1080" height = "480"/>
 </div>  
-
-
-<h1 > 袋鼯麻麻——智能零售结算平台</h1>
+<div align="center">
+<img src="./image/logo2.svg" width = "720" height = "320"/>
+</div>  
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
@@ -13,12 +11,12 @@
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
 简体中文 | [English](./README_EN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
 > 求求了，点个Star![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103704-33acf9f4-cedb-4627-9bb5-10bf68e88d6e.png)吧
-
+[![Star History Chart](https://api.star-history.com/svg?repos=thomas-yanxin/Smart_container&type=Date)](https://star-history.com/#thomas-yanxin/Smart_container&Date)
 ## 😉近期更新😉  
 -  **发布训练代码**：发布模型训练代码及实验结果，以便开发者进行适应性调参工作；
 -  **代码bug修复**： Pipeline部署方式下检索库更新后需重启服务；
 -  **精度大幅提升**：自采集数据集测试精度高达**98.442%**；
--  **文档全面升级**：提供[PP-ShiTu模型训练及部署详细文档](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
+-  **文档全面升级**：Logo全面更新，提供[PP-ShiTu模型训练及部署详细文档](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
 -  **部署方式优化**：预测速度提升**65**%，基于CPU整体流程控制在**0.9s**左右； 
 -  **产品功能升级**：增加库存信息管理功能，提供一键式数据可视化分析平台。
 

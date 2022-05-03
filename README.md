@@ -1,5 +1,6 @@
+</div>  
 <div align="center">
-<img src="./image/background-img.png" width = "1080" height = "480"/>
+<img src="./image/logo2.svg" width = "720" height = "320"/>
 </div>  
  
 <h1 > ColugoMum——Intelligent Retail Rettlement Platform</h1>
