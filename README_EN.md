@@ -197,3 +197,13 @@ A cup of coffee will refresh your mind, and product updates will be faster and b
 
 ## ❤️Welcome to build together❤️
   We welcome you to contribute code or provide suggestions for "**ColugoMum**". Whether you have a bug, fix a bug, or add a new feature, feel free to submit Issue or Pull Requests.
+
+##  <img src="https://user-images.githubusercontent.com/48054808/157835276-9aab9d1c-1c46-446b-bdd4-5ab75c5cfa48.png" width="20"/> Citation
+```
+@misc{ColugoMum2021,
+  author = {ColugoMum Authors},
+  title = {{ColugoMum: Intelligent Retail Settlement Platform}},
+  howpublished = {\url{https://github.com/thomas-yanxin/Smart_container}},
+  year = {2021}
+}
+```
