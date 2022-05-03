@@ -171,7 +171,7 @@ The processed dataset is now open source in [AIStudio](https://aistudio.baidu.co
  |  2  |  Doing  |★★★★★  | Applets |  Initial function online  |
  |  3  |  completed  |★★★★★  | Client Side |   ~~Jetson Nano Depth adaptation~~  |
  |  4  |  planning  |★★★★  | Applets |  Separation of functions for managers and customers  |
- |  5  |  completed  |★★★★  | web |   ~~ the establishment of web information management system~~  |
+ |  5  |  completed  |★★★★  | web |   ~~the establishment of web information management system~~  |
  |  6  |  planning  |★★★  | Applets |  Realize the automatic entry of commodity name  |
  |  7  |  planning  |★★  | APP | Enabling deployment on the IOS and Android  |
 
@@ -193,6 +193,7 @@ A cup of coffee will refresh your mind, and product updates will be faster and b
 ## 🌟Thanks🌟
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) provides the image recognition core function development;
   - [QPT](https://github.com/QPT-Family/QPT) provides Windows side package;
+  - [jkfx](https://github.com/jkfx) fixed some bugs.
 
 ## ❤️Welcome to build together❤️
   We welcome you to contribute code or provide suggestions for "**ColugoMum**". Whether you have a bug, fix a bug, or add a new feature, feel free to submit Issue or Pull Requests.
