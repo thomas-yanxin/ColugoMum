@@ -196,3 +196,12 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 ## ❤️欢迎共建❤️
   我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交Issue or Pull Requests。
 
+##  <img src="https://user-images.githubusercontent.com/48054808/157835276-9aab9d1c-1c46-446b-bdd4-5ab75c5cfa48.png" width="20"/> 引用
+```
+@misc{ColugoMum2021,
+  author = {ColugoMum Authors},
+  title = {{ColugoMum: Intelligent Retail Settlement Platform}},
+  howpublished = {\url{https://github.com/thomas-yanxin/Smart_container}},
+  year = {2021}
+}
+```
