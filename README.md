@@ -3,7 +3,6 @@
 <img src="./image/logo2.svg" width = "720" height = "320"/>
 </div>  
  
-<h1 > ColugoMum——Intelligent Retail Rettlement Platform</h1>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
@@ -13,7 +12,8 @@
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
  English | [简体中文](./README_CN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
 
-> Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)!
+> Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)!  
+
 [![Star History Chart](https://api.star-history.com/svg?repos=thomas-yanxin/Smart_container&type=Date)](https://star-history.com/#thomas-yanxin/Smart_container&Date)
 
 ## 😉Recent Update😉  
