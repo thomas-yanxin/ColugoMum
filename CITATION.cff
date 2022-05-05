@@ -1,0 +1,26 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ColugoMum
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0000-0002-4536-6116'
+    affiliation: East China University of Science and Technology
+    given-names: Xin Yan
+    name-particle: Xin
+    family-names: Yan
+    email: yx20001210@gmail.com
+  - given-names: Chen Shen
+    name-particle: Chen
+    family-names: Shen
+    email: 15221502172@163.com
+    affiliation: East China University of Science and Technology
+  - given-names: XuDong Du
+    name-particle: XuDong
+    family-names: Du
+    email: 1272499364@qq.com
+    affiliation: East China University of Science and Technology
