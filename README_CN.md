@@ -198,7 +198,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 
 ##  <img src="https://user-images.githubusercontent.com/48054808/157835276-9aab9d1c-1c46-446b-bdd4-5ab75c5cfa48.png" width="20"/> 引用
 ```
-@misc{ColugoMum2021,
+@Software{ColugoMum2021,
   author = {ColugoMum Authors},
   title = {{ColugoMum: Intelligent Retail Settlement Platform}},
   howpublished = {\url{https://github.com/thomas-yanxin/Smart_container}},
