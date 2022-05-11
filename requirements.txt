@@ -11,7 +11,7 @@ pyDes==2.0.1
 PyMySQL==1.0.2
 python_memcached==1.59
 PyYAML==6.0
-requests==2.22.0
+requests<=2.15.1
 scikit_learn==0.23.2
 scipy
 setuptools==45.2.0
