@@ -1,0 +1,273 @@
+[2022/05/21 16:27:06] ppcls INFO: 
+===========================================================
+==        PaddleClas is powered by PaddlePaddle !        ==
+===========================================================
+==                                                       ==
+==   For more info please go to the following website.   ==
+==                                                       ==
+==       https://github.com/PaddlePaddle/PaddleClas      ==
+===========================================================
+
+[2022/05/21 16:27:06] ppcls INFO: Arch : 
+[2022/05/21 16:27:06] ppcls INFO:     Backbone : 
+[2022/05/21 16:27:06] ppcls INFO:         name : PPLCNet_x2_5
+[2022/05/21 16:27:06] ppcls INFO:         pretrained : True
+[2022/05/21 16:27:06] ppcls INFO:         use_ssld : True
+[2022/05/21 16:27:06] ppcls INFO:     BackboneStopLayer : 
+[2022/05/21 16:27:06] ppcls INFO:         name : flatten
+[2022/05/21 16:27:06] ppcls INFO:     Head : 
+[2022/05/21 16:27:06] ppcls INFO:         class_num : 2389
+[2022/05/21 16:27:06] ppcls INFO:         embedding_size : 4096
+[2022/05/21 16:27:06] ppcls INFO:         margin : 0.2
+[2022/05/21 16:27:06] ppcls INFO:         name : ArcMargin
+[2022/05/21 16:27:06] ppcls INFO:         scale : 30
+[2022/05/21 16:27:06] ppcls INFO:     Neck : 
+[2022/05/21 16:27:06] ppcls INFO:         class_num : 4096
+[2022/05/21 16:27:06] ppcls INFO:         embedding_size : 1280
+[2022/05/21 16:27:06] ppcls INFO:         name : FC
+[2022/05/21 16:27:06] ppcls INFO:     infer_add_softmax : False
+[2022/05/21 16:27:06] ppcls INFO:     infer_output_key : features
+[2022/05/21 16:27:06] ppcls INFO:     name : RecModel
+[2022/05/21 16:27:06] ppcls INFO: DataLoader : 
+[2022/05/21 16:27:06] ppcls INFO:     Eval : 
+[2022/05/21 16:27:06] ppcls INFO:         Gallery : 
+[2022/05/21 16:27:06] ppcls INFO:             dataset : 
+[2022/05/21 16:27:06] ppcls INFO:                 cls_label_path : /home/aistudio/work/dataset/all/test_list.txt
+[2022/05/21 16:27:06] ppcls INFO:                 image_root : /home/aistudio/work/dataset/all/
+[2022/05/21 16:27:06] ppcls INFO:                 name : VeriWild
+[2022/05/21 16:27:06] ppcls INFO:                 transform_ops : 
+[2022/05/21 16:27:06] ppcls INFO:                     DecodeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         channel_first : False
+[2022/05/21 16:27:06] ppcls INFO:                         to_rgb : True
+[2022/05/21 16:27:06] ppcls INFO:                     ResizeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         size : 224
+[2022/05/21 16:27:06] ppcls INFO:                     NormalizeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         mean : [0.485, 0.456, 0.406]
+[2022/05/21 16:27:06] ppcls INFO:                         order : 
+[2022/05/21 16:27:06] ppcls INFO:                         scale : 0.00392157
+[2022/05/21 16:27:06] ppcls INFO:                         std : [0.229, 0.224, 0.225]
+[2022/05/21 16:27:06] ppcls INFO:             loader : 
+[2022/05/21 16:27:06] ppcls INFO:                 num_workers : 4
+[2022/05/21 16:27:06] ppcls INFO:                 use_shared_memory : True
+[2022/05/21 16:27:06] ppcls INFO:             sampler : 
+[2022/05/21 16:27:06] ppcls INFO:                 batch_size : 64
+[2022/05/21 16:27:06] ppcls INFO:                 drop_last : False
+[2022/05/21 16:27:06] ppcls INFO:                 name : DistributedBatchSampler
+[2022/05/21 16:27:06] ppcls INFO:                 shuffle : False
+[2022/05/21 16:27:06] ppcls INFO:         Query : 
+[2022/05/21 16:27:06] ppcls INFO:             dataset : 
+[2022/05/21 16:27:06] ppcls INFO:                 cls_label_path : /home/aistudio/work/dataset/all/test_list.txt
+[2022/05/21 16:27:06] ppcls INFO:                 image_root : /home/aistudio/work/dataset/all/
+[2022/05/21 16:27:06] ppcls INFO:                 name : VeriWild
+[2022/05/21 16:27:06] ppcls INFO:                 transform_ops : 
+[2022/05/21 16:27:06] ppcls INFO:                     DecodeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         channel_first : False
+[2022/05/21 16:27:06] ppcls INFO:                         to_rgb : True
+[2022/05/21 16:27:06] ppcls INFO:                     ResizeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         size : 224
+[2022/05/21 16:27:06] ppcls INFO:                     NormalizeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                         mean : [0.485, 0.456, 0.406]
+[2022/05/21 16:27:06] ppcls INFO:                         order : 
+[2022/05/21 16:27:06] ppcls INFO:                         scale : 0.00392157
+[2022/05/21 16:27:06] ppcls INFO:                         std : [0.229, 0.224, 0.225]
+[2022/05/21 16:27:06] ppcls INFO:             loader : 
+[2022/05/21 16:27:06] ppcls INFO:                 num_workers : 4
+[2022/05/21 16:27:06] ppcls INFO:                 use_shared_memory : True
+[2022/05/21 16:27:06] ppcls INFO:             sampler : 
+[2022/05/21 16:27:06] ppcls INFO:                 batch_size : 64
+[2022/05/21 16:27:06] ppcls INFO:                 drop_last : False
+[2022/05/21 16:27:06] ppcls INFO:                 name : DistributedBatchSampler
+[2022/05/21 16:27:06] ppcls INFO:                 shuffle : False
+[2022/05/21 16:27:06] ppcls INFO:     Train : 
+[2022/05/21 16:27:06] ppcls INFO:         dataset : 
+[2022/05/21 16:27:06] ppcls INFO:             cls_label_path : /home/aistudio/work/dataset/all/train_list.txt
+[2022/05/21 16:27:06] ppcls INFO:             image_root : /home/aistudio/work/dataset/all/
+[2022/05/21 16:27:06] ppcls INFO:             name : ImageNetDataset
+[2022/05/21 16:27:06] ppcls INFO:             transform_ops : 
+[2022/05/21 16:27:06] ppcls INFO:                 DecodeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                     channel_first : False
+[2022/05/21 16:27:06] ppcls INFO:                     to_rgb : True
+[2022/05/21 16:27:06] ppcls INFO:                 RandCropImage : 
+[2022/05/21 16:27:06] ppcls INFO:                     size : 224
+[2022/05/21 16:27:06] ppcls INFO:                 RandFlipImage : 
+[2022/05/21 16:27:06] ppcls INFO:                     flip_code : 1
+[2022/05/21 16:27:06] ppcls INFO:                 NormalizeImage : 
+[2022/05/21 16:27:06] ppcls INFO:                     mean : [0.485, 0.456, 0.406]
+[2022/05/21 16:27:06] ppcls INFO:                     order : 
+[2022/05/21 16:27:06] ppcls INFO:                     scale : 1.0/255.0
+[2022/05/21 16:27:06] ppcls INFO:                     std : [0.229, 0.224, 0.225]
+[2022/05/21 16:27:06] ppcls INFO:         loader : 
+[2022/05/21 16:27:06] ppcls INFO:             num_workers : 4
+[2022/05/21 16:27:06] ppcls INFO:             use_shared_memory : True
+[2022/05/21 16:27:06] ppcls INFO:         sampler : 
+[2022/05/21 16:27:06] ppcls INFO:             batch_size : 256
+[2022/05/21 16:27:06] ppcls INFO:             drop_last : False
+[2022/05/21 16:27:06] ppcls INFO:             name : DistributedBatchSampler
+[2022/05/21 16:27:06] ppcls INFO:             shuffle : True
+[2022/05/21 16:27:06] ppcls INFO: Global : 
+[2022/05/21 16:27:06] ppcls INFO:     checkpoints : None
+[2022/05/21 16:27:06] ppcls INFO:     device : gpu
+[2022/05/21 16:27:06] ppcls INFO:     epochs : 100
+[2022/05/21 16:27:06] ppcls INFO:     eval_during_train : True
+[2022/05/21 16:27:06] ppcls INFO:     eval_interval : 1
+[2022/05/21 16:27:06] ppcls INFO:     eval_mode : retrieval
+[2022/05/21 16:27:06] ppcls INFO:     image_shape : [3, 224, 224]
+[2022/05/21 16:27:06] ppcls INFO:     output_dir : ./output_resize_wide/
+[2022/05/21 16:27:06] ppcls INFO:     pretrained_model : /home/aistudio/PaddleClas/output_resize_wide/RecModel/best_model
+[2022/05/21 16:27:06] ppcls INFO:     print_batch_step : 10
+[2022/05/21 16:27:06] ppcls INFO:     save_inference_dir : ./inference
+[2022/05/21 16:27:06] ppcls INFO:     save_interval : 1
+[2022/05/21 16:27:06] ppcls INFO:     to_static : False
+[2022/05/21 16:27:06] ppcls INFO:     use_dali : False
+[2022/05/21 16:27:06] ppcls INFO:     use_visualdl : True
+[2022/05/21 16:27:06] ppcls INFO: Loss : 
+[2022/05/21 16:27:06] ppcls INFO:     Eval : 
+[2022/05/21 16:27:06] ppcls INFO:         CELoss : 
+[2022/05/21 16:27:06] ppcls INFO:             weight : 1.0
+[2022/05/21 16:27:06] ppcls INFO:     Train : 
+[2022/05/21 16:27:06] ppcls INFO:         CELoss : 
+[2022/05/21 16:27:06] ppcls INFO:             weight : 1.0
+[2022/05/21 16:27:06] ppcls INFO: Metric : 
+[2022/05/21 16:27:06] ppcls INFO:     Eval : 
+[2022/05/21 16:27:06] ppcls INFO:         Recallk : 
+[2022/05/21 16:27:06] ppcls INFO:             topk : [1, 5]
+[2022/05/21 16:27:06] ppcls INFO: Optimizer : 
+[2022/05/21 16:27:06] ppcls INFO:     lr : 
+[2022/05/21 16:27:06] ppcls INFO:         learning_rate : 0.002
+[2022/05/21 16:27:06] ppcls INFO:         name : Cosine
+[2022/05/21 16:27:06] ppcls INFO:         warmup_epoch : 5
+[2022/05/21 16:27:06] ppcls INFO:     momentum : 0.9
+[2022/05/21 16:27:06] ppcls INFO:     name : Momentum
+[2022/05/21 16:27:06] ppcls INFO:     regularizer : 
+[2022/05/21 16:27:06] ppcls INFO:         coeff : 1e-05
+[2022/05/21 16:27:06] ppcls INFO:         name : L2
+[2022/05/21 16:27:06] ppcls INFO: train with paddle 2.2.2 and device CUDAPlace(0)
+[2022/05/21 16:27:12] ppcls INFO: unique_endpoints {''}
+[2022/05/21 16:27:12] ppcls INFO: Found /home/aistudio/.paddleclas/weights/PPLCNet_x2_5_ssld_pretrained.pdparams
+[2022/05/21 16:27:13] ppcls INFO: gallery feature calculation process: [0/617]
+[2022/05/21 16:27:14] ppcls INFO: gallery feature calculation process: [10/617]
+[2022/05/21 16:27:15] ppcls INFO: gallery feature calculation process: [20/617]
+[2022/05/21 16:27:17] ppcls INFO: gallery feature calculation process: [30/617]
+[2022/05/21 16:27:17] ppcls INFO: gallery feature calculation process: [40/617]
+[2022/05/21 16:27:19] ppcls INFO: gallery feature calculation process: [50/617]
+[2022/05/21 16:27:20] ppcls INFO: gallery feature calculation process: [60/617]
+[2022/05/21 16:27:22] ppcls INFO: gallery feature calculation process: [70/617]
+[2022/05/21 16:27:23] ppcls INFO: gallery feature calculation process: [80/617]
+[2022/05/21 16:27:24] ppcls INFO: gallery feature calculation process: [90/617]
+[2022/05/21 16:27:26] ppcls INFO: gallery feature calculation process: [100/617]
+[2022/05/21 16:27:27] ppcls INFO: gallery feature calculation process: [110/617]
+[2022/05/21 16:27:28] ppcls INFO: gallery feature calculation process: [120/617]
+[2022/05/21 16:27:29] ppcls INFO: gallery feature calculation process: [130/617]
+[2022/05/21 16:27:30] ppcls INFO: gallery feature calculation process: [140/617]
+[2022/05/21 16:27:31] ppcls INFO: gallery feature calculation process: [150/617]
+[2022/05/21 16:27:32] ppcls INFO: gallery feature calculation process: [160/617]
+[2022/05/21 16:27:33] ppcls INFO: gallery feature calculation process: [170/617]
+[2022/05/21 16:27:35] ppcls INFO: gallery feature calculation process: [180/617]
+[2022/05/21 16:27:36] ppcls INFO: gallery feature calculation process: [190/617]
+[2022/05/21 16:27:37] ppcls INFO: gallery feature calculation process: [200/617]
+[2022/05/21 16:27:40] ppcls INFO: gallery feature calculation process: [210/617]
+[2022/05/21 16:27:41] ppcls INFO: gallery feature calculation process: [220/617]
+[2022/05/21 16:27:44] ppcls INFO: gallery feature calculation process: [230/617]
+[2022/05/21 16:27:44] ppcls INFO: gallery feature calculation process: [240/617]
+[2022/05/21 16:27:46] ppcls INFO: gallery feature calculation process: [250/617]
+[2022/05/21 16:27:47] ppcls INFO: gallery feature calculation process: [260/617]
+[2022/05/21 16:27:48] ppcls INFO: gallery feature calculation process: [270/617]
+[2022/05/21 16:27:49] ppcls INFO: gallery feature calculation process: [280/617]
+[2022/05/21 16:27:51] ppcls INFO: gallery feature calculation process: [290/617]
+[2022/05/21 16:27:52] ppcls INFO: gallery feature calculation process: [300/617]
+[2022/05/21 16:27:53] ppcls INFO: gallery feature calculation process: [310/617]
+[2022/05/21 16:27:55] ppcls INFO: gallery feature calculation process: [320/617]
+[2022/05/21 16:27:57] ppcls INFO: gallery feature calculation process: [330/617]
+[2022/05/21 16:27:58] ppcls INFO: gallery feature calculation process: [340/617]
+[2022/05/21 16:28:00] ppcls INFO: gallery feature calculation process: [350/617]
+[2022/05/21 16:28:01] ppcls INFO: gallery feature calculation process: [360/617]
+[2022/05/21 16:28:03] ppcls INFO: gallery feature calculation process: [370/617]
+[2022/05/21 16:28:05] ppcls INFO: gallery feature calculation process: [380/617]
+[2022/05/21 16:28:08] ppcls INFO: gallery feature calculation process: [390/617]
+[2022/05/21 16:28:09] ppcls INFO: gallery feature calculation process: [400/617]
+[2022/05/21 16:28:10] ppcls INFO: gallery feature calculation process: [410/617]
+[2022/05/21 16:28:11] ppcls INFO: gallery feature calculation process: [420/617]
+[2022/05/21 16:28:13] ppcls INFO: gallery feature calculation process: [430/617]
+[2022/05/21 16:28:14] ppcls INFO: gallery feature calculation process: [440/617]
+[2022/05/21 16:28:15] ppcls INFO: gallery feature calculation process: [450/617]
+[2022/05/21 16:28:16] ppcls INFO: gallery feature calculation process: [460/617]
+[2022/05/21 16:28:17] ppcls INFO: gallery feature calculation process: [470/617]
+[2022/05/21 16:28:18] ppcls INFO: gallery feature calculation process: [480/617]
+[2022/05/21 16:28:20] ppcls INFO: gallery feature calculation process: [490/617]
+[2022/05/21 16:28:21] ppcls INFO: gallery feature calculation process: [500/617]
+[2022/05/21 16:28:23] ppcls INFO: gallery feature calculation process: [510/617]
+[2022/05/21 16:28:24] ppcls INFO: gallery feature calculation process: [520/617]
+[2022/05/21 16:28:26] ppcls INFO: gallery feature calculation process: [530/617]
+[2022/05/21 16:28:27] ppcls INFO: gallery feature calculation process: [540/617]
+[2022/05/21 16:28:29] ppcls INFO: gallery feature calculation process: [550/617]
+[2022/05/21 16:28:30] ppcls INFO: gallery feature calculation process: [560/617]
+[2022/05/21 16:28:32] ppcls INFO: gallery feature calculation process: [570/617]
+[2022/05/21 16:28:33] ppcls INFO: gallery feature calculation process: [580/617]
+[2022/05/21 16:28:35] ppcls INFO: gallery feature calculation process: [590/617]
+[2022/05/21 16:28:36] ppcls INFO: gallery feature calculation process: [600/617]
+[2022/05/21 16:28:38] ppcls INFO: gallery feature calculation process: [610/617]
+[2022/05/21 16:28:38] ppcls INFO: Build gallery done, all feat shape: [39457, 4096], begin to eval..
+[2022/05/21 16:28:39] ppcls INFO: query feature calculation process: [0/617]
+[2022/05/21 16:28:40] ppcls INFO: query feature calculation process: [10/617]
+[2022/05/21 16:28:41] ppcls INFO: query feature calculation process: [20/617]
+[2022/05/21 16:28:42] ppcls INFO: query feature calculation process: [30/617]
+[2022/05/21 16:28:43] ppcls INFO: query feature calculation process: [40/617]
+[2022/05/21 16:28:44] ppcls INFO: query feature calculation process: [50/617]
+[2022/05/21 16:28:46] ppcls INFO: query feature calculation process: [60/617]
+[2022/05/21 16:28:47] ppcls INFO: query feature calculation process: [70/617]
+[2022/05/21 16:28:48] ppcls INFO: query feature calculation process: [80/617]
+[2022/05/21 16:28:49] ppcls INFO: query feature calculation process: [90/617]
+[2022/05/21 16:28:50] ppcls INFO: query feature calculation process: [100/617]
+[2022/05/21 16:28:52] ppcls INFO: query feature calculation process: [110/617]
+[2022/05/21 16:28:53] ppcls INFO: query feature calculation process: [120/617]
+[2022/05/21 16:28:54] ppcls INFO: query feature calculation process: [130/617]
+[2022/05/21 16:28:55] ppcls INFO: query feature calculation process: [140/617]
+[2022/05/21 16:28:56] ppcls INFO: query feature calculation process: [150/617]
+[2022/05/21 16:28:57] ppcls INFO: query feature calculation process: [160/617]
+[2022/05/21 16:28:59] ppcls INFO: query feature calculation process: [170/617]
+[2022/05/21 16:29:00] ppcls INFO: query feature calculation process: [180/617]
+[2022/05/21 16:29:02] ppcls INFO: query feature calculation process: [190/617]
+[2022/05/21 16:29:04] ppcls INFO: query feature calculation process: [200/617]
+[2022/05/21 16:29:05] ppcls INFO: query feature calculation process: [210/617]
+[2022/05/21 16:29:06] ppcls INFO: query feature calculation process: [220/617]
+[2022/05/21 16:29:09] ppcls INFO: query feature calculation process: [230/617]
+[2022/05/21 16:29:10] ppcls INFO: query feature calculation process: [240/617]
+[2022/05/21 16:29:12] ppcls INFO: query feature calculation process: [250/617]
+[2022/05/21 16:29:13] ppcls INFO: query feature calculation process: [260/617]
+[2022/05/21 16:29:14] ppcls INFO: query feature calculation process: [270/617]
+[2022/05/21 16:29:15] ppcls INFO: query feature calculation process: [280/617]
+[2022/05/21 16:29:17] ppcls INFO: query feature calculation process: [290/617]
+[2022/05/21 16:29:19] ppcls INFO: query feature calculation process: [300/617]
+[2022/05/21 16:29:20] ppcls INFO: query feature calculation process: [310/617]
+[2022/05/21 16:29:22] ppcls INFO: query feature calculation process: [320/617]
+[2022/05/21 16:29:23] ppcls INFO: query feature calculation process: [330/617]
+[2022/05/21 16:29:24] ppcls INFO: query feature calculation process: [340/617]
+[2022/05/21 16:29:26] ppcls INFO: query feature calculation process: [350/617]
+[2022/05/21 16:29:27] ppcls INFO: query feature calculation process: [360/617]
+[2022/05/21 16:29:29] ppcls INFO: query feature calculation process: [370/617]
+[2022/05/21 16:29:31] ppcls INFO: query feature calculation process: [380/617]
+[2022/05/21 16:29:32] ppcls INFO: query feature calculation process: [390/617]
+[2022/05/21 16:29:33] ppcls INFO: query feature calculation process: [400/617]
+[2022/05/21 16:29:35] ppcls INFO: query feature calculation process: [410/617]
+[2022/05/21 16:29:37] ppcls INFO: query feature calculation process: [420/617]
+[2022/05/21 16:29:38] ppcls INFO: query feature calculation process: [430/617]
+[2022/05/21 16:29:40] ppcls INFO: query feature calculation process: [440/617]
+[2022/05/21 16:29:41] ppcls INFO: query feature calculation process: [450/617]
+[2022/05/21 16:29:43] ppcls INFO: query feature calculation process: [460/617]
+[2022/05/21 16:29:44] ppcls INFO: query feature calculation process: [470/617]
+[2022/05/21 16:29:46] ppcls INFO: query feature calculation process: [480/617]
+[2022/05/21 16:29:48] ppcls INFO: query feature calculation process: [490/617]
+[2022/05/21 16:29:49] ppcls INFO: query feature calculation process: [500/617]
+[2022/05/21 16:29:50] ppcls INFO: query feature calculation process: [510/617]
+[2022/05/21 16:29:51] ppcls INFO: query feature calculation process: [520/617]
+[2022/05/21 16:29:52] ppcls INFO: query feature calculation process: [530/617]
+[2022/05/21 16:29:54] ppcls INFO: query feature calculation process: [540/617]
+[2022/05/21 16:29:54] ppcls INFO: query feature calculation process: [550/617]
+[2022/05/21 16:29:56] ppcls INFO: query feature calculation process: [560/617]
+[2022/05/21 16:29:57] ppcls INFO: query feature calculation process: [570/617]
+[2022/05/21 16:29:58] ppcls INFO: query feature calculation process: [580/617]
+[2022/05/21 16:29:59] ppcls INFO: query feature calculation process: [590/617]
+[2022/05/21 16:30:01] ppcls INFO: query feature calculation process: [600/617]
+[2022/05/21 16:30:02] ppcls INFO: query feature calculation process: [610/617]
+[2022/05/21 16:30:03] ppcls INFO: Build query done, all feat shape: [39457, 4096], begin to eval..
+[2022/05/21 16:30:05] ppcls INFO: [Eval][Epoch 0][Avg]recall1: 0.96101, recall5: 0.98078
