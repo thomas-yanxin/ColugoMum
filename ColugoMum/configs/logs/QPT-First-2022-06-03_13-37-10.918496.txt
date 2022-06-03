@@ -1,2 +1,0 @@
-2022-06-03 13:37:10,919 INFO: QPT Runtime版本号为1.0b3.dev7，若无法使用该程序，可向程序发布者或GitHub: QPT-Family/QPT提交issue寻求帮助
-2022-06-03 13:37:18,872 INFO: 程序已停止
