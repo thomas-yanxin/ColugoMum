@@ -1,0 +1,127 @@
+# Here is the list of packages automatically derived by QPT
+# you can ignore the dependent packages in the main package and only care about the main package
+# For example, you need to install paddlepaddle and pillow, because paddlepaddle relies on pillow, so you only need to install paddlepaddle.
+# ---------------------------------------------------------------------
+# QPT Home:        https://github.com/GT-ZhangAcer/QPT
+# ---------------------------------------------------------------------
+# 
+# -------------Mainly depends on package analysis results--------------
+
+
+numpy==1.21.5
+opencv_python==4.4.0.46
+PyQt5==5.15.6
+requests==2.25.1
+# ----------------------Ignored dependent packages---------------------
+#boost==0.1
+#bs4==0.0.1
+#cached-property==1.5.2
+#chaospy==4.2.6
+#cmake==3.21.1.post1
+#django-filter==2.4.0
+#do-mpc==4.3.1
+#faiss-cpu==1.7.1.post2
+#fake-useragent==0.1.11
+#fastcache==1.1.0
+#ffpyplayer==4.3.4
+#fonttools==4.31.2
+#gast==0.3.3
+#gurobipy==9.5.0
+#gym-super-mario-bros==7.3.2
+#interface==2.11.1
+#keras==2.4.3
+#labelme==4.5.7
+#labelme2coco==0.2.1
+#mediapipe==0.8.7.2
+#mock==3.0.5
+#myst-nb==0.12.3
+#natsort==7.1.1
+#olefile==0.46
+#omg-tools==0.1.4
+#paddle2onnx==0.5.1
+#paddlehub==1.6.2
+#paddlenlp==2.0.6
+#paddlepaddle==2.2.2
+#paddlepaddle-gpu==2.3.0.post112
+#paddlex==2.1.0
+#paddle-ernie==0.2.0.dev1
+#paramiko==2.8.0
+#parl==2.0.3
+#pce==0.1.2
+#pipreqs==0.4.11
+#playsound==1.2.2
+#ppgan==2.0.0
+#ppqi==1.0.4
+#psycopg2==2.9.3
+#pyarrow==0.13.0
+#pybind11==2.7.1
+#pydes==2.0.1
+#pyecharts==1.9.0
+#pygame==2.1.2
+#pyhook==1.5.1
+#pyinstaller==4.6
+#pymouse==1.0
+#pymunk==6.2.1
+#pymysql==1.0.2
+#pynput==1.7.6
+#pyopenssl==20.0.1
+#pypinyin==0.43.0
+#pyqt5-qt==5.15.2
+#pyqt5-tools==5.15.4.3.2
+#pysocks==1.7.1
+#python-interface==1.6.1
+#python-ldap==3.3.1
+#python-memcached==1.59
+#python-mpc==0.1.1
+#pyttsx3==2.90
+#pyuserinput==0.1.10
+#qcqp==0.8.3
+#qpt==1.0b3.dev7
+#qtawesome==1.1.0
+#rarfile==4.0
+#regex==2019.04.14
+#rlschool==1.0.2
+#rocketqa==1.0.0
+#scene==0.0.1
+#sklearn==0.0
+#snapshot-phantomjs==0.0.3
+#snapshot-selenium==0.0.2
+#sympy==1.9
+#taichi==1.0.2
+#taichi-three==0.0.5
+#tensorbay==1.24.0
+#toolz==0.11.2
+#tyadmin-api-cli==0.8.1
+#typeguard==2.12.0
+#ujson==4.2.0
+#unicodedata2==14.0.0
+#wechaty-plugin-contrib==0.0.5
+#win-inet-pton==1.1.0
+#xlutils==2.0.0
+#xpinyin==0.7.6
+#Pillow==8.3.0
+
+# ----------------------Ignored sub dependent packages---------------------
+
+# -----Dependencies of yarg
+#requests
+
+# -----Dependencies of wordcloud
+#pillow
+#numpy>=1.6.1
+#matplotlib
+
+# -----Dependencies of sahi
+#shapely>=1.8.0
+#click==8.0.4
+#tqdm>=4.48.2
+#requests
+#opencv-python>=4.2.0.32
+#pyyaml
+#fire
+#terminaltables
+#pillow>=8.2.0
+
+# -----Dependencies of pyqt5
+#pyqt5-qt5>=5.15
+#pyqt5-sip<13,>=12.8

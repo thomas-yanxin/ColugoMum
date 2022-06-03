@@ -1,0 +1,2 @@
+pywin32
+ttkbootstrap==0.5.1
