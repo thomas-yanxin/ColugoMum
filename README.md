@@ -2,7 +2,6 @@
 <div align="center">
 <img src="./image/logo2.svg" width = "720" height = "320"/>
 </div>  
- 
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thomas-yanxin/Smart_container)
 ![GitHub forks](https://img.shields.io/github/forks/thomas-yanxin/Smart_container)
@@ -10,78 +9,76 @@
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
- English | [简体中文](./README_CN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
-
-> Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)!  
+简体中文 | [English](./README_EN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
+> 求求了，点个Star![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103704-33acf9f4-cedb-4627-9bb5-10bf68e88d6e.png)吧 
 
 [![Star History Chart](https://api.star-history.com/svg?repos=thomas-yanxin/Smart_container&type=Date)](https://star-history.com/#thomas-yanxin/Smart_container&Date)
+## 😉近期更新😉  
+-  **发布训练代码**：发布模型训练代码及实验结果，以便开发者进行适应性调参工作；
+-  **代码bug修复**： Pipeline部署方式下检索库更新后需重启服务；
+-  **精度大幅提升**：自采集数据集测试精度高达**98.442%**；
+-  **文档全面升级**：Logo全面更新，提供[PP-ShiTu模型训练及部署详细文档](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
+-  **部署方式优化**：预测速度提升**65**%，基于CPU整体流程控制在**0.9s**左右； 
+-  **产品功能升级**：增加库存信息管理功能，提供一键式数据可视化分析平台。
 
-## 😉Recent Update😉  
--  **Release training code**：Publish model training code and experimental results for adaptive tuning;
--  **Fixe Code Bug**： Restart the service after the database is updated in Pipeline deployment mode;
--  **Improve Accuracy Greatly**：The test accuracy of the self-collected data set is **99.098%**；
--  **Upgrade Document**：Provides detailed documentation of [PP-ShiTu model training and deployment](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
--  **Optimize Deployment Mode**：The predicted speed increase is **65**%, based on the overall CPU flow control at **0.9s**； 
--  **Upgrade Product Function**：Add inventory information management function, provide one-click data visualization analysis platform;
-
-## 🧁Project Context🧁
-<font size=3 >Currently in the process of actual operations of the retail industry, will produce a great human cost, such as guides, cleaning, settlement, and among them, especially need to spend a lot of labor cost and time cost in the identification of goods and settlement in the process of the price, and in the process, and so the customer need to wait in line.  As a result, the retail industry has high labor costs and low work efficiency. Secondly, it also reduces the shopping experience of customers.    
+## 🧁项目背景🧁
+<font size=3 >目前在零售行业的实际运营过程中，会产生巨大的人力成本，例如导购、保洁、结算等，而其中，尤其需要花费大量的人力成本和时间成本在识别商品并对其进行价格结算的过程中，并且在此过程中，顾客也因此而需要排队等待。这样一来零售行业人力成本较大、工作效率极低，二来也使得顾客的购物体验下降。  
   
-With the development of computer vision technology, as well as the unmanned and automated supermarket operation concept, the use of image recognition technology and target detection technology to achieve Automatic product identification and Automatic settlement demand, namely Automatic checkout system (ACO).  The automatic checkout system based on computer vision can effectively reduce the operating cost of retail industry, improve the checkout efficiency of customers, so as to further enhance the user experience and happiness in the process of shopping.    </font>
+随着计算机视觉技术的发展，以及无人化、自动化超市运营理念的提出，利用图像识别技术及目标检测技术实现产品的自动识别及自动化结算的需求呼之欲出，即自动结账系统（Automatic checkout, ACO）。基于计算机视觉的自动结账系统能有效降低零售行业的运营成本，提高顾客结账效率，从而进一步提升用户在购物过程中的体验感与幸福感。  </font>
 
-## Applicable Scene  
+## 适用场景  
 
- >**ColugoMum——Intelligent Retail Rettlement Platform**Committed to provide **the largest offline retail experience store** with retail settlement solution based on vision.  
+ >**袋鼯麻麻——智能零售结算平台**致力于为**大型线下零售体验店**提供基于视觉的零售结算方案。
 
-## Pain Problem
+## 痛点问题
 
-   1. **Settlement efficiency is highly required**：In the shopping scenario of large offline retail experience stores, if customers buy more goods, the traditional bar code settlement is adopted, which is inefficient and leads to poor shopping experience of customers；
-   2. **Category update very fast**：For in the new retail industry, new products are almost always updated on an hourly basis. Every time new products are added, the model has to be retrained so hard that it is impossible for a single model to keep pace；
-   3. **Different products are very similar**：Different flavors of the same drink, for example, are likely to have very similar packaging. And even for the same product, **there are often considerable differences in the product images obtained under different circumstances**;
-   4. **Tens of thousands of commodity categories**：There is no way to put all categories into the training set beforehand。
+   1. **结算效率要求极高**：在大型线下零售体验店购物场景中，若顾客购买的商品较多，采用传统的条形码结算，效率较低，顾客购物体验较差；
+   2. **品类更新极快**：像新零售这种行业，新品几乎都是**按小时级别**在更新，每增加新的产品都要辛辛苦苦重新训练模型，仅靠单一模型想要跟上步伐，着实望尘莫及；
+   3. **不同商品相似度极高**：比如同一种饮料的不同口味，就很可能拥有非常类似的包装。而且即便对于同一件商品，**在不同情况下所获得的商品图像都往往存在相当大的差异**；
+   4. **商品类别数以万计**：根本没法事先把所有类别都放入训练集。
 
-## 🍑Realize function🍑
-<font size=3 >**ColugoMum** realize automatic settlement of goods purchased by users in the retail process. We take advantage of the PaddleClas team's open source [PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf) technology, precise positioning of customers to buy goods, and intelligent, automatic price settlement. When customers place their chosen products in the designated area, **ColugoMum** can accurately locate and identify each product, and can return a complete shopping list and the actual total price of goods that customers should pay. When the system has a new product increase, the system only need to update the retrieval database, without retraining the model.   
+## 🍑实现功能🍑
+<font size=3 >“**袋鼯麻麻——智能零售结算平台**”具体实现在零售过程中对用户购买商品的自动结算。即：利用PaddleClas团队开源的[图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)技术，精准地定位顾客购买的商品，并进行智能化、自动化的价格结算。当顾客将自己选购的商品放置在制定区域内时，“**袋鼯麻麻——智能零售结算平台**”能够精准地定位识别每一个商品，并且能够返回完整的购物清单及顾客应付的实际商品总价格。而当系统有新商品增加时，本系统只需更新检索库即可，无需重新训练模型。   
     
-This project is a lightweight general PP-ShiTu image recognition system provides the solid ground application cases, the new one of the retail industry and retail visual intelligent solution provides a very good basis and train of thought, especially for solving many categories, small sample, high similarity, and frequently updated the special image recognition scene pain difficulties provides reference of demonstrations, Greatly reduce the retail industry in the actual operation of the huge human cost, improve the retail industry unmanned, automation, intelligent level.  </font>  
+  本项目为轻量级通用图像识别系统PP-ShiTu提供了扎实的落地应用案例，对新零售行业中无人零售视觉化智能解决方案提供了非常好的基础和思路，尤其针对解决多类别、小样本、高相似和更新频繁的特殊图像识别场景痛难点提供了可参考的示范，极大地降低零售行业实际运营过程中巨大的人力成本，提升零售行业无人化、自动化、智能化水平。  </font>  
 
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/56a6521f80754fcdb12ab433e35ce343b7a5e475b56446e8beb4d9c93213e7b3" width = "480" height = "320"/>
 </div>
 
 
-## 🍎Overall Architecture🍎
+## 🍎整体架构🍎
 <div align="center">
 <img src="https://ai-studio-static-online.cdn.bcebos.com/59f875129c854cdfb7cbb3435f5004c37ffed920756b41e5bde49e98c09cd0ab" width = "1080" height = "640"/>
 </div>
 
 
-## 🐻Technical Route🐻
-<font size=3 >**ColugoMum** Based on PaddleClas as the main feature development suite, leveraging its open source [PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf) for core feature development. Through PaddleInference, it was deployed in Jetson Nano, and was packaged based on [QPT](https://github.com/QPT-Family/QPT) to develop an industrial-level intelligent retail settlement platform in line with actual application requirements.  </font>
+## 🐻技术路线🐻
+<font size=3 >**袋鼯麻麻——智能零售结算平台** 基于[PaddleClas](https://github.com/PaddlePaddle/PaddleClas)作为主要的功能开发套件，利用其开源的[PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)进行核心功能的开发，并通过PaddleInference将其部署于Jetson Nano，并基于[QPT](https://github.com/QPT-Family/QPT)打包.exe打通Windows系统，开发一套符合实际应用需求的工业级智能零售结算平台。  </font>
 
-### [PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf) Introduce
+### [图像识别PP-ShiTu](https://arxiv.org/pdf/2111.00775.pdf)介绍
 
-PP-ShiTu is a practical lightweight general image recognition system, which is mainly composed of three modules: subject detection, feature learning and vector retrieval.  The system from the selection and adjustment of backbone networks, the choice of loss function, vector data, transform strategy, choice of regularization parameter, use the training model and quantitative model cutting eight aspects, use a variety of strategies, optimize the model of the various modules, finally got on the CPU is only 0.2 s to complete 10 w + library image recognition system.  
+PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检测、特征学习和向量检索三个模块组成。该系统从骨干网络选择和调整、损失函数的选择、数据增强、学习率变换策略、正则化参数选择、预训练模型使用以及模型裁剪量化8个方面，采用多种策略，对各个模块的模型进行优化，最终得到在CPU上仅0.2s即可完成10w+库的图像识别的系统。
 
 <div align="center">
 <img src="./image/structure.jpg" width = "1080" height = "540"/>
 </div>
 
-<font size=3 >The whole image recognition system is divided into three steps（[See PP-ShiTu training module for details](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/models_training/recognition.md)）：  
-(1) The candidate regions of image objects are detected by a target detection model;  
-(2) Feature extraction for each candidate region;  
-(3) Feature matching with images in the retrieval database, and extraction of recognition results.  
+<font size=3 >整个图像识别系统分为三步（[详情见PP-ShiTu训练模块](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/models_training/recognition.md)）：  
+（1）通过一个目标检测模型，检测图像物体候选区域；  
+（2）对每个候选区域进行特征提取；  
+（3）与检索库中图像进行特征匹配，提取识别结果。
 
-For the new unknown category, there is no need to retrain the model, but only need to add the image of the category in the retrieval database and rebuild the retrieval database to recognize the category.   </font>
+对于新的未知类别，无需重新训练模型，只需要在检索库补入该类别图像，重新建立检索库，就可以识别该类别。  </font>
 
-### Introduction to Data Set
+### 数据集介绍
 【The first one】:[Products-10K Large Scale Product Recognition Dataset](https://arxiv.org/abs/2006.12634)  
 
 【The second one】:[RP2K: A Large-Scale Retail Product Dataset for Fine-Grained Image Classification](https://www.pinlandata.com/rp2k_dataset)  
 
-**ColugoMum** based on the above two data sets and combined with the actual characteristics of the retail scene, adaptive processing is carried out.  
+**袋鼯麻麻——智能购物平台**基于上述两个数据集，结合爬虫，对此两种数据集进行适应性处理。  
 
-### List of Commodities 
+### 商品部分list
 
 > 	东古酱油一品鲜  
 	东古黄豆酱750G  
@@ -96,109 +93,110 @@ For the new unknown category, there is no need to retrain the model, but only ne
    ...
 
 
-The processed dataset is now open source in [AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/113685). </font>
-## Ablation experiments ##
- |  model  | num epoch |  batch size/gpu cards |  learning rate  |  use cutout  |  use ssld  |  top1 recall  | config |
+目前处理后的数据集已在[AIStudio](https://aistudio.baidu.com/aistudio/datasetdetail/113685)开源。 </font>
+## 消融实验 ##
+ |  model  | num epoch |  batch size/gpu cards |  learning rate  |  use cutout  |  use ssld  |  top1 recall  | 配置文件 |
  | :----: | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
- | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | N | N | [98.189%](./exprements/log/98189.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_01.yaml) |
- | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | Y | N | [98.21%](./exprements/log/98216.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_01_cutout.yaml) |
- | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | N | N | [98.201%](./exprements/log/98201.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_005.yaml) |
- | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | Y | N | [98.29%](./exprements/log/98291.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_005_cutout.yaml) |
- | PP_LCNet_x2_5 | 400 | 256/4 | 0.001 | Y | N | 98.26% |config|
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.005 | Y | Y | 98.30% | config|
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | [98.37%](./exprements/log/98379.log) | config |
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | [98.38%](./exprements/log/98383.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002.yaml) |
- | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | [98.39%]((./exprements/log/98395.log)) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002_cutout.yaml) |
-<!--  | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004.yaml) |
- | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | Y | Y | [98.38%](./exprements/log/98376.log) | [config](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004_cutout.yaml) | -->
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | N | N | [98.189%](./exprements/log/98189.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_01.yaml) |
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.01 | Y | N | [98.21%](./exprements/log/98216.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_01_cutout.yaml) |
+ | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | N | N | [98.201%](./exprements/log/98201.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_005.yaml) |
+ | PP_LCNet_x2_5 | 400 | 256/4| 0.005 | Y | N | [98.29%](./exprements/log/98291.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_005_cutout.yaml) |
+ | PP_LCNet_x2_5 | 400 | 256/4 | 0.001 | Y | N | 98.26% |配置文件|
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.005 | Y | Y | 98.30% | 配置文件|
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.0025 | Y | Y | [98.37%](./exprements/log/98379.log) | 配置文件 |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | N | Y | [98.38%](./exprements/log/98383.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002.yaml) |
+ | PP_LCNet_x2_5 | 400 | 64/4 | 0.002 | Y | Y | [98.39%]((./exprements/log/98395.log)) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_dml_002_cutout.yaml) |
+<!--  | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | N | Y | [98.44%](./exprements/log/98442.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004.yaml) |
+ | PP_LCNet_x2_5 | 400 | 128/4 | 0.004 | Y | Y | [98.38%](./exprements/log/98376.log) | [配置文件](./exprements/PaddleClas/ppcls/configs/GeneralRecognition/GeneralRecognition_PPLCNet_x2_5_004_cutout.yaml) | -->
 
-**Attention**:
-1. This experiment is based on GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB for training and testing;
-2. The experiments are based on the above data set [Retail Product Characteristics Study Data Set](https://aistudio.baidu.com/aistudio/datasetdetail/113685) for training and testing;
-3. Evaluation of RP2K and other large open source data sets of retail products will be carried out soon.
-   
+**注**:
+ 1. 本实验均基于 GPU:Tesla V100* 4; CPU:Inter Xeon* 32; RAM:DDR4 128GB 进行训练并测试；
+ 2. 本实验均基于上述[零售商品特征学习数据集](https://aistudio.baidu.com/aistudio/datasetdetail/113685)进行训练和测试;
+ 3. 即将对RP2K等大型零售商品开源数据集进行评测。
 
-## 🌍Deployment Mode🌍
-**ColugoMum** has been connected to**Jetson Nano, Windows, linux** system.  
+
+## 🌍部署方式🌍
+本项目已打通**Jetson Nano、Windows、linux**系统  
 
 <font size=3 >
   
-  - Windows  
-  [**ColugoMum** provides a relatively simple demo version]  
+  - Windows 端  
+  [本项目提供了较为简单的demo演示版本]  
 	
-    We use [QPT](https://github.com/QPT-Family/QPT) for packaging.   
-    Download the project code, enter the QPT_client folder, and Click the "启动程序.exe".
+    使用[QPT](https://github.com/QPT-Family/QPT)打包   
+    链接：https://pan.baidu.com/s/194ApbJuDJWyV7tv5sCaGsg  提取码：wy7i  
 	  
-  - Linux  
-    Download the project code, enter the client folder, and run the following code to run it  ：
+	  解压后运行**启动程序.exe**即可
+  - Linux 端  
+    Download本项目代码后，进入client文件夹内，执行以下代码即可运行：
     ```
       python client.py
      ```
   
-  - For details of the image recognition part deployment, you can see [PP-ShiTu Development](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
+  - 图像识别部分部署详情请见[PP-ShiTu部署](https://github.com/PaddlePaddle/PaddleClas/blob/release/2.3/docs/zh_CN/inference_deployment/python_deploy.md#%E4%B8%BB%E4%BD%93%E6%A3%80%E6%B5%8B%E3%80%81%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2%E4%B8%B2%E8%81%94)
   
-  - Wechat applet 
-   Open the wechat developer tool, import the AIContainer folder under the system folder and run it；
+  - 微信小程序端
+   打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端；
 
-## 💃[bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507) Results Demonstrate💃  
+## 💃[bilibili](https://www.bilibili.com/video/BV19q4y1G7bx#reply5654379507)效果演示💃  
  
     
-- Main Interface
+- 主界面
   <div align="center"><img src="./image/all.jpg" width = "720" height = "540"/></div>
   
-- Client Side Interface  
+- 端侧界面  
  
 <div align="center"><img src="./image/pic_paddle.gif" width = "720" height = "540"/></div>
 
 
-- Applets Interface
+- 小程序界面
   <div align="center">
 <img src="./image/wx_all.png" width = "840" height = "480"/>
 </div>
 
-- Big Data Visualization Analysis Interface
+- 大数据可视化分析界面
 	<div align="center">
 <img src="./image/datacenter.jpg" width = "840" height = "480"/>
 </div>  
 
 
-## ⛽️To Do List⛽️
+## ⛽️待完成⛽️
 
   
- |  number  | complete degree |  priority |  category  |  Functional description  | 
+ |  序号  | 完成度 |  优先级 |  分属类别  |  功能描述  | 
  | :----: | :---- | :---- | :---- | :---- |
- |  1  |  completed  |★★★★★  | Applets | ~~Add inventory information display, add data analysis module~~|
- |  2  |  Doing  |★★★★★  | Applets |  Initial function online  |
- |  3  |  completed  |★★★★★  | Client Side |   ~~Jetson Nano Depth adaptation~~  |
- |  4  |  planning  |★★★★  | Applets |  Separation of functions for managers and customers  |
- |  5  |  completed  |★★★★  | web |   ~~the establishment of web information management system~~  |
- |  6  |  planning  |★★★  | Applets |  Realize the automatic entry of commodity name  |
- |  7  |  planning  |★★  | APP | Enabling deployment on the IOS and Android  |
+ |  1  |  已完成  |★★★★★  | 小程序 | ~~添加库存信息显示，增添数据分析模块~~|
+ |  2  |  在做了  |★★★★★  | 小程序 |  初始功能上线  |
+ |  3  |  已完成  |★★★★★  | 端侧 |   ~~Jetson Nano的深度适配~~  |
+ |  4  |  规划中  |★★★★  | 小程序 |  面向管理者及顾客的功能分离  |
+ |  5  |  已完成  |★★★★  | web |   ~~基于 [Tyadmin](https://github.com/mtianyan/django-antd-tyadmin) or 其他工具 关于web端信息管理系统的建立~~  |
+ |  6  |  规划中  |★★★  | 小程序 |  接入[PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)实现商品名称的自动录入  |
+ |  7  |  规划中  |★★  | APP |  Android and IOS 客户端的打通部署  |
 
 
-## 🚀 Development Team🚀
+## 🚀开发团队🚀
 
-  |  Duty   |  Name  |
+  |  职责   |  名单  |
 |  :----:  | :----:  |
-| PM | [X. Yan](https://github.com/thomas-yanxin) |
-| Algorithm | [X. Yan](https://github.com/thomas-yanxin) |
-| Side of the front end | [X. Yan](https://github.com/thomas-yanxin) |
-| Applets front end  | [C. Shen](https://github.com/Scxw010516) |
- | Back End  | [D. DU](https://github.com/DXD-agumo) |
+| PM | [颜鑫](https://github.com/thomas-yanxin) |
+| 算法 | [颜鑫](https://github.com/thomas-yanxin) |
+| 端侧前端 | [颜鑫](https://github.com/thomas-yanxin) |
+| 小程序前端  | [沈晨](https://github.com/Scxw010516) |
+ | 后端  | [杜旭东](https://github.com/DXD-agumo) |
   
-## ☕Sponsor☕
-A cup of coffee will refresh your mind, and product updates will be faster and better!  
+## ☕来一杯咖啡☕
+一杯咖啡提神醒脑，产品更新会更快更好！  
 <div><img width="490" alt="图片" src="./image/pay.png"></div>
 	  
-## 🌟Thanks🌟
-  - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) provides the image recognition core function development;
-  - [QPT](https://github.com/QPT-Family/QPT) provides Windows side package;
-  - [jkfx](https://github.com/jkfx) fixed some bugs.
+## 🌟特别鸣谢🌟
+  - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
+  - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
+  - [jkfx](https://github.com/jkfx) 修复了一些bug.
 
-## ❤️Welcome to build together❤️
-  We welcome you to contribute code or provide suggestions for "**ColugoMum**". Whether you have a bug, fix a bug, or add a new feature, feel free to submit Issue or Pull Requests.
+## ❤️欢迎共建❤️
+  我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交Issue or Pull Requests。
 
-##  <img src="https://user-images.githubusercontent.com/48054808/157835276-9aab9d1c-1c46-446b-bdd4-5ab75c5cfa48.png" width="20"/> Citation
+##  <img src="https://user-images.githubusercontent.com/48054808/157835276-9aab9d1c-1c46-446b-bdd4-5ab75c5cfa48.png" width="20"/> 引用
 ```
 @software{ColugoMum2021,
   author = {Xin Yan, Chen Shen and XuDong Du},
