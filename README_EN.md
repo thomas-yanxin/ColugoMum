@@ -11,7 +11,7 @@
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
- English | [简体中文](./README_CN.md) | [gitee 支持国产](https://gitee.com/E_Light/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
+ English | [简体中文](./README_CN.md) | [启智OpenI](https://git.openi.org.cn/ColugoMum/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
 
 > Remember to give it a ![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103534-0eea7fe9-b3bc-485f-a752-8151b3982901.png)! 
  
