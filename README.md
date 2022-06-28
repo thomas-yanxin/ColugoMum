@@ -152,7 +152,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   
 - 端侧界面  
  
-<div align="center"><img src="./image/pic_paddle.gif" width = "720" height = "540"/></div>
+<div align="center"><img src="./image/pic.gif" width = "720" height = "540"/></div>
 
 
 - 小程序界面
