@@ -15,7 +15,7 @@
 [![Star History Chart](https://api.star-history.com/svg?repos=thomas-yanxin/Smart_container&type=Date)](https://star-history.com/#thomas-yanxin/Smart_container&Date)
 ## 😉近期更新😉  
  1. 因项目不断扩大，将本[Smart_container](https://github.com/thomas-yanxin/Smart_container)项目架构拆分为[组织架构](https://github.com/ColugoMum)，并计划拓展边界，您可以移步至[ColugoMum](https://github.com/ColugoMum)进行查看；
- 2. 提供基于PPLCNET骨干网络的端侧级[RP2K](https://www.pinlandata.com/rp2k_dataset)预训练模型，精度达96.54%；
+ 2. 提供基于PPLCNET骨干网络的端侧级[RP2K](https://www.pinlandata.com/rp2k_dataset)预训练模型，精度达96.91%；
  3. 提供图像识别教程，并提供[在线实训环境](https://aistudio.baidu.com/aistudio/projectdetail/3460304)方便开发者进行训练调优。此教程也已收录于[飞桨产业实践范例库](https://aistudio.baidu.com/aistudio/topic/1000)；
  4. 已经提供基于PPLCNETV2的端侧级模型，即将提供基于PPHGNET的服务端模型，以及相关推理模型。敬请期待；
  5. 欢迎感兴趣的开发者加入[RP2K](https://www.pinlandata.com/rp2k_dataset)的打榜活动！
