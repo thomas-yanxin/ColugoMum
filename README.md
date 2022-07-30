@@ -9,8 +9,12 @@
 ![python](https://img.shields.io/badge/python-3.79+-aff.svg)
 ![os](https://img.shields.io/badge/os-win%2C%20linux(Nano)-pink.svg)
 ![contributors](https://img.shields.io/github/contributors/thomas-yanxin/Smart_container)  
-简体中文 | [English](./README_EN.md) | [启智OpenI](https://git.openi.org.cn/ColugoMum/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)
-> 求求了，点个Star![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103704-33acf9f4-cedb-4627-9bb5-10bf68e88d6e.png)吧 
+简体中文 | [English](./README_EN.md) | [启智OpenI](https://git.openi.org.cn/ColugoMum/Smart_container) | [github](https://github.com/thomas-yanxin/Smart_container)  
+
+**注**：项目会第一时间在[OpenI启智社区](https://git.openi.org.cn/ColugoMum/Smart_container)首发，其余平台保持同步。
+> 求求了，点个Star![T_ZKW6KJ_X{% %P_AY$`( X](https://user-images.githubusercontent.com/58030051/158103704-33acf9f4-cedb-4627-9bb5-10bf68e88d6e.png)吧   
+
+
 
 [![Star History Chart](https://api.star-history.com/svg?repos=thomas-yanxin/Smart_container&type=Date)](https://star-history.com/#thomas-yanxin/Smart_container&Date)
 ## 😉近期更新😉  
