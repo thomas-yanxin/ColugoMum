@@ -27,11 +27,6 @@ from xpinyin import Pinyin
 # Create your views here.
 
 
-
-
-
-
-
 url = "http://127.0.0.1:18081/recognition/prediction"
 
 # with open(os.path.join(".",  imgpath), 'rb') as file:
