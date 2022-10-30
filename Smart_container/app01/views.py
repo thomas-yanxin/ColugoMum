@@ -131,7 +131,7 @@ def update():
         fh.close()
 
     os.system('python3 ./PaddleClas/deploy/python/build_gallery.py -c ./PaddleClas/deploy/configs/build_product.yaml -o IndexProcess.data_file="./PaddleClas/dataset/retail/data_update.txt" -o IndexProcess.index_dir="./PaddleClas/dataset/retail/index_update"')
-    os.system('sh ././Smart_container/start_server.sh')
+    os.system('sh ./start_server.sh')
 
 
 # 识别模块
