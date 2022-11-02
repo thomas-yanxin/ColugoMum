@@ -13,7 +13,7 @@ container.sql
 
 Smart_container/src/branch/master/Smart_container/djangoProject/settings.py
 
-
+```shell
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',	# 要连接的 数据库类型
@@ -24,7 +24,7 @@ DATABASES = {
         'NAME': 'container',	# 要连接的 数据库名
     }
 }
-
+```
 3. 启动Django框架
 
 在终端执行此命令:
@@ -37,6 +37,7 @@ python manage.py runserver 0.0.0.0:8001
 PaddleClas/deploy/paddleserving/recognition
 
 2.修改配置文件config.yml路径
+```
 op:
     rec:
             ···
@@ -63,8 +64,10 @@ op:
             fetch_list:
             - save_infer_model/scale_0.tmp_1
             model_config: /你的项目路径/PaddleClas/deploy/picodet_PPLCNet_x2_5_mainbody_lite_v1.0_serving
+```
 
 3.修改启动服务脚本recognition_web_service.py 这里主要修改服务所需的检索库地址
+```
         ···
         index_dir = "/你的项目路径/dataset/index_update"
         
@@ -73,25 +76,34 @@ op:
         assert os.path.exists(os.path.join(
             index_dir, "id_map.pkl")), "id_map.pkl not found ... "
         ···
+ ```
+ 
 4.启动/停止服务
 
 启动服务---
 在终端执行此命令:
+```python
 python recognition_web_service.py &>log.txt &
+```
 启动服务后，运行日志保存在 log.txt可查看是否正常运行。
 
 停止服务---
 在终端执行此命令:
+```python
 python -m paddle_serving_server.serve stop
+```
 
-######客户端运行######
+## 客户端运行
 
 进入client文件夹内，执行以下代码即可运行：
+```shell
 python client.py
-=====================================================
+```
+
 注：Linux下运行需要修改client.py文件,注释掉win32相关代码
-=====================================================
+
 修改self.rate = (w,h)
+```
 class Ui_MainWindow(QtWidgets.QWidget):
 
     def __init__(self):
@@ -105,6 +117,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
         if self.rate != 1 and self.rate != 1.25 and self.rate != 1.5 and self.rate != 1.75 :
             self.rate = 1
         super(Ui_MainWindow, self).__init__()
+
+```
 修改请求地址
 res=requests.post('http://127.0.0.1:8001/reference_client/', data=req)
 
