@@ -7,6 +7,7 @@ cd Smart_container
 pip install -r requirements.txt  # install
 
 2. 导入数据库并修改数据库信息
+
 container.sql
 
 修改数据库信息
@@ -129,9 +130,9 @@ res=requests.post('http://127.0.0.1:8001/reference_client/', data=req)
 
 需要修改Smart_container/AIContainer/miniprogram/app.js 
 改为自己IP地址方可正常请求后台。
-========================
+
 小程序商品图片显示问题修改
-========================
+
 pages/main/revisepage/revise.js
 pages/main/main/revise.wxml
 
