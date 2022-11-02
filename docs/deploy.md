@@ -12,6 +12,8 @@ container.sql
 修改数据库信息
 
 Smart_container/src/branch/master/Smart_container/djangoProject/settings.py
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',	# 要连接的 数据库类型
