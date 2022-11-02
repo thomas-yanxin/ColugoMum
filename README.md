@@ -23,13 +23,13 @@
  3. 提供图像识别教程，并提供[在线实训环境](https://aistudio.baidu.com/aistudio/projectdetail/3460304)方便开发者进行训练调优。此教程也已收录于[飞桨产业实践范例库](https://aistudio.baidu.com/aistudio/topic/1000)；
  4. 已经提供基于PPLCNETV2的端侧级模型，即将提供基于PPHGNET的服务端模型，以及相关推理模型。敬请期待；
  5. 欢迎感兴趣的开发者加入[RP2K](https://www.pinlandata.com/rp2k_dataset)的打榜活动！
- 
+
+-  **项目部署文档**：发布项目[部署文档Demo版](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/deploy.md)，便于开发者能更快部署本项目进行体验；
 -  **发布训练代码**：发布模型训练代码及实验结果，以便开发者进行适应性调参工作；
 -  **代码bug修复**： Pipeline部署方式下检索库更新后需重启服务；
 -  **精度大幅提升**：自采集数据集测试精度高达**99.10%**；
 -  **文档全面升级**：Logo全面更新，提供[PP-ShiTu模型训练及部署详细文档](https://github.com/thomas-yanxin/Smart_container/blob/master/docs/readme_industry_v5.md)；
--  **部署方式优化**：预测速度提升**65**%，基于CPU整体流程控制在**0.9s**左右； 
--  **产品功能升级**：增加库存信息管理功能，提供一键式数据可视化分析平台。
+-  **部署方式优化**：预测速度提升**65**%，基于CPU整体流程控制在**0.9s**左右.
 
 ## 🧁项目背景🧁
 <font size=3 >目前在零售行业的实际运营过程中，会产生巨大的人力成本，例如导购、保洁、结算等，而其中，尤其需要花费大量的人力成本和时间成本在识别商品并对其进行价格结算的过程中，并且在此过程中，顾客也因此而需要排队等待。这样一来零售行业人力成本较大、工作效率极低，二来也使得顾客的购物体验下降。  
@@ -201,7 +201,8 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
 ## 🌟特别鸣谢🌟
   - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas) 提供了图像识别核心功能开发；
   - [QPT打包工具](https://github.com/QPT-Family/QPT) 提供了Windows端.exe打包；
-  - [jkfx](https://github.com/jkfx) 修复了一些bug.
+  - [jkfx](https://github.com/jkfx) 修复了一些bug；
+  - [17635703590](https://github.com/17635703590) 提供项目部署文档.
 
 ## ❤️欢迎共建❤️
   我们非常欢迎您为"**袋鼯麻麻——智能零售结算平台**"贡献代码或者提供使用建议。无论您是提出存在bug、修复某个bug或者增加一个新功能，欢迎给我们提交Issue or Pull Requests。
