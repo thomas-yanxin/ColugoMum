@@ -1,13 +1,15 @@
-######项目部署流程######
+# 项目部署流程
 ==============================================
 前提条件，有Python>=3.8.0环境，下载微信开发者工具
 ==============================================
 
+## 服务端部署
+1. 获取项目代码并安装依赖包
 git clone https://git.openi.org.cn/ColugoMum/Smart_container.git  # clone
 cd Smart_container
 pip install -r requirements.txt  # install
 
-######导入数据库######
+2. 导入数据库并修改数据库信息
 container.sql
 
 修改数据库信息
@@ -22,13 +24,14 @@ DATABASES = {
         'NAME': 'container',	# 要连接的 数据库名
     }
 }
-######启动Django框架######
+
+3. 启动Django框架
 
 在终端执行此命令:
 Smart_container/Smart_container
 python manage.py runserver 0.0.0.0:8001
 
-######模型服务部署######
+## 模型服务化部署
 
 1.进入到工作目录
 PaddleClas/deploy/paddleserving/recognition
@@ -106,7 +109,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 res=requests.post('http://127.0.0.1:8001/reference_client/', data=req)
 
 
-######小程序端运行######
+## 小程序端运行
 
 打开微信开发者工具，导入系统文件夹下AIContainer文件夹并运行，即可运行小程序端。
 
@@ -118,4 +121,4 @@ res=requests.post('http://127.0.0.1:8001/reference_client/', data=req)
 pages/main/revisepage/revise.js
 pages/main/main/revise.wxml
 
-######注:上传商品前数据表t_container只留一条数据，如果全部清空数据上传商品时会报错。
+注:上传商品前数据表t_container只留一条数据，如果全部清空数据上传商品时会报错。
