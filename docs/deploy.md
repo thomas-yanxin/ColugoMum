@@ -1,7 +1,4 @@
 # 项目部署流程
-==============================================
-前提条件，有Python>=3.8.0环境，下载微信开发者工具
-==============================================
 
 ## 服务端部署
 1. 获取项目代码并安装依赖包
@@ -13,6 +10,7 @@ pip install -r requirements.txt  # install
 container.sql
 
 修改数据库信息
+
 Smart_container/src/branch/master/Smart_container/djangoProject/settings.py
 DATABASES = {
     'default': {
