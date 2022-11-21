@@ -217,3 +217,7 @@ PP-ShiTu是一个实用的轻量级通用图像识别系统，主要由主体检
   pages={609-616},
   doi={10.1109/CISCE55963.2022.9851085}}
 ```
+@software{Xin_Yan_ColugoMum,
+author = {Xin Yan, Xin Yan and Chen Shen, Chen Shen and XuDong Du, XuDong Du},
+title = {{ColugoMum}}
+}
